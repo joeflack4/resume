@@ -1,0 +1,5 @@
+@page { size: Letter; margin: 0.5in; }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { color: #000; }
+h1, h2, h3 { page-break-after: avoid; }
+li { break-inside: avoid; }

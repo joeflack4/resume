@@ -1,0 +1,10 @@
+body.resume { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif; color: #111; line-height: 1.35; margin: 24px; }
+.masthead { margin-bottom: 16px; }
+.name { font-size: 28px; margin: 0; }
+.location, .email, .phone, .links { font-size: 13px; color: #444; }
+h1, h2, h3 { margin: 10px 0 6px; }
+section { margin: 8px 0; }
+ul { margin: 0 0 6px 20px; }
+li { margin: 2px 0; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }

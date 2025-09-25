@@ -1,0 +1,30 @@
+$if(lang)$
+<html lang="$lang$">
+$else$
+<html>
+$endif$
+  <head>
+    <meta charset="utf-8">
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="resume">
+    <header class="masthead">
+      <h1 class="name">$name$</h1>
+      $if(location)$<div class="location">$location$</div>$endif$
+      $if(email)$<div class="email"><a href="mailto:$email$">$email$</a></div>$endif$
+      $if(phone)$<div class="phone">$phone$</div>$endif$
+      $if(links)$
+      <div class="links">
+        $for(links)$<span class="link"><a href="$links$">$links$</a></span>$sep$ · $endfor$
+      </div>
+      $endif$
+    </header>
+    <main>
+      $body$
+    </main>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+from: gfm
+to: docx
+standalone: true
+
+metadata-files:
+  - data/meta.yml
+  - data/variants/general.yml
+
+reference-doc: templates/docx/reference.docx
+
+input-files:
+  - content/01-header.md
+  - content/02-summary.md
+  - content/10-experience/2021-experience.md
+  - content/10-experience/2025-.md
+  - content/20-skills.md
+  - content/30-education.md
+output-file: output/Joe-Flack-Resume.docx

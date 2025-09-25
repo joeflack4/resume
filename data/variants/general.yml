@@ -1,0 +1,9 @@
+include_sections:
+- header
+- summary
+- skills
+- experience
+- education
+experience_order:
+- 2021-experience.md
+- 2025-.md

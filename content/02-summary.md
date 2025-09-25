@@ -1,0 +1,1 @@
+Seasoned software engineer and biomedical data engineer with focus on semantic engineering, ontologies, and privacy-preserving data pipelines. Experienced across Python, Spark, Postgres, and modern OSS workflows.

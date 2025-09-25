@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="$lang$">
+<head>
+  <meta charset="utf-8" />
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <style>
+    body { font-family: sans-serif; margin: 2rem; }
+    h1, h2, h3 { color: #2c3e50; }
+  </style>
+  $for(css)$
+  <link rel="stylesheet" href="$css$" />
+  $endfor$
+</head>
+<body>
+  <header>
+    <h1>$name$</h1>
+    <p>$email$ | $phone$ | $location$</p>
+    $if(links)$
+    <p>$for(links)$$links$$sep$ · $endfor$</p>
+    $endif$
+  </header>
+  <main>
+    $body$
+  </main>
+</body>
+</html>
