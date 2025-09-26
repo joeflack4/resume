@@ -16,7 +16,6 @@ tags
 MANIFEST
 
 # Custom
-output/
 bak/
 /*.json
 !config.json
