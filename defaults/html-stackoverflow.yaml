@@ -1,0 +1,37 @@
+from: gfm
+to: html
+standalone: true
+self-contained: true  # embeds css/js from external links
+embed-resources: true  # embeds css/js from external links
+
+metadata-files:
+  - data/meta.yml
+  - data/variants/general.yml
+
+template: templates/in-development/html-stackoverflow/stackoverflow-theme.html
+
+css:
+  - templates/in-development/html-stackoverflow/custom.css
+  - templates/in-development/html-stackoverflow/fontawesome-free-5.15.4-web/css/all.css
+#  - templates/in-development/html-stackoverflow/fontawesome-v5.15.4-all.css
+
+resource-path:
+  - .
+  - templates/in-development/html-stackoverflow
+  - templates/html
+  - assets/images
+
+input-files:
+#  - content/01-header.md  #duplicative; this is defined in the html with $ vars
+  - content/02-summary.md
+  - content/10-experience/2021-experience.md
+  - content/10-experience/2025-.md
+  - content/20-skills.md
+  - content/30-education.md
+  - content/40-projects.md
+#  - content/50-awards.md
+#  - content/60-languages.md
+#  - content/70-interests.md
+#  - content/80-references.md
+
+#output-file: output/Joe-Flack-Résumé.html

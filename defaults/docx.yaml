@@ -6,7 +6,8 @@ metadata-files:
   - data/meta.yml
   - data/variants/general.yml
 
-reference-doc: templates/docx/reference.docx
+# reference-doc: templates/docx/reference.docx
+reference-doc: templates/_todo/docx/reference.docx
 
 input-files:
   - content/01-header.md
@@ -15,4 +16,5 @@ input-files:
   - content/10-experience/2025-.md
   - content/20-skills.md
   - content/30-education.md
-output-file: output/Joe-Flack-Resume.docx
+#output-file: output/Joe-Flack-Resume.docx
+output-file: output/Joe-Flack-Résumé.docx

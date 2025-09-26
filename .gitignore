@@ -39,7 +39,7 @@ backup/
 *.code-workspace
 *.dmp
 .log
-#scratchpads/  # actually; commit these; when done, can put the files in _archive/.
+#notes/  # actually; commit these; when done, can put the files in _archive/.
 
 # Frontend
 # - JS: CreateReactApp
