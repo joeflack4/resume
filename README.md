@@ -18,11 +18,11 @@ Edit content in `content/` and profile data in `data/meta.yml`.
 ### Canonical directories
 ```
 .
-├── content/     # Markdown sections that feed the resume body
-├── data/        # YAML metadata and variant toggles referenced by pandoc
-├── defaults/    # Pandoc default files defining inputs and outputs
-├── templates/   # HTML/DOCX/etc templates and styles applied during builds
-└── output/      # Generated artifacts (html, docx) from the make targets
+├── content/     # Markdown sections: Markdown sections that feed the resume body
+├── data/        # Vars: YAML metadata and variant toggles referenced by pandoc
+├── defaults/    # Builds: Pandoc default files defining inputs and outputs
+├── templates/   # Templates: HTML/DOCX/etc templates and styles applied during builds
+└── output/      # Output: Generated artifacts (html, docx) from the make targets
 ```
 
 ### Template flow

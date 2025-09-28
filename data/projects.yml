@@ -1,0 +1,26 @@
+projects:
+  - id: project-item-0
+    name: JSON Resume
+    url: https://jsonresume.org
+    startDate: "2014-04"
+    endDate: "Current"
+    summary: >
+      JSON Resume is a community-driven standard for resumes with an
+      ecosystem of open-source tools and themes.
+    highlights:
+      - This resume is built with JSON Resume
+      - Over 3000 stars on GitHub
+      - Community developed themes
+      - Tens of thousands of users
+
+  - id: project-item-1
+    name: My Awesome Tool
+    url: https://example.com
+    startDate: "2023-01"
+    endDate: "2024-08"
+    summary: >
+      A CLI and web UI for X that improved Y by Z%.
+    highlights:
+      - Reduced processing time by 40%
+      - Added plugin system and SDK
+      - Deployed to 3 environments with CI/CD

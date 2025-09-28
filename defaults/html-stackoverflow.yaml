@@ -6,12 +6,15 @@ embed-resources: true  # embeds css/js from external links
 
 metadata-files:
   - data/meta.yml
-  - data/variants/general.yml
+  - data/section-ordering/body.yml
+  - data/work-experience.yml
+  - data/projects.yml
+  - data/education.yml   # or education.json
 
 template: templates/in-development/html-stackoverflow/stackoverflow-theme.html
 
 css:
-  - templates/in-development/html-stackoverflow/custom.css
+  - templates/in-development/html-stackoverflow/theme.css
   - templates/in-development/html-stackoverflow/fontawesome-free-5.15.4-web/css/all.css
 #  - templates/in-development/html-stackoverflow/fontawesome-v5.15.4-all.css
 
@@ -27,11 +30,14 @@ input-files:
   - content/10-experience/2021-experience.md
   - content/10-experience/2025-.md
   - content/20-skills.md
-  - content/30-education.md
-  - content/40-projects.md
+#  - content/30-education.md
+#  - content/40-projects.md
 #  - content/50-awards.md
 #  - content/60-languages.md
 #  - content/70-interests.md
 #  - content/80-references.md
+
+filters:
+  - templates/in-development/html-stackoverflow/filters/section-headings.lua
 
 #output-file: output/Joe-Flack-Résumé.html

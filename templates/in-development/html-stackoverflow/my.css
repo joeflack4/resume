@@ -1,0 +1,46 @@
+/* Pills */
+.skills-pills {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.skills-pills li {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 9999px;     /* pill */
+  background: #f2f3f5;       /* very light gray */
+  border: 1px solid #e4e6eb; /* subtle outline */
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;       /* keeps each pill on one line */
+}
+@media print {
+  .skills-pills li {
+    background: #eee;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Section headers */
+.project-item {
+  margin-top: 0.5em;
+}
+
+/* Links */
+/* Neutralize links by default */
+a {
+  color: inherit;        /* inherit text color */
+  text-decoration: none; /* remove underline */
+  font-weight: inherit;  /* inherit weight */
+}
+/* Keep hover/active/focus effects intact */
+a:hover,
+a:focus,
+a:active {
+  color: #0073e6;        /* or whatever your theme’s hover color is */
+  text-decoration: underline; /* or another hover style you like */
+}

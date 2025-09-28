@@ -4,7 +4,7 @@
 
 **Repository Structure:**
 - `content/` - Markdown sections (header, summary, experience, skills, education)
-- `data/` - YAML metadata files (`meta.yml`, `variants/general.yml`)
+- `data/` - YAML metadata files (`meta.yml`, `section-ordering/body.yml`)
 - `templates/` - HTML templates (existing working template in `_todo/html/html-pandoc/`, target template in `in-development/html-stackoverflow/`)
 - `defaults/` - Pandoc configuration files
 - `makefile` - Build automation (currently broken)
@@ -63,7 +63,7 @@ A: It's fine -- because I can edit it at any point in the future. Even if it is 
 A: If you are able to do so in a way that makes sense for each file, then do so, case by case. Otherwise, leave a todo in the file and mark it with @dev (that's me!), so I can know to do it.
 
 3. **Missing sections**: The StackOverflow template has sections like Projects, Awards, Languages, Interests, References - do you want these included? Should we create placeholder content?
-A: I'd like to keep those sections. I think we'll need to add markdown files somewhere (probably in content/) for each of these sections, and then configure something (perhaps meta.ymla nd general.yml) to point to these files. I'm not sure how to do it in pandoc, but I think you might be able to figure it out!
+A: I'd like to keep those sections. I think we'll need to add markdown files somewhere (probably in content/) for each of these sections, and then configure something (perhaps meta.ymla nd body.yml) to point to these files. I'm not sure how to do it in pandoc, but I think you might be able to figure it out!
 
 ### Template Preferences
 4. **Template fidelity**: Do you want to keep the StackOverflow theme exactly as-is, or are you open to modifications for better pandoc integration?

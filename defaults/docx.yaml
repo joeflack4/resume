@@ -4,7 +4,7 @@ standalone: true
 
 metadata-files:
   - data/meta.yml
-  - data/variants/general.yml
+  - data/section-ordering/body.yml
 
 # reference-doc: templates/docx/reference.docx
 reference-doc: templates/_todo/docx/reference.docx
