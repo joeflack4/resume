@@ -177,20 +177,16 @@ $endif$
           </ul>
           $endif$
 
-          $if(work-experience.projects.skills)$
-          <ul class="skills">
-            $for(work-experience.projects.skills)$
-            <li>$work-experience.projects.skills$</li>
-            $endfor$
-          </ul>
+          $if(work_experience.projects.skills)$
+          <p class="skills">
+            $for(work_experience.projects.skills)$$work_experience.projects.skills$$sep$, $endfor$
+          </p>
           $endif$
 
-          $if(work-experience.projects.roles)$
-          <ul class="roles">
-            $for(work-experience.projects.roles)$
-            <li>$work-experience.projects.roles$</li>
-            $endfor$
-          </ul>
+          $if(work_experience.projects.roles)$
+          <p class="roles">
+            $for(work_experience.projects.roles)$$work_experience.projects.roles$$sep$, $endfor$
+          </p>
           $endif$
         </section>
         $endfor$
