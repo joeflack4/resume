@@ -19,20 +19,6 @@ projects:
     summary: >
       Break apart, dynamically construct, and sync sets of related markdown files, subsections, and checklists.
 
-  - id: health-hub
-    name: Health Hub
-    url: gitlab.com/the-health-hub/health-hub.web.client
-    endDate: "2019"
-    summary: >
-      A pre-release phase project of a web application that is the central point allowing users to manage their personal
-      health data collected from a suite of illness-specific mobile applications.
-    skills:
-      - JavaScript
-      - React
-      - GraphQL
-      - Neo4j
-      - Apollo
-
   - id: personal-health-data-analysis
     name: Personal Health Data Analysis
     url: tinyurl.com/jf4healthdata
@@ -50,12 +36,23 @@ projects:
       - R
       - Google Sheets / Forms
 
-  - id: proj-id
-    name:
-    url:
-#    endDate: 202?  # end only?
+  - id: health-hub
+    name: Health Hub
+    url: gitlab.com/the-health-hub/health-hub.web.client
+    endDate: "2019"
     summary: >
-      TODO
+      A pre-release phase project of a web application that is the central point allowing users to manage their personal
+      health data collected from a suite of illness-specific mobile applications.
     skills:
-      -
+      - JavaScript
+      - React
+      - GraphQL
+      - Neo4j
+      - Apollo
 
+  - id: honorable-mentions
+    name: Honorable mentions
+#    setuptools long url: https://github.com/pypa/setuptools/pulls?q=is%3Apr+author%3Ajoeflack4+is%3Aclosed
+    highlights:
+      - "**SetupTools**: Small PRs to core Python infra. [tinyurl.com/jf4stools]"
+      - "**Résumé**: Dynamic builder using Pandoc. [github.com/joeflack4/resume]"

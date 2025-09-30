@@ -21,12 +21,16 @@ work-experience:
         Managed small team on web app to create and manage biomedical / terminological value sets, primarily for virtual
         cohort selection. Involved complex tmeplate-based SQL system. github.com/jhu-bids/termhub
       skills:
-      - Python (FastAPI, networkx, SQLAlchemy)
-      - JavaScript (React, TypeScript, Material UI)
-      - PostgreSQL (GIN & GiST indexing, window functions, materialized views, etc)
+      - name: Python
+        sub: [FastAPI, networkx, SQLAlchemy]
+      - name: JavaScript
+        sub: [React, TypeScript, Material UI]
+      - name: PostgreSQL
+        sub: [GIN & GiST indexing, window functions, materialized views, etc]
       - Azure
-      - Apache Parquet
-      #      - GitHub Actions
+      - Parquet
+#      - Apache Parquet
+#      - GitHub Actions
 #      - Agile/Scrum
 #      - Kanban
       roles:
@@ -58,21 +62,18 @@ work-experience:
       url: https://github.com/monarch-initiative/mondo-ingest
       about: Managed ingest stack. Coordinated several repos & data sources.
       skills:
-      - Python (pandas)
+      - name: Python
+        sub: [pandas]
       - Docker
       - GitHub Actions
       - SPARQL
       - RDF
       - OWL
-      - awk
+#      - awk
       - Biomedical Ontologies
       - Semantic Engineering
       - Data Visualization
-      - Data pipelines
-      - ShellScript
-      - Makefile
-      - Agile/Scrum
-      - Kanban
+#      - Data pipelines
       roles:
       - Developer
 
@@ -83,47 +84,143 @@ work-experience:
         libraries.
       skills:
       - Python
-      - JavaScript
-      - ReactJS
+      - name: JavaScript
+        sub: [React]
       - Java
       - Azure
       - HL7 FHIR
-      - Biomedical Terminology
-      - REST
-      - API
+      - REST API
       - Docker
       - OWL
       - RDF
-      - Linux
-      - Ubuntu
-      - Bash
-      - Zsh
-      - ShellScript
-      - Agile
-      - Kanban
+      - Biomedical Terminology
       roles:
       - Developer
       - Project Management
 
+
+    - name: TCCM (Terminology Core Common Model)
+      url: https://github.com/HOT-Ecosystem/tccm-api
+      about: >
+        Maintained terminology service framework, used by CCDH Terminology Service.
+      skills:
+        - name: Python
+          sub: [Flask, FastAPI]
+        - API
+        - REST
+        - Neo4J
+        - Cypher
+      roles:
+        - Developer
+
+    - name: CCDH (Center for Cancer Data Harmonization)
+      about: >
+        Helped develop and maintain codebase and servers.
+      url: https://github.com/cancerDHC
+      skills:
+        - name: Python
+          sub: [Flask, FastAPI]
+        - REST
+        - Neo4J
+        - Cypher
+        - Docker
+        - RDF
+        - OWL
+        - AWS EC2
+        - Semantic Engineering
+      roles:
+        - Software Engineer
+
+    - name: JH K Anonymity
+      about: >
+        Made Johns Hopkins OMOP patient anonymity analyses viable, increasing memory performance by ~100x.
+      skills:
+        - name: Python
+          sub: [Pandas, PySpark, Matplotlib]
+        - Databricks
+        - Apache Spark
+        - Parquet
+#        - Apache Parquet
+        - Virtualization
+        - Data obfuscation
+        - GitHub Actions
+      roles:
+        - Developer
+
+    - name: N3C (National COVID Cohort Collaborative)
+      url: http://ncats.nih.gov/n3c
+      about: >
+        Wrote ValueSet tools library and assisted with various ETL and analysis.
+      skills:
+        - Palantir Foundry
+        - OMOP
+        - Python
+        - REST
+        - API
+      roles:
+        - Software Engineer
+
+    - name: LinkML (Linked data Modeling Language)
+      url: https://github.com/linkml/linkml
+      about: >
+        Contributed to open source library for a data metamodeling. Biggest contributions: Enumerations and FHIR ValueSets.
+      skills:
+        - Python
+#        - Markdown
+        - Data Modeling
+        - FHIR
+      roles:
+        - Developer
+
+    - name: SSSOM (Super Simple Standard for Ontology Mappings)
+      url: https://github.com/mapping-commons/sssom
+      about: >
+        Open source contributions, e.g. FHIR ConceptMap format.
+      skills:
+        - Python
+        - Data modeling
+        - Data standards
+        - RDF
+        - OWL
+        - Ontology engineering
+        - Semantic engineering
+        - HL7 FHIR
+      roles:
+        - Developer
+
+    - name: Zulip Analysis
+      url: https://github.com/jhu-bids/fhir-zulip-nlp-analysis
+      about: >
+        Analyzed community activity for Zulip-based HL7 chat.fhir.org.
+      skills:
+        - name:
+          sub: Python(Pandas, Matplotlib)
+        - Google API
+        - Zulip API
+      roles:
+        - Lead dev
 
   - job: "Johns Hopkins: Tuberculosis Modeling and Translational Epi Group"
     title: Sr. Programmer Analyst
     url: modeltb.org
     startDate: 2019/10
     endDate: 2021/06
-    skills: []
+    skills: [Python, R, C++, Shiny, Statistical Modeling, GIS, HPC]
+    summary: >
+      Worked with a number of teams on projects requiring different skill sets, from statistical modeling, to frontend 
+      development, to high performance computing.
     projects:
 
     - name: JHEEM (Ending HIV)
+      url: https://jheem.shinyapps.io/EndingHIV/
       about: >
         Implemented front-end and integrated various back-end services for a web application related to HIV modeling.
       skills:
-      - R
-      - Shiny
-      - ggplot
+      - name: R
+        sub: [Shiny, ggplot]
       - JavaScript
-      - CSS
-      - HTML
+#      - CSS
+#      - HTML
       - RDBMS
       - S3
       - SMTP
@@ -131,6 +228,7 @@ work-experience:
       - Web development
 
     - name: Impaact4TB
+      url: http://impaact4tb.org/
       about: >
         Co-authored on a project related to preventative therapies for Tuberculosis (TB). Helped with code structure and
         debugging. Assisted with sensitivity analyses.
@@ -140,28 +238,29 @@ work-experience:
       - Programmer Analyst
 
     - name: COVID NAT-RDT
+      url: https://joeflack4.shinyapps.io/COVID19-NAT-RDT/
       about: >
         Implemented the front-end for COVID-19 related model for optimizing lab testing throughput and cost 
         effectiveness. Translated MATLAB model into R.
       skills:
-      - R
-      - Shiny
-      - CSS
-      - HTML
+      - name: R
+        sub: [Shiny]
+#      - CSS
+#      - HTML
       - MATLAB
       roles:
       - Web development
 
     - name: Ghana Lab Network
+      url: https://joeflack4.shinyapps.io/GhanaLabNetwork/
       about: >
         Created web application. Built data visualizations, multi-format data harmonization (APIs, CSVs, PDFs), lexical 
         analyses, and data analyses.
       skills:
-      - Python
-      - Pandas
-      - R
-      - Shiny
-      - Plotly
+      - name: Python
+        sub: [Pandas]
+      - name: R
+        sub: [Shiny, Plotly]
       - GoogleMaps API
       - Tableau
       - GIS
@@ -172,35 +271,36 @@ work-experience:
       - Web development
 
     - name: MDRTB agent-based Modeling
+      url: https://github.com/TB-Modeling/mdrtb
       about: > 
         Implemented parts of epidemiological model for MDRTB (Multidrug Resistant Tuberculosis) in C++. Calibrated 
         models by tuning parameters and modifying structural code. Executed simulations on HPC cluster. Analyzed model 
         fitness in R and collaborated with epidemiologists.
       skills:
-      - C++
+      - name: C++
+        sub: [Valgrind, Conan, CMake]
       - R
-      - Valgrind
-      - Conan
-      - HPC
-      - SLURM
-      - CMake
+      - name: HPC
+        sub: [SLURM]
       roles:
       - Model implementer
 
     - name: Kampala Enumerator Map Tool
+      url: https://modeltb.org/kampala-map/
       about: Created a GIS tool to help interviewers with household survey activities in Kampala, Uganda.
       skills:
       - JavaScript
-      - HTML
-      - CSS
-      - Bootstrap
-      - GoogleMaps API
-      - Open Data Kit
-      - GoogleSheets
+#      - HTML
+#      - CSS
+#      - Bootstrap
+      - Google Maps API
+#      - Open Data Kit
+      - Google Sheets
       roles:
       - Web development
 
     - name: REDCap Operations Costing Database
+      url: https://ictr.johnshopkins.edu/service/informatics/redcap/
       about: >
         Built an advanced, customizable template database deployed in various countries for an operations costing team; 
         included a front-end with interconnected forms for multiple phases of data collection.
@@ -211,60 +311,72 @@ work-experience:
       roles:
       - System architect
 
-    - name: OneDrive Report Automation
-      about: Automated a reporting aggregation process involving Excel reports hosted on OneDrive.
-      skills:
-      - Python
-      - MS GraphAPI
-      - OneDrive
-      - Excel
-      roles:
-      - Software engineer
+#    - name: OneDrive Report Automation
+#      about: Automated a reporting aggregation process involving Excel reports hosted on OneDrive.
+#      skills:
+#      - Python
+#      - MS GraphAPI
+#      - OneDrive
+#      - Excel
+#      roles:
+#      - Software engineer
 
-    - name: General Technical Support
-      about: >
-        Supported a small data science and software engineering team to improve existing codebases for various 
-        agent-based epidemiological models written in C++; guided best practices.
-      skills: []
-      roles: []
-    - name: Zulip Analysis
-      about: Analyzed community activity for Zulip-based HL7 chat.fhir.org.
-      skills:
-      - Python
-      - Google API
-      - Zulip API
-      - Pandas
-      - Matplotlib
-      roles:
-      - Lead dev
+#    - name: General Technical Support
+#      about: >
+#        Supported a small data science and software engineering team to improve existing codebases for various
+#        agent-based epidemiological models written in C++; guided best practices.
+#      skills: []
+#      roles: []
+# From resume (for tech support 'project'): still needs munging to put here if I  want:
+#Worked with small data science and software engineering team to improve existing codebases for various agent-based
+#epidemiological models written in C++.
+#Guided team on software best practices, including version control in Git/GitHub/GitFlow, agile methodologies and
+#related project management, automated testing, pair programming, code style guidelines, and package management, build
+#systems, etc.
+#Created knowledge base of developer and analyst documentation on various aspects of agent-based model codebases using
+#GitHub wiki.
+#Deployed HPC cluster using AWS pcluster.
+#Provided support and technical assistance related to version control, R, and C++.
+#Solved problems using HPC tech such as Slurm.
 
-    - name: Informatics Portal Mockup
+
+
+  - job: BioViva
+    url: https://bioviva-science.com/
+    title: Software Engineer
+    endDate: 2019/05
+    skills: [React, Python, Flask, AWS]
+    summary: >
+      Several contractors, including myself, drafted separate mockups to inspire BioViva's technical development 
+      ideation.
+    projects:
+    - name: Bioinformatics Portal Mockup
       about: >
-        Created a static ReactJS web application for patients to manage contact and biometric data; built a backend API 
-        for storing data and interacting with cloud storage for medical records.
-      skills:
-      - ReactJS
-      - JavaScript
-      - CSS
-      - HTML
-      - Python
-      - Cloud storage
-      roles:
-      - Web development
+        Created static ReactJS web application for patients to perform basic CRUD operations on their contact 
+        information and biometric data, and visualize data over time. Created backend API for storing patient data, as 
+        well as interacting with cloud storage for medical records.
+
 
 
   - job: PMA (Performance Monitoring for Action)
+    url: https://www.pmadata.org/
     title: Programmer Analyst
     startDate: 2016/09
     endDate: 2019/10
-    skills: []
+    skills: [Python, Flask, JavaScript, SQL]
+    summary: >
+      Provided devleopment and maaintained codebases for public health survey operations organization, including 
+      creation of web API, software libraries, frontend databases, and data visualization app.
     projects:
 
     - name: PMA API
       about: RESTful API for programmatic access to PMA2020 data.
+      url: https://github.com/PMA-2020/pma-api
       skills:
-      - Python (Flask, SQLAlchemy, Sphinx, Celery)
-      - JavaScript (jQuery)
+      - name: Python
+        sub: [Flask, SQLAlchemy, Sphinx, Celery]
+      - name: JavaScript
+        sub: [jQuery]
       - R
       - SQL
       - PostgreSQL
@@ -276,28 +388,33 @@ work-experience:
       - Developer
 
     - name: Datalab
+      url: https://datalab.pmadata.org/
       about: Web application for visualizing PMA2020 data.
       skills:
-      - JavaScript (jQuery, Selenium, Node, npm)
+      - name: JavaScript
+        sub: [jQuery, Selenium, Node, npm]
       - AWS S3
       - CircleCI
       roles:
       - Dev team lead
 
     - name: XFormTest
+      url: https://github.com/PMA-2020/xform-test
       about: CLI tool and library for automated testing of XForms survey definitions.
       skills:
       - Java
       - Python
+      - XPath
       roles:
       - Product lead
       - Lead developer
 
     - name: Pretty PDF Printer
-      url:
+      url: https://ppp.pma2020.org/
       about: Tool for converting XForms into printable, editable forms such as Word documents.
       skills:
-      - Python (Flask, Argparse, PyPI)
+      - name: Python
+        sub: [Flask, Argparse, PyPI]
       - JavaScript
       - Linode
       - Heroku
@@ -308,17 +425,19 @@ work-experience:
       - Dev team lead
 
     - name: PMA2020 DHIS2
+      url: https://dhis2.org/
       about: >
         Deployment of DHIS2 data warehouse/BI solution for governments and M&E organizations to store medical and public 
         health data.
       skills:
       - Python
-      - Bash
+#      - ShellScript
       - SQL
       roles:
       - Project lead
 
     - name: pmix
+      url: https://github.com/PMA-2020/pmix
       about: CLI tools for working with XForms.
       skills:
       - Python
@@ -326,17 +445,73 @@ work-experience:
       - Contributor
 
     - name: QTools2
+      url: https://github.com/jkpr/qtools2
       about: Converter from XLSForms to XForms for electronic surveys.
       skills:
       - Python
       roles:
       - Contributor
 
+    - name: Open Data Kit forms development
+      url: https://github.com/PMA-2020/collect
+      about: >
+        Using XForms, created programmatic surveys for data collection. Runs on pplatforms such as Open Data Kit (ODK).
+      skills:
+        - XPath
+        - XForms
+#        - XML
+#        - Excel
+#        - Bash
+#        - ShellScript
+#        - Makefile
+        - Google Cloud
+        - Digital Ocean
+      roles:
+        - Programmer
+
+    - name: Business Intelligence Dashboard
+      about: >
+        Created dashboard for reporting personnel technical capacity levels in various countries of operation, using 
+        mock data.
+      skills:
+        - Microsoft Power BI
+        - Azure
+      roles:
+        - Co-implementer
+
+#    - name: Viffer
+#      url: https://github.com/joeflack4/pmix/tree/feature_viffer/pmix/viffer
+#      about: >
+#        Alpha CLI tool for diffing XLSForm spec M&E survey Excel files. A sub-package of the "pmix" library for various
+#        XForms related tools.
+#      skills:
+#        - Python
+#      roles:
+#        - Product lead
+
+    - name: PMA Survey Hub
+      url: https://www.youtube.com/watch?v=efdKNfjDNRM&t=287s
+      about: >
+        Alpha development phase project that is a combination of various PMA2020-created survey tools in one web app. 
+        Currently implementing own proprietary app, but in talks with KoBo Toolbox team, to add our tools as plugins.
+      skills:
+        - Python
+        - JavaScript
+#        - Node
+        - Docker
+        - Linode
+        - Heroku
+      roles:
+        - Product lead
+
     - name: PMA Translation Hub
+      url: https://github.com/PMA-2020/pma-translation-hub
       about: Pre-release web application for translation management of M&E survey content.
       skills:
-      - JavaScript (React, Redux, Node)
-      - Python (Flask)
+      - name: JavaScript
+        sub: [React, Redux, Node]
+      - name: Python
+        sub: [Flask]
       - Heroku
       roles:
       - Lead developer
@@ -350,14 +525,17 @@ work-experience:
       software development.
     startDate: 2014/09
     endDate: 2016/09
-    skills: []
+    skills: [Python, Flask, JavaScript, Angular]
     projects:
 
     - name: Just-a-Dash
+      url: https://drive.google.com/file/d/0B7Ejc8xgPuo5bUVxT3l1YWVCT1k/view
       about: Light-weight combined HRM+CRM tool.
       skills:
-      - Python (Flask, SQLAlchemy, Alembic)
-      - JavaScript (Angular, Bootstrap)
+      - name: Python
+        sub: [Flask, SQLAlchemy, Alembic]
+      - name: JavaScript
+        sub: [Angular]
       - PostgreSQL
       - Heroku
       - Twilio
@@ -377,6 +555,7 @@ work-experience:
       - Software lead
 
     - name: Company website
+      url: https://www.sonshinecompanioncare.com/
       about: Designed and administered company website.
       skills:
       - WordPress
@@ -389,5 +568,12 @@ work-experience:
     title: English Teacher
     startDate: 2009/03
     endDate: 2014/08
-    skills: []
-    projects: []
+    summary: >
+      Taught in Japan & South Korea, public and private, all age ranges from toddler to post-high school.
+
+  - job: Several schools
+    title: Various roles
+    startDate: "2002"
+    endDate: "2008"
+    summary: >
+      Worked in several roles in sales, food service, and retail.

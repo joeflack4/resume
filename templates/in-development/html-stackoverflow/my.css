@@ -27,18 +27,29 @@
 }
 
 /* Section headers */
+/* General spacing between projects */
 .project-item {
-  margin-top: 0.5em;
+  margin-top: 1.5em;
+}
+
+/* But don’t add margin to the first one */
+.project-item:first-child {
+  margin-top: 0;
 }
 
 /* Job entry headers */
 /* - Card container */
+/* default spacing between jobs */
+.work-item { margin-top: 30px; }
+
+/* but not for the very first job */
+.work-item:first-of-type { margin-top: 10px; }
+
 .work-card {
   background: #f7f8fa;            /* light grey */
   border: 1px solid #e5e7eb;      /* subtle outline */
   border-radius: 10px;
   padding: 10px 16px;
-  margin-top: 10px;
   margin-bottom: 6px;
 }
 
@@ -89,24 +100,135 @@ a:active {
   margin-left: 0.25em;
 }
 
+
+
 /* - Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) */
-.skills-line { margin-top: 6px; }
-.skill-block { display: inline; }
-.skill-block:not(:last-child)::after { content: ", "; } /* auto-commas */
-.pill {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 9999px;
+/* Base layout: full width, centered row of wrapping chips */
+.skills-line {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  /*justify-content: center;   *//* center horizontally */
+  flex-wrap: wrap;           /* wrap to new lines */
+  gap: 7px 3px;             /* row/column gaps between items */
+}
+
+/* flex items determine row height → shrink their line-height */
+.skills-line .skill-block {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 0.8;
+  font-size: 0.92em;
+}
+
+/* ensure inner spans don’t re-inflate it */
+.skills-line .skill-main,
+.skills-line .skill-sub {
+  line-height: 0.8;
+}
+
+/* Shared mono styling (size, spacing, etc.) */
+.skills-line--mono {
+  font-size: 12px;     /* slightly smaller */
+}
+
+/* Per-font stacks (swap by changing the mono--* class) (other fonts look exactly the same; could remove) */
+.mono--consolas {
+  font-family: Consolas, "SFMono-Regular", ui-monospace, Menlo, Monaco,
+               "Liberation Mono", "Courier New", monospace;
+}
+.mono--sf {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+}
+.mono--jetbrains {
+  font-family: "JetBrains Mono", "Fira Code", "Fira Mono", ui-monospace,
+               Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Each logical skill group is one "chip" with optional grey parens */
+.skill-block {
+  display: inline-flex;      /* keeps main + sub together as one unit */
+  align-items: baseline;
+  white-space: nowrap;       /* keeps (sub,items) together */
+  line-height: 1.25;
+}
+
+/* Comma separator between groups (flex-safe) */
+.skill-block:not(:last-child)::after {
+  content: ",";
+}
+
+/* Color: main vs. sub (parens) */
+.skill-main {
+  /* color: #111827;  /* near-black */
+}
+.skills-line .skill-sub {
+  /* color: #6b7280 !important;  /* dark grey */
+  color: #636770 !important;  /* darker grey (slightly); less blue hue */
+  /* color: #535863 !important;  /* darker grey: too dark */
+  /* color: #373b42 !important;  /* darker+ grey: too dark*/
+}
+
+/* --- Monospace font stacks --- */
+/* Consolas stack (default block above) */
+.skills-line--mono-consolas {
+  font-family: Consolas, "SFMono-Regular", ui-monospace, Menlo, Monaco,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 12.5px;
+}
+
+/* SF Mono / Menlo stack (macOS-friendly) */
+.skills-line--mono-sf {
+  font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-size: 12.5px;
+}
+
+/* JetBrains/Fira (if you have them installed locally) */
+.skills-line--mono-jetbrains {
+  font-family: "JetBrains Mono", "Fira Code", "Fira Mono", ui-monospace,
+               Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12.5px;
+}
+
+/* Optional: tiny pill-ish background around the main label only
+.pillish .skill-main {
   background: #f2f3f5;
   border: 1px solid #e4e6eb;
-  font-size: 12px; line-height: 1;
+  border-radius: 9999px;
+  padding: 3px 8px;
 }
-.sub { margin-left: 4px; }
+*/
 
-/* - variation: Grey text inside parens */
-.skills-line { margin-top: 6px; }
-.skill-block { display: inline; }
-.skill-block:not(:last-child)::after { content: ", "; }
-.skill-main { color: #111827; }                    /* near-black */
-.skills-line .skill-sub { color: #6b7280 !important; } /* dark grey override */
+/* Contact row */
+#contact-row {
+  display: flex;
+  flex-direction: column; /* stack rows vertically */
+  gap: 6px;
+  margin-top: 8px;
+  align-items: flex-start; /* align content left */
+}
 
+.contact-top,
+.contact-bottom {
+  display: flex;
+  flex-wrap: wrap;       /* wrap nicely on smaller screens */
+  gap: 12px;             /* spacing between items */
+  align-items: center;   /* icons and text aligned */
+  justify-content: flex-start; /* align row content left */
+}
+
+.contact-bottom {
+  margin-top: 4px;
+}
+
+#profiles {
+  display: flex;
+  gap: 12px;              /* spacing between each profile item */
+}
+#profiles .item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
