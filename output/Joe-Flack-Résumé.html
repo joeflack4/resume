@@ -3311,7 +3311,7 @@ display: inline;
 font-weight: 600;
 }
 .job, .institution, .organization, .awarder {
-color: #606d76;
+
 font-weight: 400;
 }
 .section header .date {
@@ -3736,17 +3736,25 @@ print-color-adjust: exact;
 }
 }
 
+
 .project-item {
-margin-top: 0.5em;
+margin-top: 1.5em;
+}
+
+.project-item:first-child {
+margin-top: 0;
 }
 
 
+
+.work-item { margin-top: 30px; }
+
+.work-item:first-of-type { margin-top: 10px; }
 .work-card {
 background: #f7f8fa; 
 border: 1px solid #e5e7eb; 
 border-radius: 10px;
 padding: 10px 16px;
-margin-top: 10px;
 margin-bottom: 6px;
 }
 
@@ -3791,24 +3799,113 @@ color: #6b7280;
 margin-left: 0.25em;
 }
 
-.skills-line { margin-top: 6px; }
-.skill-block { display: inline; }
-.skill-block:not(:last-child)::after { content: ", "; } 
-.pill {
-display: inline-block;
-padding: 2px 8px;
-border-radius: 9999px;
-background: #f2f3f5;
-border: 1px solid #e4e6eb;
-font-size: 12px; line-height: 1;
-}
-.sub { margin-left: 4px; }
 
-.skills-line { margin-top: 6px; }
-.skill-block { display: inline; }
-.skill-block:not(:last-child)::after { content: ", "; }
-.skill-main { color: #111827; } 
-.skills-line .skill-sub { color: #6b7280 !important; } 
+.skills-line {
+width: 100%;
+margin-top: 8px;
+display: flex;
+
+flex-wrap: wrap; 
+gap: 7px 3px; 
+}
+
+.skills-line .skill-block {
+display: inline-flex;
+align-items: baseline;
+line-height: 0.8;
+font-size: 0.92em;
+}
+
+.skills-line .skill-main,
+.skills-line .skill-sub {
+line-height: 0.8;
+}
+
+.skills-line--mono {
+font-size: 12px; 
+}
+
+.mono--consolas {
+font-family: Consolas, "SFMono-Regular", ui-monospace, Menlo, Monaco,
+"Liberation Mono", "Courier New", monospace;
+}
+.mono--sf {
+font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas,
+"Liberation Mono", "Courier New", monospace;
+}
+.mono--jetbrains {
+font-family: "JetBrains Mono", "Fira Code", "Fira Mono", ui-monospace,
+Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.skill-block {
+display: inline-flex; 
+align-items: baseline;
+white-space: nowrap; 
+line-height: 1.25;
+}
+
+.skill-block:not(:last-child)::after {
+content: ",";
+}
+
+.skill-main {
+
+}
+.skills-line .skill-sub {
+
+color: #636770 !important; 
+
+
+}
+
+
+.skills-line--mono-consolas {
+font-family: Consolas, "SFMono-Regular", ui-monospace, Menlo, Monaco,
+"Liberation Mono", "Courier New", monospace;
+font-size: 12.5px;
+}
+
+.skills-line--mono-sf {
+font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas,
+"Liberation Mono", "Courier New", monospace;
+font-size: 12.5px;
+}
+
+.skills-line--mono-jetbrains {
+font-family: "JetBrains Mono", "Fira Code", "Fira Mono", ui-monospace,
+Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+font-size: 12.5px;
+}
+
+
+#contact-row {
+display: flex;
+flex-direction: column; 
+gap: 6px;
+margin-top: 8px;
+align-items: flex-start; 
+}
+.contact-top,
+.contact-bottom {
+display: flex;
+flex-wrap: wrap; 
+gap: 12px; 
+align-items: center; 
+justify-content: flex-start; 
+}
+.contact-bottom {
+margin-top: 4px;
+}
+#profiles {
+display: flex;
+gap: 12px; 
+}
+#profiles .item {
+display: flex;
+align-items: center;
+gap: 4px;
+}
 </style>
 </head>
 
@@ -3826,45 +3923,50 @@ font-size: 12px; line-height: 1;
 	<span class="subheader">
 		<span class="city">Full stack and data engineering</span>
 	</span>
-	<div id="contact">
-		<div class="website">
-			<span class="fas fa-external-link-alt"></span>
-			<a class="hide-href-print" target="_blank" href="https://josephflack.com" rel="noreferrer">https://josephflack.com</a>
-		</div>
-		<div class="email">
-			<span class="far fa-envelope"></span>
-			<a class="hide-href-print" href="mailto:joeflack4@gmail.com">joeflack4@gmail.com</a>
-		</div>
-		<div class="phone">
-			<span class="fas fa-mobile-alt"></span>
-			<a class="hide-href-print" href="tel:850-982-7871">850-982-7871</a>
-		</div>
-	</div>
-	<div id="profiles">
-		<div class="item">
-			<div class="username">
-				<span class="fas fa-external-link-alt"></span>
-				<span class="url">
-					<a target="_blank" href="https://github.com/joeflack4" rel="noreferrer">https://github.com/joeflack4</a>
-				</span>
-			</div>
-		</div><div class="item">
-			<div class="username">
-				<span class="fas fa-external-link-alt"></span>
-				<span class="url">
-					<a target="_blank" href="https://www.linkedin.com/in/joeflack4/" rel="noreferrer">https://www.linkedin.com/in/joeflack4/</a>
-				</span>
-			</div>
-		</div>
-	</div>
+
+
+<div id="contact-row">
+  <!-- email + phone -->
+  <div class="contact-top">
+    <span class="far fa-envelope"></span>
+    <a class="hide-href-print" href="mailto:joeflack4@gmail.com">joeflack4@gmail.com</a>
+    <span class="fas fa-mobile-alt"></span>
+    <a class="hide-href-print" href="tel:850-982-7871">850-982-7871</a>
+  </div>
+
+  <!-- Links -->
+    <div class="contact-bottom">
+        <span class="fas fa-globe"></span>
+    <span class="url">
+      <a class="hide-href-print" target="_blank" href="https://josephflack.com" rel="noreferrer">
+        josephflack.com
+      </a>
+    </span>
+        <span class="fab fa-github"></span>
+    <span class="url">
+      <a class="hide-href-print" target="_blank" href="https://github.com/joeflack4" rel="noreferrer">
+        github.com/joeflack4
+      </a>
+    </span>
+        <span class="fab fa-linkedin"></span>
+    <span class="url">
+      <a class="hide-href-print" target="_blank" href="https://www.linkedin.com/in/joeflack4/" rel="noreferrer">
+        linkedin.com/in/joeflack4/
+      </a>
+    </span>
+      </div>
+  </div>
+
+
 </header>
 
 <section class="section"><section class="main-summary"><div>
-	I’m a full stack developer specializing in web application and data
-engineering projects. I’ve worked on a wide variety of projects and
-developed a wide range of skills and interests. Recently, I’ve worked a
-lot in biomedical informatics. Currently developing proficiency in ML.
-Proficient with agents to supercharge my productivity.
+	<p>I’m a full stack developer specializing in web application and data
+engineering projects, with increasing expertise in machine learning. I
+have particular experience and passion for healthcare. I employ new and
+extremely powerful spec-driven agentic AI techniques, which allows me to
+deliver exceptionally well tested, full-featured deliverables extremely
+fast.</p>
 </div></section></section>
 <!--  Alt major way to group content, using content/*.md rather than Non data/*.yml -->
 <!--<main class="resume-content">-->
@@ -3895,6 +3997,58 @@ indexing, utilizing Jinja templates. github.com/jhu-bids/termhub.
         <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
         <header>
           <div class="date">
+            <span class="startDate">2025/09</span> -
+            <span class="endDate">Current</span>
+          </div>
+
+          <!-- Title -->
+          <div class="position">Founder</div>
+
+          <!-- URL -->
+          <div class="job">
+                          <a href="https://github.com/joeflack4/genonaut" class="job-link">
+                Genonaut
+                <span class="job-url">[github.com/joeflack4/genonaut]</span>
+              </a>
+                      </div>
+        </header>
+
+        <div class="item work-card__body">
+          <!-- Loc -->
+          <!--      -->
+
+          <!-- Summary -->
+                    <div class="summary"><p>Novel combination of
+recommender systems and gen AI to perpetually generate huge quantities
+of images based on user preference. Finds models and prompts that work
+well when combined, and filters those which don’t. Developing extremely
+quickly using the latest agentic tools, with bundles of features, pages
+of documentation, and 100s of new tests created every week.</p></div>
+          
+          <!-- Job skills overview -->
+                    <ul class="skills-pills" aria-label="Skills">
+                        <li>Python</li>
+                        <li>React</li>
+                        <li>Full Stack</li>
+                        <li>Recommender Systems</li>
+                        <li>ML Engineering</li>
+                      </ul>
+                  </div>
+      </div>
+
+      <!-- Job projects -->
+      <div class="item">
+              </div>
+    </section>
+        <section class="work-item">
+      <div class="work-card">
+        <!-- id -->
+        
+
+        <!-- Start/end date -->
+        <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
+        <header>
+          <div class="date">
             <span class="startDate">2021/06</span> -
             <span class="endDate">2025/07</span>
           </div>
@@ -3904,7 +4058,7 @@ indexing, utilizing Jinja templates. github.com/jhu-bids/termhub.
 
           <!-- URL -->
           <div class="job">
-                          <a href="dhsi.med.jhmi.edu/" class="job-link">
+                          <a href="https://dhsi.med.jhmi.edu/" class="job-link">
                 Johns Hopkins: Biomedical Informatics and Data Science
                 team
                 <span class="job-url">[dhsi.med.jhmi.edu/]</span>
@@ -3948,35 +4102,59 @@ SQL system. github.com/jhu-bids/termhub</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python
-(FastAPI, networkx, SQLAlchemy)</span>
-                                                <span class="skill-block">JavaScript
-(React, TypeScript, Material UI)</span>
-                                                <span class="skill-block">PostgreSQL
-(GIN &amp; GiST indexing, window functions, materialized views,
-etc)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(FastAPI, networkx, SQLAlchemy)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(React, TypeScript, Material
+UI)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">PostgreSQL</span>
+                                  <span class="skill-sub">(GIN &amp;
+GiST indexing, window functions, materialized views, etc)</span>
+                              </span>
                                                 <span class="skill-block">Azure</span>
-                                                <span class="skill-block">Apache
-Parquet</span>
+                                                <span class="skill-block">Parquet</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (FastAPI, networkx,
-SQLAlchemy)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(FastAPI, networkx, SQLAlchemy)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript (React,
-TypeScript, Material UI)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(React, TypeScript, Material
+UI)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">PostgreSQL (GIN &amp; GiST
-indexing, window functions, materialized views, etc)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">PostgreSQL</span>-->
+<!--                -->
+<!--                  <span class="sub">(GIN &amp; GiST indexing, window
+functions, materialized views, etc)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -3984,7 +4162,7 @@ indexing, window functions, materialized views, etc)</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Apache Parquet</span>-->
+<!--              <span class="skill-block">Parquet</span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -3992,9 +4170,7 @@ indexing, window functions, materialized views, etc)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python (FastAPI, networkx, SQLAlchemy), JavaScript
-(React, TypeScript, Material UI), PostgreSQL (GIN &amp; GiST indexing,
-window functions, materialized views, etc), Azure, Apache Parquet-->
+<!--            true, true, true, Azure, Parquet-->
 <!--          </p>-->
 <!--          -->
 
@@ -4019,7 +4195,10 @@ pipeline, semantic harmonization, and CI/CD.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">
                 <span class="skill-main">Python</span>
                                   <span class="skill-sub">(networkx, PyTorch, Sentence
@@ -4029,6 +4208,7 @@ Transformers, LinkML, Matplotlib, Plotly, Dash)</span>
                                                 <span class="skill-block">OWL</span>
                                                 <span class="skill-block">render.com</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4084,35 +4264,39 @@ Coordinated several repos &amp; data sources.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python
-(pandas)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(pandas)</span>
+                              </span>
                                                 <span class="skill-block">Docker</span>
                                                 <span class="skill-block">GitHub
 Actions</span>
                                                 <span class="skill-block">SPARQL</span>
                                                 <span class="skill-block">RDF</span>
                                                 <span class="skill-block">OWL</span>
-                                                <span class="skill-block">awk</span>
                                                 <span class="skill-block">Biomedical
 Ontologies</span>
                                                 <span class="skill-block">Semantic
 Engineering</span>
                                                 <span class="skill-block">Data
 Visualization</span>
-                                                <span class="skill-block">Data
-pipelines</span>
-                                                <span class="skill-block">ShellScript</span>
-                                                <span class="skill-block">Makefile</span>
-                                                <span class="skill-block">Agile/Scrum</span>
-                                                <span class="skill-block">Kanban</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (pandas)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(pandas)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4136,10 +4320,6 @@ pipelines</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">awk</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
 <!--              <span class="skill-block">Biomedical
 Ontologies</span>-->
 <!--            -->
@@ -4153,35 +4333,14 @@ Engineering</span>-->
 <!--              <span class="skill-block">Data Visualization</span>-->
 <!--            -->
 <!--          -->
-<!--            -->
-<!--              <span class="skill-block">Data pipelines</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">ShellScript</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Makefile</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Agile/Scrum</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Kanban</span>-->
-<!--            -->
-<!--          -->
 <!--          </p>-->
 
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python (pandas), Docker, GitHub
-Actions, SPARQL, RDF, OWL, awk, Biomedical Ontologies, Semantic
-Engineering, Data Visualization, Data
-pipelines, ShellScript, Makefile, Agile/Scrum, Kanban-->
+<!--            true, Docker, GitHub
+Actions, SPARQL, RDF, OWL, Biomedical Ontologies, Semantic
+Engineering, Data Visualization-->
 <!--          </p>-->
 <!--          -->
 
@@ -4206,29 +4365,28 @@ pipelines and libraries.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
-                                                <span class="skill-block">JavaScript</span>
-                                                <span class="skill-block">ReactJS</span>
+                                                <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(React)</span>
+                              </span>
                                                 <span class="skill-block">Java</span>
                                                 <span class="skill-block">Azure</span>
                                                 <span class="skill-block">HL7
 FHIR</span>
-                                                <span class="skill-block">Biomedical
-Terminology</span>
-                                                <span class="skill-block">REST</span>
-                                                <span class="skill-block">API</span>
+                                                <span class="skill-block">REST
+API</span>
                                                 <span class="skill-block">Docker</span>
                                                 <span class="skill-block">OWL</span>
                                                 <span class="skill-block">RDF</span>
-                                                <span class="skill-block">Linux</span>
-                                                <span class="skill-block">Ubuntu</span>
-                                                <span class="skill-block">Bash</span>
-                                                <span class="skill-block">Zsh</span>
-                                                <span class="skill-block">ShellScript</span>
-                                                <span class="skill-block">Agile</span>
-                                                <span class="skill-block">Kanban</span>
+                                                <span class="skill-block">Biomedical
+Terminology</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4238,11 +4396,12 @@ Terminology</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">ReactJS</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(React)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4258,16 +4417,7 @@ Terminology</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Biomedical
-Terminology</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">REST</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">API</span>-->
+<!--              <span class="skill-block">REST API</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4283,31 +4433,8 @@ Terminology</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Linux</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Ubuntu</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Bash</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Zsh</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">ShellScript</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Agile</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Kanban</span>-->
+<!--              <span class="skill-block">Biomedical
+Terminology</span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -4315,9 +4442,8 @@ Terminology</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python, JavaScript, ReactJS, Java, Azure, HL7
-FHIR, Biomedical
-Terminology, REST, API, Docker, OWL, RDF, Linux, Ubuntu, Bash, Zsh, ShellScript, Agile, Kanban-->
+<!--            Python, true, Java, Azure, HL7 FHIR, REST
+API, Docker, OWL, RDF, Biomedical Terminology-->
 <!--          </p>-->
 <!--          -->
 
@@ -4325,6 +4451,533 @@ Terminology, REST, API, Docker, OWL, RDF, Linux, Ubuntu, Bash, Zsh, ShellScript,
 <!--          -->
 <!--          <p class="roles">-->
 <!--            Developer, Project Management-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/HOT-Ecosystem/tccm-api">TCCM
+(Terminology Core Common Model)</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Maintained terminology
+service framework, used by CCDH Terminology Service.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask, FastAPI)</span>
+                              </span>
+                                                <span class="skill-block">API</span>
+                                                <span class="skill-block">REST</span>
+                                                <span class="skill-block">Neo4J</span>
+                                                <span class="skill-block">Cypher</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask, FastAPI)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">API</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">REST</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Neo4J</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Cypher</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            true, API, REST, Neo4J, Cypher-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Developer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/cancerDHC">CCDH
+(Center for Cancer Data Harmonization)</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Helped develop and maintain
+codebase and servers.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask, FastAPI)</span>
+                              </span>
+                                                <span class="skill-block">REST</span>
+                                                <span class="skill-block">Neo4J</span>
+                                                <span class="skill-block">Cypher</span>
+                                                <span class="skill-block">Docker</span>
+                                                <span class="skill-block">RDF</span>
+                                                <span class="skill-block">OWL</span>
+                                                <span class="skill-block">AWS
+EC2</span>
+                                                <span class="skill-block">Semantic
+Engineering</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask, FastAPI)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">REST</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Neo4J</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Cypher</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Docker</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">RDF</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">OWL</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">AWS EC2</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Semantic
+Engineering</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            true, REST, Neo4J, Cypher, Docker, RDF, OWL, AWS
+EC2, Semantic Engineering-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Software Engineer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              JH K Anonymity
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Made Johns Hopkins OMOP
+patient anonymity analyses viable, increasing memory performance by
+~100x.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Pandas, PySpark, Matplotlib)</span>
+                              </span>
+                                                <span class="skill-block">Databricks</span>
+                                                <span class="skill-block">Apache
+Spark</span>
+                                                <span class="skill-block">Parquet</span>
+                                                <span class="skill-block">Virtualization</span>
+                                                <span class="skill-block">Data
+obfuscation</span>
+                                                <span class="skill-block">GitHub
+Actions</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Pandas, PySpark, Matplotlib)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Databricks</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Apache Spark</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Parquet</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Virtualization</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Data obfuscation</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">GitHub Actions</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            true, Databricks, Apache
+Spark, Parquet, Virtualization, Data obfuscation, GitHub Actions-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Developer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="http://ncats.nih.gov/n3c">N3C
+(National COVID Cohort Collaborative)</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Wrote ValueSet tools library
+and assisted with various ETL and analysis.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">Palantir
+Foundry</span>
+                                                <span class="skill-block">OMOP</span>
+                                                <span class="skill-block">Python</span>
+                                                <span class="skill-block">REST</span>
+                                                <span class="skill-block">API</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Palantir Foundry</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">OMOP</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Python</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">REST</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">API</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            Palantir Foundry, OMOP, Python, REST, API-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Software Engineer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/linkml/linkml">LinkML
+(Linked data Modeling Language)</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Contributed to open source
+library for a data metamodeling. Biggest contributions: Enumerations and
+FHIR ValueSets.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">Python</span>
+                                                <span class="skill-block">Data
+Modeling</span>
+                                                <span class="skill-block">FHIR</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Python</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Data Modeling</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">FHIR</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            Python, Data Modeling, FHIR-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Developer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/mapping-commons/sssom">SSSOM
+(Super Simple Standard for Ontology Mappings)</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Open source contributions,
+e.g. FHIR ConceptMap format.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">Python</span>
+                                                <span class="skill-block">Data
+modeling</span>
+                                                <span class="skill-block">Data
+standards</span>
+                                                <span class="skill-block">RDF</span>
+                                                <span class="skill-block">OWL</span>
+                                                <span class="skill-block">Ontology
+engineering</span>
+                                                <span class="skill-block">Semantic
+engineering</span>
+                                                <span class="skill-block">HL7
+FHIR</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Python</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Data modeling</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Data standards</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">RDF</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">OWL</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Ontology
+engineering</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Semantic
+engineering</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">HL7 FHIR</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            Python, Data modeling, Data
+standards, RDF, OWL, Ontology engineering, Semantic engineering, HL7
+FHIR-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Developer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/jhu-bids/fhir-zulip-nlp-analysis">Zulip
+Analysis</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Analyzed community activity
+for Zulip-based HL7 chat.fhir.org.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Pandas, Matplotlib)</span>
+                              </span>
+                                                <span class="skill-block">Google
+API</span>
+                                                <span class="skill-block">Zulip
+API</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Pandas, Matplotlib)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Google API</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Zulip API</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            true, Google API, Zulip API-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Lead dev-->
 <!--          </p>-->
 <!--          -->
         </section>
@@ -4348,7 +5001,7 @@ Terminology, REST, API, Docker, OWL, RDF, Linux, Ubuntu, Bash, Zsh, ShellScript,
 
           <!-- URL -->
           <div class="job">
-                          <a href="modeltb.org" class="job-link">
+                          <a href="https://modeltb.org" class="job-link">
                 Johns Hopkins: Tuberculosis Modeling and Translational
                 Epi Group
                 <span class="job-url">[modeltb.org]</span>
@@ -4361,8 +5014,21 @@ Terminology, REST, API, Docker, OWL, RDF, Linux, Ubuntu, Bash, Zsh, ShellScript,
           <!--      -->
 
           <!-- Summary -->
+                    <div class="summary"><p>Worked with a number of
+teams on projects requiring different skill sets, from statistical
+modeling, to frontend development, to high performance
+computing.</p></div>
           
           <!-- Job skills overview -->
+                    <ul class="skills-pills" aria-label="Skills">
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>C++</li>
+                        <li>Shiny</li>
+                        <li>Statistical Modeling</li>
+                        <li>GIS</li>
+                        <li>HPC</li>
+                      </ul>
                   </div>
       </div>
 
@@ -4371,7 +5037,8 @@ Terminology, REST, API, Docker, OWL, RDF, Linux, Ubuntu, Bash, Zsh, ShellScript,
                         <section class="project-item">
           <header class="clear">
             <div class="position">
-                              JHEEM (Ending HIV)
+                              <a href="https://jheem.shinyapps.io/EndingHIV/">JHEEM
+(Ending HIV)</a>
                           </div>
           </header>
 
@@ -4381,43 +5048,35 @@ HIV modeling.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">R</span>
-                                                <span class="skill-block">Shiny</span>
-                                                <span class="skill-block">ggplot</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">R</span>
+                                  <span class="skill-sub">(Shiny, ggplot)</span>
+                              </span>
                                                 <span class="skill-block">JavaScript</span>
-                                                <span class="skill-block">CSS</span>
-                                                <span class="skill-block">HTML</span>
                                                 <span class="skill-block">RDBMS</span>
                                                 <span class="skill-block">S3</span>
                                                 <span class="skill-block">SMTP</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">R</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Shiny</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">ggplot</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">R</span>-->
+<!--                -->
+<!--                  <span class="sub">(Shiny, ggplot)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">JavaScript</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">CSS</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">HTML</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4437,7 +5096,7 @@ HIV modeling.</p></div>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            R, Shiny, ggplot, JavaScript, CSS, HTML, RDBMS, S3, SMTP-->
+<!--            true, JavaScript, RDBMS, S3, SMTP-->
 <!--          </p>-->
 <!--          -->
 
@@ -4451,7 +5110,7 @@ HIV modeling.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Impaact4TB
+                              <a href="http://impaact4tb.org/">Impaact4TB</a>
                           </div>
           </header>
 
@@ -4462,9 +5121,13 @@ analyses.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">R</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4492,7 +5155,8 @@ analyses.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              COVID NAT-RDT
+                              <a href="https://joeflack4.shinyapps.io/COVID19-NAT-RDT/">COVID
+NAT-RDT</a>
                           </div>
           </header>
 
@@ -4502,31 +5166,28 @@ cost effectiveness. Translated MATLAB model into R.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">R</span>
-                                                <span class="skill-block">Shiny</span>
-                                                <span class="skill-block">CSS</span>
-                                                <span class="skill-block">HTML</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">R</span>
+                                  <span class="skill-sub">(Shiny)</span>
+                              </span>
                                                 <span class="skill-block">MATLAB</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">R</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Shiny</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">CSS</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">HTML</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">R</span>-->
+<!--                -->
+<!--                  <span class="sub">(Shiny)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4538,7 +5199,7 @@ cost effectiveness. Translated MATLAB model into R.</p></div>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            R, Shiny, CSS, HTML, MATLAB-->
+<!--            true, MATLAB-->
 <!--          </p>-->
 <!--          -->
 
@@ -4552,7 +5213,8 @@ cost effectiveness. Translated MATLAB model into R.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Ghana Lab Network
+                              <a href="https://joeflack4.shinyapps.io/GhanaLabNetwork/">Ghana
+Lab Network</a>
                           </div>
           </header>
 
@@ -4562,12 +5224,18 @@ PDFs), lexical analyses, and data analyses.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python</span>
-                                                <span class="skill-block">Pandas</span>
-                                                <span class="skill-block">R</span>
-                                                <span class="skill-block">Shiny</span>
-                                                <span class="skill-block">Plotly</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Pandas)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">R</span>
+                                  <span class="skill-sub">(Shiny, Plotly)</span>
+                              </span>
                                                 <span class="skill-block">GoogleMaps
 API</span>
                                                 <span class="skill-block">Tableau</span>
@@ -4576,27 +5244,26 @@ API</span>
 visualization</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Pandas)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Pandas</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">R</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Shiny</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Plotly</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">R</span>-->
+<!--                -->
+<!--                  <span class="sub">(Shiny, Plotly)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4620,8 +5287,8 @@ visualization</span>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python, Pandas, R, Shiny, Plotly, GoogleMaps
-API, Tableau, GIS, Data visualization-->
+<!--            true, true, GoogleMaps API, Tableau, GIS, Data
+visualization-->
 <!--          </p>-->
 <!--          -->
 
@@ -4635,7 +5302,8 @@ API, Tableau, GIS, Data visualization-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              MDRTB agent-based Modeling
+                              <a href="https://github.com/TB-Modeling/mdrtb">MDRTB
+agent-based Modeling</a>
                           </div>
           </header>
 
@@ -4647,21 +5315,32 @@ and collaborated with epidemiologists.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">C++</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">C++</span>
+                                  <span class="skill-sub">(Valgrind, Conan, CMake)</span>
+                              </span>
                                                 <span class="skill-block">R</span>
-                                                <span class="skill-block">Valgrind</span>
-                                                <span class="skill-block">Conan</span>
-                                                <span class="skill-block">HPC</span>
-                                                <span class="skill-block">SLURM</span>
-                                                <span class="skill-block">CMake</span>
+                                                <span class="skill-block">
+                <span class="skill-main">HPC</span>
+                                  <span class="skill-sub">(SLURM)</span>
+                              </span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">C++</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">C++</span>-->
+<!--                -->
+<!--                  <span class="sub">(Valgrind, Conan, CMake)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4669,23 +5348,12 @@ and collaborated with epidemiologists.</p></div>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Valgrind</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Conan</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">HPC</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">SLURM</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">CMake</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">HPC</span>-->
+<!--                -->
+<!--                  <span class="sub">(SLURM)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -4693,7 +5361,7 @@ and collaborated with epidemiologists.</p></div>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            C++, R, Valgrind, Conan, HPC, SLURM, CMake-->
+<!--            true, R, true-->
 <!--          </p>-->
 <!--          -->
 
@@ -4707,7 +5375,8 @@ and collaborated with epidemiologists.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Kampala Enumerator Map Tool
+                              <a href="https://modeltb.org/kampala-map/">Kampala
+Enumerator Map Tool</a>
                           </div>
           </header>
 
@@ -4716,17 +5385,17 @@ interviewers with household survey activities in Kampala, Uganda.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">JavaScript</span>
-                                                <span class="skill-block">HTML</span>
-                                                <span class="skill-block">CSS</span>
-                                                <span class="skill-block">Bootstrap</span>
-                                                <span class="skill-block">GoogleMaps
-API</span>
-                                                <span class="skill-block">Open
-Data Kit</span>
-                                                <span class="skill-block">GoogleSheets</span>
+                                                <span class="skill-block">Google
+Maps API</span>
+                                                <span class="skill-block">Google
+Sheets</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4736,27 +5405,11 @@ Data Kit</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">HTML</span>-->
+<!--              <span class="skill-block">Google Maps API</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">CSS</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Bootstrap</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">GoogleMaps API</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Open Data Kit</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">GoogleSheets</span>-->
+<!--              <span class="skill-block">Google Sheets</span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -4764,8 +5417,7 @@ Data Kit</span>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            JavaScript, HTML, CSS, Bootstrap, GoogleMaps API, Open
-Data Kit, GoogleSheets-->
+<!--            JavaScript, Google Maps API, Google Sheets-->
 <!--          </p>-->
 <!--          -->
 
@@ -4779,7 +5431,8 @@ Data Kit, GoogleSheets-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              REDCap Operations Costing Database
+                              <a href="https://ictr.johnshopkins.edu/service/informatics/redcap/">REDCap
+Operations Costing Database</a>
                           </div>
           </header>
 
@@ -4790,11 +5443,15 @@ for multiple phases of data collection.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">SQL</span>
                                                 <span class="skill-block">REDCap</span>
                                                 <span class="skill-block">Excel</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4827,78 +5484,76 @@ for multiple phases of data collection.</p></div>
 <!--          </p>-->
 <!--          -->
         </section>
-                <section class="project-item">
+                      </div>
+    </section>
+        <section class="work-item">
+      <div class="work-card">
+        <!-- id -->
+        
+
+        <!-- Start/end date -->
+        <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
+        <header>
+          <div class="date">
+            <span class="startDate"></span>
+            <span class="endDate">2019/05</span>
+          </div>
+
+          <!-- Title -->
+          <div class="position">Software Engineer</div>
+
+          <!-- URL -->
+          <div class="job">
+                          <a href="https://https://bioviva-science.com/" class="job-link">
+                BioViva
+                <span class="job-url">[https://bioviva-science.com/]</span>
+              </a>
+                      </div>
+        </header>
+
+        <div class="item work-card__body">
+          <!-- Loc -->
+          <!--      -->
+
+          <!-- Summary -->
+                    <div class="summary"><p>Several contractors,
+including myself, drafted separate mockups to inspire BioViva’s
+technical development ideation.</p></div>
+          
+          <!-- Job skills overview -->
+                    <ul class="skills-pills" aria-label="Skills">
+                        <li>React</li>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>AWS</li>
+                      </ul>
+                  </div>
+      </div>
+
+      <!-- Job projects -->
+      <div class="item">
+                        <section class="project-item">
           <header class="clear">
             <div class="position">
-                              OneDrive Report Automation
+                              Bioinformatics Portal Mockup
                           </div>
           </header>
 
-                    <div class="summary">Automated a reporting
-aggregation process involving Excel reports hosted on OneDrive.</div>
+                    <div class="summary"><p>Created static ReactJS web
+application for patients to perform basic CRUD operations on their
+contact information and biometric data, and visualize data over time.
+Created backend API for storing patient data, as well as interacting
+with cloud storage for medical records.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python</span>
-                                                <span class="skill-block">MS
-GraphAPI</span>
-                                                <span class="skill-block">OneDrive</span>
-                                                <span class="skill-block">Excel</span>
-                                </p>
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">MS GraphAPI</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">OneDrive</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Excel</span>-->
-<!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            Python, MS GraphAPI, OneDrive, Excel-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-<!--          <p class="roles">-->
-<!--            Software engineer-->
-<!--          </p>-->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              General Technical Support
-                          </div>
-          </header>
-
-                    <div class="summary"><p>Supported a small data
-science and software engineering team to improve existing codebases for
-various agent-based epidemiological models written in C++; guided best
-practices.</p></div>
-          
-          
-<!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                     </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
@@ -4908,134 +5563,6 @@ practices.</p></div>
 <!--          -->
 
 <!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              Zulip Analysis
-                          </div>
-          </header>
-
-                    <div class="summary">Analyzed community activity for
-Zulip-based HL7 chat.fhir.org.</div>
-          
-          
-<!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python</span>
-                                                <span class="skill-block">Google
-API</span>
-                                                <span class="skill-block">Zulip
-API</span>
-                                                <span class="skill-block">Pandas</span>
-                                                <span class="skill-block">Matplotlib</span>
-                                </p>
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Google API</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Zulip API</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Pandas</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Matplotlib</span>-->
-<!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            Python, Google API, Zulip API, Pandas, Matplotlib-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-<!--          <p class="roles">-->
-<!--            Lead dev-->
-<!--          </p>-->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              Informatics Portal Mockup
-                          </div>
-          </header>
-
-                    <div class="summary"><p>Created a static ReactJS web
-application for patients to manage contact and biometric data; built a
-backend API for storing data and interacting with cloud storage for
-medical records.</p></div>
-          
-          
-<!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">ReactJS</span>
-                                                <span class="skill-block">JavaScript</span>
-                                                <span class="skill-block">CSS</span>
-                                                <span class="skill-block">HTML</span>
-                                                <span class="skill-block">Python</span>
-                                                <span class="skill-block">Cloud
-storage</span>
-                                </p>
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">ReactJS</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">JavaScript</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">CSS</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">HTML</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Cloud storage</span>-->
-<!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            ReactJS, JavaScript, CSS, HTML, Python, Cloud storage-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-<!--          <p class="roles">-->
-<!--            Web development-->
-<!--          </p>-->
 <!--          -->
         </section>
                       </div>
@@ -5058,7 +5585,10 @@ storage</span>
 
           <!-- URL -->
           <div class="job">
-                          PMA (Performance Monitoring for Action)
+                          <a href="https://https://www.pmadata.org/" class="job-link">
+                PMA (Performance Monitoring for Action)
+                <span class="job-url">[https://www.pmadata.org/]</span>
+              </a>
                       </div>
         </header>
 
@@ -5067,8 +5597,19 @@ storage</span>
           <!--      -->
 
           <!-- Summary -->
+                    <div class="summary"><p>Provided devleopment and
+maaintained codebases for public health survey operations organization,
+including creation of web API, software libraries, frontend databases,
+and data visualization app.</p></div>
           
           <!-- Job skills overview -->
+                    <ul class="skills-pills" aria-label="Skills">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                        <li>Full Stack</li>
+                      </ul>
                   </div>
       </div>
 
@@ -5077,7 +5618,8 @@ storage</span>
                         <section class="project-item">
           <header class="clear">
             <div class="position">
-                              PMA API
+                              <a href="https://github.com/PMA-2020/pma-api">PMA
+API</a>
                           </div>
           </header>
 
@@ -5086,11 +5628,18 @@ access to PMA2020 data.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python
-(Flask, SQLAlchemy, Sphinx, Celery)</span>
-                                                <span class="skill-block">JavaScript
-(jQuery)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask, SQLAlchemy, Sphinx, Celery)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(jQuery)</span>
+                              </span>
                                                 <span class="skill-block">R</span>
                                                 <span class="skill-block">SQL</span>
                                                 <span class="skill-block">PostgreSQL</span>
@@ -5101,17 +5650,26 @@ S3</span>
                                                 <span class="skill-block">Redis</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (Flask, SQLAlchemy,
-Sphinx, Celery)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask, SQLAlchemy, Sphinx, Celery)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript
-(jQuery)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(jQuery)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5147,8 +5705,8 @@ Sphinx, Celery)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python (Flask, SQLAlchemy, Sphinx, Celery), JavaScript
-(jQuery), R, SQL, PostgreSQL, Heroku, AWS S3, RabbitMQ, Redis-->
+<!--            true, true, R, SQL, PostgreSQL, Heroku, AWS
+S3, RabbitMQ, Redis-->
 <!--          </p>-->
 <!--          -->
 
@@ -5162,7 +5720,7 @@ Sphinx, Celery)</span>-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Datalab
+                              <a href="https://datalab.pmadata.org/">Datalab</a>
                           </div>
           </header>
 
@@ -5171,20 +5729,30 @@ PMA2020 data.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">JavaScript
-(jQuery, Selenium, Node, npm)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(jQuery, Selenium, Node, npm)</span>
+                              </span>
                                                 <span class="skill-block">AWS
 S3</span>
                                                 <span class="skill-block">CircleCI</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript (jQuery,
-Selenium, Node, npm)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(jQuery, Selenium, Node, npm)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5200,8 +5768,7 @@ Selenium, Node, npm)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            JavaScript (jQuery, Selenium, Node, npm), AWS
-S3, CircleCI-->
+<!--            true, AWS S3, CircleCI-->
 <!--          </p>-->
 <!--          -->
 
@@ -5215,7 +5782,7 @@ S3, CircleCI-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              XFormTest
+                              <a href="https://github.com/PMA-2020/xform-test">XFormTest</a>
                           </div>
           </header>
 
@@ -5224,10 +5791,15 @@ automated testing of XForms survey definitions.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Java</span>
                                                 <span class="skill-block">Python</span>
+                                                <span class="skill-block">XPath</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5240,12 +5812,16 @@ automated testing of XForms survey definitions.</div>
 <!--              <span class="skill-block">Python</span>-->
 <!--            -->
 <!--          -->
+<!--            -->
+<!--              <span class="skill-block">XPath</span>-->
+<!--            -->
+<!--          -->
 <!--          </p>-->
 
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Java, Python-->
+<!--            Java, Python, XPath-->
 <!--          </p>-->
 <!--          -->
 
@@ -5259,7 +5835,8 @@ automated testing of XForms survey definitions.</div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Pretty PDF Printer
+                              <a href="https://ppp.pma2020.org/">Pretty
+PDF Printer</a>
                           </div>
           </header>
 
@@ -5268,21 +5845,31 @@ printable, editable forms such as Word documents.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python
-(Flask, Argparse, PyPI)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask, Argparse, PyPI)</span>
+                              </span>
                                                 <span class="skill-block">JavaScript</span>
                                                 <span class="skill-block">Linode</span>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">CircleCI</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (Flask, Argparse,
-PyPI)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask, Argparse, PyPI)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5306,8 +5893,7 @@ PyPI)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python (Flask, Argparse,
-PyPI), JavaScript, Linode, Heroku, CircleCI-->
+<!--            true, JavaScript, Linode, Heroku, CircleCI-->
 <!--          </p>-->
 <!--          -->
 
@@ -5321,7 +5907,8 @@ PyPI), JavaScript, Linode, Heroku, CircleCI-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              PMA2020 DHIS2
+                              <a href="https://dhis2.org/">PMA2020
+DHIS2</a>
                           </div>
           </header>
 
@@ -5331,21 +5918,20 @@ medical and public health data.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
-                                                <span class="skill-block">Bash</span>
                                                 <span class="skill-block">SQL</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Bash</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5357,7 +5943,7 @@ medical and public health data.</p></div>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python, Bash, SQL-->
+<!--            Python, SQL-->
 <!--          </p>-->
 <!--          -->
 
@@ -5371,7 +5957,7 @@ medical and public health data.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              pmix
+                              <a href="https://github.com/PMA-2020/pmix">pmix</a>
                           </div>
           </header>
 
@@ -5380,9 +5966,13 @@ XForms.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5410,7 +6000,7 @@ XForms.</div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              QTools2
+                              <a href="https://github.com/jkpr/qtools2">QTools2</a>
                           </div>
           </header>
 
@@ -5419,9 +6009,13 @@ XForms for electronic surveys.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5449,33 +6043,159 @@ XForms for electronic surveys.</div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              PMA Translation Hub
+                              <a href="https://github.com/PMA-2020/collect">Open
+Data Kit forms development</a>
                           </div>
           </header>
 
-                    <div class="summary">Pre-release web application for
-translation management of M&amp;E survey content.</div>
+                    <div class="summary"><p>Using XForms, created
+programmatic surveys for data collection. Runs on pplatforms such as
+Open Data Kit (ODK).</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">JavaScript
-(React, Redux, Node)</span>
-                                                <span class="skill-block">Python
-(Flask)</span>
-                                                <span class="skill-block">Heroku</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">XPath</span>
+                                                <span class="skill-block">XForms</span>
+                                                <span class="skill-block">Google
+Cloud</span>
+                                                <span class="skill-block">Digital
+Ocean</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript (React, Redux,
-Node)</span>-->
+<!--              <span class="skill-block">XPath</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (Flask)</span>-->
+<!--              <span class="skill-block">XForms</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Google Cloud</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Digital Ocean</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            XPath, XForms, Google Cloud, Digital Ocean-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Programmer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              Business Intelligence Dashboard
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Created dashboard for
+reporting personnel technical capacity levels in various countries of
+operation, using mock data.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">Microsoft
+Power BI</span>
+                                                <span class="skill-block">Azure</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Microsoft Power BI</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Azure</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            Microsoft Power BI, Azure-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Co-implementer-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://www.youtube.com/watch?v=efdKNfjDNRM&amp;t=287s">PMA
+Survey Hub</a>
+                          </div>
+          </header>
+
+                    <div class="summary"><p>Alpha development phase
+project that is a combination of various PMA2020-created survey tools in
+one web app. Currently implementing own proprietary app, but in talks
+with KoBo Toolbox team, to add our tools as plugins.</p></div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">Python</span>
+                                                <span class="skill-block">JavaScript</span>
+                                                <span class="skill-block">Docker</span>
+                                                <span class="skill-block">Linode</span>
+                                                <span class="skill-block">Heroku</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Python</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">JavaScript</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Docker</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Linode</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5487,8 +6207,77 @@ Node)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            JavaScript (React, Redux, Node), Python
-(Flask), Heroku-->
+<!--            Python, JavaScript, Docker, Linode, Heroku-->
+<!--          </p>-->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+<!--          <p class="roles">-->
+<!--            Product lead-->
+<!--          </p>-->
+<!--          -->
+        </section>
+                <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              <a href="https://github.com/PMA-2020/pma-translation-hub">PMA
+Translation Hub</a>
+                          </div>
+          </header>
+
+                    <div class="summary">Pre-release web application for
+translation management of M&amp;E survey content.</div>
+          
+          
+<!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(React, Redux, Node)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask)</span>
+                              </span>
+                                                <span class="skill-block">Heroku</span>
+                                </p>
+
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(React, Redux, Node)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask)</span>-->
+<!--                -->
+<!--              </span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Heroku</span>-->
+<!--            -->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+<!--          <p class="skills">-->
+<!--            true, true, Heroku-->
 <!--          </p>-->
 <!--          -->
 
@@ -5535,6 +6324,12 @@ directed all IT, including systems, networking, web presence, software
 development.</p></div>
           
           <!-- Job skills overview -->
+                    <ul class="skills-pills" aria-label="Skills">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>JavaScript</li>
+                        <li>Angular</li>
+                      </ul>
                   </div>
       </div>
 
@@ -5543,7 +6338,7 @@ development.</p></div>
                         <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Just-a-Dash
+                              <a href="https://drive.google.com/file/d/0B7Ejc8xgPuo5bUVxT3l1YWVCT1k/view">Just-a-Dash</a>
                           </div>
           </header>
 
@@ -5552,27 +6347,43 @@ tool.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
-                                    <span class="skill-block">Python
-(Flask, SQLAlchemy, Alembic)</span>
-                                                <span class="skill-block">JavaScript
-(Angular, Bootstrap)</span>
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                                    <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(Flask, SQLAlchemy, Alembic)</span>
+                              </span>
+                                                <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(Angular)</span>
+                              </span>
                                                 <span class="skill-block">PostgreSQL</span>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">Twilio</span>
                                 </p>
 
+
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">Python (Flask, SQLAlchemy,
-Alembic)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">Python</span>-->
+<!--                -->
+<!--                  <span class="sub">(Flask, SQLAlchemy, Alembic)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">JavaScript (Angular,
-Bootstrap)</span>-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">JavaScript</span>-->
+<!--                -->
+<!--                  <span class="sub">(Angular)</span>-->
+<!--                -->
+<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5592,8 +6403,7 @@ Bootstrap)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python (Flask, SQLAlchemy, Alembic), JavaScript
-(Angular, Bootstrap), PostgreSQL, Heroku, Twilio-->
+<!--            true, true, PostgreSQL, Heroku, Twilio-->
 <!--          </p>-->
 <!--          -->
 
@@ -5617,12 +6427,16 @@ accounting software; scripts to rename and move files.</p></div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">PowerShell</span>
                                                 <span class="skill-block">ODBC</span>
                                                 <span class="skill-block">Excel</span>
                                                 <span class="skill-block">GoogleSheets</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5662,7 +6476,8 @@ accounting software; scripts to rename and move files.</p></div>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Company website
+                              <a href="https://www.sonshinecompanioncare.com/">Company
+website</a>
                           </div>
           </header>
 
@@ -5671,9 +6486,13 @@ company website.</div>
           
           
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">WordPress</span>
                                 </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5727,6 +6546,47 @@ company website.</div>
           <!--      -->
 
           <!-- Summary -->
+                    <div class="summary"><p>Taught in Japan &amp; South
+Korea, public and private, all age ranges from toddler to post-high
+school.</p></div>
+          
+          <!-- Job skills overview -->
+                  </div>
+      </div>
+
+      <!-- Job projects -->
+      <div class="item">
+              </div>
+    </section>
+        <section class="work-item">
+      <div class="work-card">
+        <!-- id -->
+        
+
+        <!-- Start/end date -->
+        <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
+        <header>
+          <div class="date">
+            <span class="startDate">2002</span> -
+            <span class="endDate">2008</span>
+          </div>
+
+          <!-- Title -->
+          <div class="position">Various roles</div>
+
+          <!-- URL -->
+          <div class="job">
+                          Several schools
+                      </div>
+        </header>
+
+        <div class="item work-card__body">
+          <!-- Loc -->
+          <!--      -->
+
+          <!-- Summary -->
+                    <div class="summary"><p>Worked in several roles in
+sales, food service, and retail.</p></div>
           
           <!-- Job skills overview -->
                   </div>
@@ -5752,7 +6612,7 @@ company website.</div>
 Manager</a>
         </div>
         <div class="date">
-          <span class="startDate"></span> -
+          <span class="startDate"></span>
           <span class="endDate">2025/09</span>
         </div>
       </header>
@@ -5760,26 +6620,10 @@ Manager</a>
         <div class="summary"><p>Break apart, dynamically construct, and
 sync sets of related markdown files, subsections, and
 checklists.</p></div>
-              </div>
-    </section>
-        <section class="project-item" id="health-hub">
-      <label for="health-hub"></label>
-      <header class="clear">
-        <div class="position">
-          <a href="gitlab.com/the-health-hub/health-hub.web.client">Health
-Hub</a>
-        </div>
-        <div class="date">
-          <span class="startDate"></span> -
-          <span class="endDate">2019</span>
-        </div>
-      </header>
-      <div class="item">
-        <div class="summary"><p>A pre-release phase project of a web
-application that is the central point allowing users to manage their
-personal health data collected from a suite of illness-specific mobile
-applications.</p></div>
-              </div>
+
+        
+        
+      </div>
     </section>
         <section class="project-item" id="personal-health-data-analysis">
       <label for="personal-health-data-analysis"></label>
@@ -5796,22 +6640,72 @@ Analysis</a>
       <div class="item">
         <div class="summary"><p>Have worked in several repos to collect
 and analyze various aspects of my health data over the years.</p></div>
-              </div>
+
+                <ul class="skills-pills" aria-label="Skills">
+                    <li>Python</li>
+                    <li>Pandas</li>
+                    <li>Plotly</li>
+                    <li>Dash</li>
+                    <li>Jupyter Notebook</li>
+                    <li>R</li>
+                    <li>Google Sheets / Forms</li>
+                  </ul>
+        
+        
+      </div>
     </section>
-        <section class="project-item" id="proj-id">
-      <label for="proj-id"></label>
+        <section class="project-item" id="health-hub">
+      <label for="health-hub"></label>
       <header class="clear">
         <div class="position">
-          
+          <a href="gitlab.com/the-health-hub/health-hub.web.client">Health
+Hub</a>
         </div>
         <div class="date">
-          <span class="startDate"></span> -
+          <span class="startDate"></span>
+          <span class="endDate">2019</span>
+        </div>
+      </header>
+      <div class="item">
+        <div class="summary"><p>A pre-release phase project of a web
+application that is the central point allowing users to manage their
+personal health data collected from a suite of illness-specific mobile
+applications.</p></div>
+
+                <ul class="skills-pills" aria-label="Skills">
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>GraphQL</li>
+                    <li>Neo4j</li>
+                    <li>Apollo</li>
+                  </ul>
+        
+        
+      </div>
+    </section>
+        <section class="project-item" id="honorable-mentions">
+      <label for="honorable-mentions"></label>
+      <header class="clear">
+        <div class="position">
+          Honorable mentions
+        </div>
+        <div class="date">
+          <span class="startDate"></span>
           <span class="endDate"></span>
         </div>
       </header>
       <div class="item">
-        <div class="summary"><p>TODO</p></div>
-              </div>
+        
+
+        
+                <ul>
+                    <li><strong>SetupTools</strong>: Small PRs to core
+Python infra. [tinyurl.com/jf4stools]</li>
+                    <li><strong>Résumé</strong>: Dynamic builder using
+Pandoc. [github.com/joeflack4/resume]</li>
+                  </ul>
+        
+      </div>
     </section>
       </section>
 </section>

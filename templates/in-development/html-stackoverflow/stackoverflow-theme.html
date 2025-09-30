@@ -52,30 +52,33 @@ $endif$
 	$if(subheader)$<span class="subheader">
 		<span class="city">$subheader$</span>
 	</span>$endif$
-	<div id="contact">
-		$if(website)$<div class="website">
-			<span class="fas fa-external-link-alt"></span>
-			<a class="hide-href-print" target="_blank" href="$website$" rel="noreferrer">$website$</a>
-		</div>$endif$
-		$if(email)$<div class="email">
-			<span class="far fa-envelope"></span>
-			<a class="hide-href-print" href="mailto:$email$">$email$</a>
-		</div>$endif$
-		$if(phone)$<div class="phone">
-			<span class="fas fa-mobile-alt"></span>
-			<a class="hide-href-print" href="tel:$phone$">$phone$</a>
-		</div>$endif$
-	</div>
-	$if(links)$<div id="profiles">
-		$for(links)$<div class="item">
-			<div class="username">
-				$if(it.type)$<span class="fab fa-$it.type$ $it.type$ social"></span>$else$<span class="fas fa-external-link-alt"></span>$endif$
-				<span class="url">
-					<a target="_blank" href="$links$" rel="noreferrer">$links$</a>
-				</span>
-			</div>
-		</div>$endfor$
-	</div>$endif$
+
+
+<div id="contact-row">
+  <!-- email + phone -->
+  <div class="contact-top">
+    <span class="far fa-envelope"></span>
+    <a class="hide-href-print" href="mailto:$email$">$email$</a>
+    <span class="fas fa-mobile-alt"></span>
+    <a class="hide-href-print" href="tel:$phone$">$phone$</a>
+  </div>
+
+  <!-- Links -->
+  $if(links)$
+  <div class="contact-bottom">
+    $for(links)$
+    <span class="$if(links.icon)$$links.icon$$else$fas fa-external-link-alt$endif$"></span>
+    <span class="url">
+      <a class="hide-href-print" target="_blank" href="$links.href$" rel="noreferrer">
+        $links.text$
+      </a>
+    </span>
+    $endfor$
+  </div>
+  $endif$
+</div>
+
+
 </header>
 
 <section class="section"><section class="main-summary"><div>
@@ -101,7 +104,7 @@ $endif$
         <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
         <header>
           <div class="date">
-            <span class="startDate">$work-experience.startDate$</span> -
+            <span class="startDate">$work-experience.startDate$</span>$if(work-experience.startDate)$ -$endif$
             <span class="endDate">$work-experience.endDate$</span>
           </div>
 
@@ -111,7 +114,7 @@ $endif$
           <!-- URL -->
           <div class="job">
             $if(work-experience.url)$
-              <a href="$work-experience.url$" class="job-link">
+              <a href=$if(work-experience.url)$"https://$work-experience.url$"$endif$ class="job-link">
                 $work-experience.job$
                 <span class="job-url">[$work-experience.url$]</span>
               </a>
@@ -171,7 +174,10 @@ $endif$
           $endif$
 
 <!--          Variation: Grey text inside parens -->
-          <p class="skills-line" aria-label="Skills">
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
           $for(work-experience.projects.skills)$
             $if(work-experience.projects.skills.name)$
               <span class="skill-block">
@@ -185,6 +191,7 @@ $endif$
             $endif$
           $endfor$
           </p>
+
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -237,15 +244,13 @@ $endif$
           $if(projects.url)$<a href="$projects.url$">$projects.name$</a>$else$$projects.name$$endif$
         </div>
         <div class="date">
-          <span class="startDate">$projects.startDate$</span> -
+          <span class="startDate">$projects.startDate$</span>$if(projects.startDate)$ -$endif$
           <span class="endDate">$projects.endDate$</span>
         </div>
       </header>
       <div class="item">
         $if(projects.summary)$<div class="summary">$projects.summary$</div>$endif$
-        $if(projects.highlights)$
 
-        <!-- skills -->
         $if(projects.skills)$
         <ul class="skills-pills" aria-label="Skills">
           $for(projects.skills)$
@@ -254,12 +259,14 @@ $endif$
         </ul>
         $endif$
 
-        <ul class="highlights">
+        $if(projects.highlights)$
+        <ul>
           $for(projects.highlights)$
           <li>$projects.highlights$</li>
           $endfor$
         </ul>
         $endif$
+
       </div>
     </section>
     $endfor$
@@ -276,7 +283,7 @@ $endif$
     <section class="education-item">
       <header class="clear">
         <div class="date">
-          <span class="startDate">$education.startDate$</span> -
+          <span class="startDate">$education.startDate$</span>$if(education.startDate)$ -$endif$
           <span class="endDate">$education.endDate$</span>
         </div>
         <div class="header-left">

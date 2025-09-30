@@ -178,7 +178,7 @@
 	 font-weight: 600;
 }
  .job, .institution, .organization, .awarder {
-	 color: #606d76;
+	 /*color: #606d76; /* mid-dark grey */
 	 font-weight: 400;
 }
  .section header .date {

@@ -1,18 +1,41 @@
 name: Joe Flack
 title: Software Engineer
 subheader: Full stack and data engineering
-website: https://josephflack.com
 email: joeflack4@gmail.com
 phone: 850-982-7871
 location: Raleigh, NC
 # todo: reactivate headshot image if/when I want, or allow to be done so via some kind of makefile params
 #headshot: assets/images/headshot.jpeg
 headshot: assets/images/headshot_bw.png
+#website: https://josephflack.com  # old way
+#links:
+#- https://github.com/joeflack4
+#- https://linkedin.com/in/joeflack4/
+# remove old: website:, links: [...]
 links:
-- https://github.com/joeflack4
-- https://www.linkedin.com/in/joeflack4/
+  - type: website
+    text: josephflack.com
+    href: https://josephflack.com
+    icon: fas fa-globe
+  - type: github
+    text: github.com/joeflack4
+    href: https://github.com/joeflack4
+    icon: fab fa-github
+  - type: linkedin
+    text: linkedin.com/in/joeflack4/
+    href: https://www.linkedin.com/in/joeflack4/
+    icon: fab fa-linkedin
 toggles:
   show_projects: true
   show_publications: false
-  show_headshot: false
-summary: I'm a full stack developer specializing in web application and data engineering projects. I've worked on a wide variety of projects and developed a wide range of skills and interests. Recently, I've worked a lot in biomedical informatics. Currently developing proficiency in ML. Proficient with agents to supercharge my productivity.
+  show_headshot: true
+#summary: >
+#  I'm a full stack developer specializing in web application and data engineering projects, with increasing expertise in
+#  machine learning. I have particular experience and passion for healthcare. I employ new and extremely powerful
+#  spec-driven agentic AI techniques. That, together with my ability juggle multiple projects and lead small teams,
+#  allows me to deliver thoroughly tested, exceptionally high quality products and features at fast pace.
+summary: >
+  I'm a full stack developer specializing in web application and data engineering projects, with increasing expertise in 
+  machine learning. I have particular experience and passion for healthcare. I employ new and extremely powerful 
+  spec-driven agentic AI techniques, which allows me to deliver exceptionally well tested, full-featured deliverables 
+  extremely fast.
