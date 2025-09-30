@@ -171,13 +171,13 @@
 	 line-height: 1;
 	 opacity: 0;
 }
- .position, .company, .organization, .institution, .date, .area, .studyType, .title, .awarder {
+ .position, .job, .organization, .institution, .date, .area, .studyType, .title, .awarder {
 	 display: inline;
 }
  .position, .studyType, .area, .title, .language, .name {
 	 font-weight: 600;
 }
- .company, .institution, .organization, .awarder {
+ .job, .institution, .organization, .awarder {
 	 color: #606d76;
 	 font-weight: 400;
 }
@@ -375,7 +375,7 @@
 	}
 }
 /**************** * LAPTOP ****************/
- .company::before, .institution::before, .organization::before, .awarder::before {
+ .job::before, .institution::before, .organization::before, .awarder::before {
 	 content: ' | ';
 }
  @media screen and (min-width: 1025px) {
@@ -425,7 +425,7 @@
 	 .item-count {
 		 display: none;
 	}
-	 .company::before, .institution::before, .organization::before, .awarder::before {
+	 .job::before, .institution::before, .organization::before, .awarder::before {
 		 content: ' at ';
 	}
 	 .main-summary {

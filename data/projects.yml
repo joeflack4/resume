@@ -1,26 +1,61 @@
 projects:
-  - id: project-item-0
-    name: JSON Resume
-    url: https://jsonresume.org
-    startDate: "2014-04"
-    endDate: "Current"
-    summary: >
-      JSON Resume is a community-driven standard for resumes with an
-      ecosystem of open-source tools and themes.
-    highlights:
-      - This resume is built with JSON Resume
-      - Over 3000 stars on GitHub
-      - Community developed themes
-      - Tens of thousands of users
+## template
+#  - id: proj-id
+#    name:
+#    url:
+##    startDate:
+##    endDate: 202?  # end only?
+#    summary: >
+#      TODO
+#    skills:
+#      -
+##    highlights:
+##      -
 
-  - id: project-item-1
-    name: My Awesome Tool
-    url: https://example.com
-    startDate: "2023-01"
-    endDate: "2024-08"
+  - id: markdown-manager
+    name: Markdown Manager
+    url: github.com/joeflack4/markdown-manager
+    endDate: 2025/09
     summary: >
-      A CLI and web UI for X that improved Y by Z%.
-    highlights:
-      - Reduced processing time by 40%
-      - Added plugin system and SDK
-      - Deployed to 3 environments with CI/CD
+      Break apart, dynamically construct, and sync sets of related markdown files, subsections, and checklists.
+
+  - id: health-hub
+    name: Health Hub
+    url: gitlab.com/the-health-hub/health-hub.web.client
+    endDate: "2019"
+    summary: >
+      A pre-release phase project of a web application that is the central point allowing users to manage their personal
+      health data collected from a suite of illness-specific mobile applications.
+    skills:
+      - JavaScript
+      - React
+      - GraphQL
+      - Neo4j
+      - Apollo
+
+  - id: personal-health-data-analysis
+    name: Personal Health Data Analysis
+    url: tinyurl.com/jf4healthdata
+#    url: https://nbviewer.org/github/joeflack4/jupyter_notebooks/blob/master/health/Ashley/v3-2018.06.14/Health%20Calendar%20Analysis.ipynb
+    startDate: 2018
+    endDate: Current
+    summary: >
+      Have worked in several repos to collect and analyze various aspects of my health data over the years.
+    skills:
+      - Python
+      - Pandas
+      - Plotly
+      - Dash
+      - Jupyter Notebook
+      - R
+      - Google Sheets / Forms
+
+  - id: proj-id
+    name:
+    url:
+#    endDate: 202?  # end only?
+    summary: >
+      TODO
+    skills:
+      -
+

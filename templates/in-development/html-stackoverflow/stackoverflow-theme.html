@@ -81,43 +81,11 @@ $endif$
 <section class="section"><section class="main-summary"><div>
 	$summary$
 </div></section></section>
+<!--  Alt major way to group content, using content/*.md rather than Non data/*.yml -->
+<!--<main class="resume-content">-->
+<!--	$body$-->
+<!--</main>-->
 
-<main class="resume-content">
-	$body$
-</main>
-
-
-
-
-
-
-<!--<section class="section">-->
-<!--  <header><h2 class="section-title">Work Experience</h2></header>-->
-
-<!--  <section id="work">-->
-<!--    <section class="work-item" id="work-item-0">-->
-<!--      <label for="work-item-0"></label>-->
-<!--      <header class="clear">-->
-<!--        <div class="date">-->
-<!--          <span class="startDate">May 2020</span>-->
-<!--          <span class="endDate">- Current</span>-->
-<!--        </div>-->
-<!--        <div class="position">Product Engineer</div>-->
-<!--        <div class="company">Misc Companies</div>-->
-<!--      </header>-->
-<!--      <span class="subheader">Melbourne</span>-->
-<!--      <div class="item" id="work-item">-->
-<!--        <div class="summary">Over the past several years, I&#x27;ve worked at various roles and companies. Mostly early stage startups, doing full stack product development. </div>-->
-<!--        <ul class="highlights">-->
-<!--          <li>React / Next</li>-->
-<!--          <li>Node / Laravel</li>-->
-<!--          <li>LLM&#x27;s</li>-->
-<!--          <li>Diagrams / Canvas</li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </section>-->
-<!--  </section>-->
-<!--</section>-->
 
 
 <section class="section">
@@ -125,33 +93,58 @@ $endif$
   <section id="work">
     $for(work-experience)$
     <section class="work-item"$if(work-experience.id)$ id="$work-experience.id$"$endif$>
-      $if(work-experience.id)$<label for="$work-experience.id$"></label>$endif$
-      <header class="clear">
-        <div class="date">
-          <span class="startDate">$work-experience.startDate$</span>
-          <span class="endDate">$work-experience.endDate$</span>
+      <div class="work-card">
+        <!-- id -->
+        $if(work-experience.id)$<label for="$work-experience.id$"></label>$endif$
+
+        <!-- Start/end date -->
+        <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
+        <header>
+          <div class="date">
+            <span class="startDate">$work-experience.startDate$</span> -
+            <span class="endDate">$work-experience.endDate$</span>
+          </div>
+
+          <!-- Title -->
+          <div class="position">$work-experience.title$</div>
+
+          <!-- URL -->
+          <div class="job">
+            $if(work-experience.url)$
+              <a href="$work-experience.url$" class="job-link">
+                $work-experience.job$
+                <span class="job-url">[$work-experience.url$]</span>
+              </a>
+            $else$
+              $work-experience.job$
+            $endif$
+          </div>
+        </header>
+
+        <div class="item work-card__body">
+          <!-- Loc -->
+          <!--      $if(work-experience.location)$-->
+          <!--      <span class="subheader">$work-experience.location$</span>-->
+          <!--      $endif$-->
+
+          <!-- Summary -->
+          $if(work-experience.summary)$
+          <div class="summary">$work-experience.summary$</div>
+          $endif$
+
+          <!-- Job skills overview -->
+          $if(work-experience.skills)$
+          <ul class="skills-pills" aria-label="Skills">
+            $for(work-experience.skills)$
+            <li>$work-experience.skills$</li>
+            $endfor$
+          </ul>
+          $endif$
         </div>
-        <div class="position">$work-experience.title$</div>
-        <div class="company">$work-experience.job$</div>
-      </header>
+      </div>
 
-      $if(work-experience.location)$
-      <span class="subheader">$work-experience.location$</span>
-      $endif$
-
+      <!-- Job projects -->
       <div class="item">
-        $if(work-experience.summary)$
-        <div class="summary">$work-experience.summary$</div>
-        $endif$
-
-        $if(work-experience.skills)$
-        <ul class="skills-pills" aria-label="Skills">
-          $for(work-experience.skills)$
-          <li>$work-experience.skills$</li>
-          $endfor$
-        </ul>
-        $endif$
-
         $if(work-experience.projects)$
         $for(work-experience.projects)$
         <section class="project-item"$if(work-experience.projects.id)$ id="$work-experience.projects.id$"$endif$>
@@ -177,17 +170,51 @@ $endif$
           </ul>
           $endif$
 
-          $if(work_experience.projects.skills)$
-          <p class="skills">
-            $for(work_experience.projects.skills)$$work_experience.projects.skills$$sep$, $endfor$
+<!--          Variation: Grey text inside parens -->
+          <p class="skills-line" aria-label="Skills">
+          $for(work-experience.projects.skills)$
+            $if(work-experience.projects.skills.name)$
+              <span class="skill-block">
+                <span class="skill-main">$work-experience.projects.skills.name$</span>
+                $if(work-experience.projects.skills.sub)$
+                  <span class="skill-sub">($for(work-experience.projects.skills.sub)$$work-experience.projects.skills.sub$$sep$, $endfor$)</span>
+                $endif$
+              </span>
+            $else$
+              <span class="skill-block">$work-experience.projects.skills$</span>
+            $endif$
+          $endfor$
           </p>
-          $endif$
 
-          $if(work_experience.projects.roles)$
-          <p class="roles">
-            $for(work_experience.projects.roles)$$work_experience.projects.roles$$sep$, $endfor$
-          </p>
-          $endif$
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          $for(work-experience.projects.skills)$-->
+<!--            $if(work-experience.projects.skills.name)$-->
+<!--              <span class="skill-block">-->
+<!--                <span class="pill">$work-experience.projects.skills.name$</span>-->
+<!--                $if(work-experience.projects.skills.sub)$-->
+<!--                  <span class="sub">($for(work-experience.projects.skills.sub)$$work-experience.projects.skills.sub$$sep$, $endfor$)</span>-->
+<!--                $endif$-->
+<!--              </span>-->
+<!--            $else$-->
+<!--              <span class="skill-block">$work-experience.projects.skills$</span>-->
+<!--            $endif$-->
+<!--          $endfor$-->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          $if(work-experience.projects.skills)$-->
+<!--          <p class="skills">-->
+<!--            $for(work-experience.projects.skills)$$work-experience.projects.skills$$sep$, $endfor$-->
+<!--          </p>-->
+<!--          $endif$-->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          $if(work-experience.projects.roles)$-->
+<!--          <p class="roles">-->
+<!--            $for(work-experience.projects.roles)$$work-experience.projects.roles$$sep$, $endfor$-->
+<!--          </p>-->
+<!--          $endif$-->
         </section>
         $endfor$
         $endif$
@@ -196,7 +223,6 @@ $endif$
     $endfor$
   </section>
 </section>
-
 
 
 
@@ -211,13 +237,23 @@ $endif$
           $if(projects.url)$<a href="$projects.url$">$projects.name$</a>$else$$projects.name$$endif$
         </div>
         <div class="date">
-          <span class="startDate">$projects.startDate$</span>
+          <span class="startDate">$projects.startDate$</span> -
           <span class="endDate">$projects.endDate$</span>
         </div>
       </header>
       <div class="item">
         $if(projects.summary)$<div class="summary">$projects.summary$</div>$endif$
         $if(projects.highlights)$
+
+        <!-- skills -->
+        $if(projects.skills)$
+        <ul class="skills-pills" aria-label="Skills">
+          $for(projects.skills)$
+          <li>$projects.skills$</li>
+          $endfor$
+        </ul>
+        $endif$
+
         <ul class="highlights">
           $for(projects.highlights)$
           <li>$projects.highlights$</li>
@@ -240,7 +276,7 @@ $endif$
     <section class="education-item">
       <header class="clear">
         <div class="date">
-          <span class="startDate">$education.startDate$</span>
+          <span class="startDate">$education.startDate$</span> -
           <span class="endDate">$education.endDate$</span>
         </div>
         <div class="header-left">

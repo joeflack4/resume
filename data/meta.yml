@@ -7,6 +7,7 @@ phone: 850-982-7871
 location: Raleigh, NC
 # todo: reactivate headshot image if/when I want, or allow to be done so via some kind of makefile params
 #headshot: assets/images/headshot.jpeg
+headshot: assets/images/headshot_bw.png
 links:
 - https://github.com/joeflack4
 - https://www.linkedin.com/in/joeflack4/

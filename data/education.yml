@@ -2,10 +2,10 @@ education:
   - institution: University of Florida
     area: Philosophy
     studyType: Bachelor of Arts
-    startDate: "2004-09"
-    endDate: "2008-12"
+    startDate: "2004/09"
+    endDate: "2008/12"
   - institution: Pensacola State College
     area: General Studies
     studyType: Associate of Arts
-    startDate: "2002-08"
-    endDate: "2004-06"
+    startDate: "2002/08"
+    endDate: "2004/06"

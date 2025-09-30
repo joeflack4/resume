@@ -1,47 +1,59 @@
 work-experience:
-  - job: JHU Biomedical Informatics and Data Science team
+  - job: "Johns Hopkins: Biomedical Informatics and Data Science team"
     title: Software Engineer
-    startDate: 2021-06
-    endDate: 2025-07
+    url: dhsi.med.jhmi.edu/
+    startDate: 2021/06
+    endDate: 2025/07
+    summary: >
+      Managed and developed on multiple simultaneous projects, involving full stack, data, and semantic/ontology 
+      engineering. Effectively lead small teams.
     skills:
     - Python
-    - Ontology engineering
-    - ReactJS
+    - React
+    - Full Stack
     - Biomedical Informatics
-    - Full stack
+    - Ontology Engineering
     projects:
+
     - name: TermHub
       url: https://bit.ly/termhub
-      about: Web app to create and manage biomedical / terminological value sets, primarily for virtual cohort selection. Involved complex PostgreSQL expressions, joins, views, and indexing, utilizing Jinja templates. github.com/jhu-bids/termhub
+      about: >
+        Managed small team on web app to create and manage biomedical / terminological value sets, primarily for virtual
+        cohort selection. Involved complex tmeplate-based SQL system. github.com/jhu-bids/termhub
       skills:
-      - Python (FastAPI, networkx, pandas, SQLAlchemy)
-      - JavaScript (React, Jest, Playwright, TypeScript, Node, npm, Material UI)
-      - PostgreSQL
-      - GitHub Actions
+      - Python (FastAPI, networkx, SQLAlchemy)
+      - JavaScript (React, TypeScript, Material UI)
+      - PostgreSQL (GIN & GiST indexing, window functions, materialized views, etc)
       - Azure
       - Apache Parquet
-      - Agile/Scrum
-      - Kanban
+      #      - GitHub Actions
+#      - Agile/Scrum
+#      - Kanban
       roles:
       - Primary backend dev
       - Full stack dev
       - Project management
+
     - name: CompLOINC
       url: https://github.com/loinc/comp-loinc
-      about: Rendered LOINC as a proper ontology. Managed data processing pipeline. Performed semantic similarity analyses.
+      about: >
+        Managed small team to render biomedical vocabulary as a proper ontology. Lead on data processing pipeline, 
+        semantic harmonization, and CI/CD.
       skills:
-      - Python (Poetry, black, networkx, pandas, PyTorch, Sentence Transformers, LinkML, Matplotlib, Plotly, Dash)
-      - SPARQL
-      - OWL
-      - Makefile
-      - GitHub Actions
-      - Render.com
-      - TDD
-      - Kanban
-      - Data engineering
+        - name: Python
+          sub: [networkx, PyTorch, Sentence Transformers, LinkML, Matplotlib, Plotly, Dash]
+        - SPARQL
+        - OWL
+        - render.com
+#        - Makefile
+#        - GitHub Actions
+#        - TDD
+#        - Kanban
+#        - Data engineering
       roles:
       - Developer
       - Project Management
+
     - name: Mondo Disease Ontology
       url: https://github.com/monarch-initiative/mondo-ingest
       about: Managed ingest stack. Coordinated several repos & data sources.
@@ -63,9 +75,12 @@ work-experience:
       - Kanban
       roles:
       - Developer
+
     - name: TIMS (Terminology Infrastructure Management Systems)
       url: https://www.timsbiomed.org/
-      about: Deployed and maintained web servers. Helped write custom extensions in Java. Wrote data processing pipelines and libraries.
+      about: >
+        Deployed and maintained web servers. Helped write custom extensions in Java. Wrote data processing pipelines and
+        libraries.
       skills:
       - Python
       - JavaScript
@@ -89,14 +104,19 @@ work-experience:
       roles:
       - Developer
       - Project Management
-  - job: JHSPH Tuberculosis Modeling and Translational Epidemiology Group
+
+
+  - job: "Johns Hopkins: Tuberculosis Modeling and Translational Epi Group"
     title: Sr. Programmer Analyst
-    startDate: 2019-10
-    endDate: 2021-06
+    url: modeltb.org
+    startDate: 2019/10
+    endDate: 2021/06
     skills: []
     projects:
+
     - name: JHEEM (Ending HIV)
-      about: Implemented front-end and integrated various back-end services for a web application related to HIV modeling.
+      about: >
+        Implemented front-end and integrated various back-end services for a web application related to HIV modeling.
       skills:
       - R
       - Shiny
@@ -109,14 +129,20 @@ work-experience:
       - SMTP
       roles:
       - Web development
+
     - name: Impaact4TB
-      about: Co-authored on a project related to preventative therapies for Tuberculosis (TB). Helped with code structure and debugging. Assisted with sensitivity analyses.
+      about: >
+        Co-authored on a project related to preventative therapies for Tuberculosis (TB). Helped with code structure and
+        debugging. Assisted with sensitivity analyses.
       skills:
       - R
       roles:
       - Programmer Analyst
+
     - name: COVID NAT-RDT
-      about: Implemented the front-end for COVID-19 related model for optimizing lab testing throughput and cost effectiveness. Translated MATLAB model into R.
+      about: >
+        Implemented the front-end for COVID-19 related model for optimizing lab testing throughput and cost 
+        effectiveness. Translated MATLAB model into R.
       skills:
       - R
       - Shiny
@@ -125,8 +151,11 @@ work-experience:
       - MATLAB
       roles:
       - Web development
+
     - name: Ghana Lab Network
-      about: Created web application. Built data visualizations, multi-format data harmonization (APIs, CSVs, PDFs), lexical analyses, and data analyses.
+      about: >
+        Created web application. Built data visualizations, multi-format data harmonization (APIs, CSVs, PDFs), lexical 
+        analyses, and data analyses.
       skills:
       - Python
       - Pandas
@@ -141,8 +170,12 @@ work-experience:
       - Data engineering
       - Data management
       - Web development
+
     - name: MDRTB agent-based Modeling
-      about: Implemented parts of epidemiological model for MDRTB (Multidrug Resistant Tuberculosis) in C++. Calibrated models by tuning parameters and modifying structural code. Executed simulations on HPC cluster. Analyzed model fitness in R and collaborated with epidemiologists.
+      about: > 
+        Implemented parts of epidemiological model for MDRTB (Multidrug Resistant Tuberculosis) in C++. Calibrated 
+        models by tuning parameters and modifying structural code. Executed simulations on HPC cluster. Analyzed model 
+        fitness in R and collaborated with epidemiologists.
       skills:
       - C++
       - R
@@ -153,6 +186,7 @@ work-experience:
       - CMake
       roles:
       - Model implementer
+
     - name: Kampala Enumerator Map Tool
       about: Created a GIS tool to help interviewers with household survey activities in Kampala, Uganda.
       skills:
@@ -165,14 +199,18 @@ work-experience:
       - GoogleSheets
       roles:
       - Web development
+
     - name: REDCap Operations Costing Database
-      about: Built an advanced, customizable template database deployed in various countries for an operations costing team; included a front-end with interconnected forms for multiple phases of data collection.
+      about: >
+        Built an advanced, customizable template database deployed in various countries for an operations costing team; 
+        included a front-end with interconnected forms for multiple phases of data collection.
       skills:
       - SQL
       - REDCap
       - Excel
       roles:
       - System architect
+
     - name: OneDrive Report Automation
       about: Automated a reporting aggregation process involving Excel reports hosted on OneDrive.
       skills:
@@ -182,8 +220,11 @@ work-experience:
       - Excel
       roles:
       - Software engineer
+
     - name: General Technical Support
-      about: Supported a small data science and software engineering team to improve existing codebases for various agent-based epidemiological models written in C++; guided best practices.
+      about: >
+        Supported a small data science and software engineering team to improve existing codebases for various 
+        agent-based epidemiological models written in C++; guided best practices.
       skills: []
       roles: []
     - name: Zulip Analysis
@@ -196,8 +237,11 @@ work-experience:
       - Matplotlib
       roles:
       - Lead dev
+
     - name: Informatics Portal Mockup
-      about: Created a static ReactJS web application for patients to manage contact and biometric data; built a backend API for storing data and interacting with cloud storage for medical records.
+      about: >
+        Created a static ReactJS web application for patients to manage contact and biometric data; built a backend API 
+        for storing data and interacting with cloud storage for medical records.
       skills:
       - ReactJS
       - JavaScript
@@ -207,12 +251,15 @@ work-experience:
       - Cloud storage
       roles:
       - Web development
+
+
   - job: PMA (Performance Monitoring for Action)
     title: Programmer Analyst
-    startDate: 2016-09
-    endDate: 2019-10
+    startDate: 2016/09
+    endDate: 2019/10
     skills: []
     projects:
+
     - name: PMA API
       about: RESTful API for programmatic access to PMA2020 data.
       skills:
@@ -227,6 +274,7 @@ work-experience:
       - Redis
       roles:
       - Developer
+
     - name: Datalab
       about: Web application for visualizing PMA2020 data.
       skills:
@@ -235,6 +283,7 @@ work-experience:
       - CircleCI
       roles:
       - Dev team lead
+
     - name: XFormTest
       about: CLI tool and library for automated testing of XForms survey definitions.
       skills:
@@ -243,7 +292,9 @@ work-experience:
       roles:
       - Product lead
       - Lead developer
-    - name: PPP
+
+    - name: Pretty PDF Printer
+      url:
       about: Tool for converting XForms into printable, editable forms such as Word documents.
       skills:
       - Python (Flask, Argparse, PyPI)
@@ -255,26 +306,32 @@ work-experience:
       - Product lead
       - Lead developer
       - Dev team lead
+
     - name: PMA2020 DHIS2
-      about: Deployment of DHIS2 data warehouse/BI solution for governments and M&E organizations to store medical and public health data.
+      about: >
+        Deployment of DHIS2 data warehouse/BI solution for governments and M&E organizations to store medical and public 
+        health data.
       skills:
       - Python
       - Bash
       - SQL
       roles:
       - Project lead
+
     - name: pmix
       about: CLI tools for working with XForms.
       skills:
       - Python
       roles:
       - Contributor
+
     - name: QTools2
       about: Converter from XLSForms to XForms for electronic surveys.
       skills:
       - Python
       roles:
       - Contributor
+
     - name: PMA Translation Hub
       about: Pre-release web application for translation management of M&E survey content.
       skills:
@@ -283,12 +340,19 @@ work-experience:
       - Heroku
       roles:
       - Lead developer
+
+
   - job: Sonshine Companion Care
-    title: Caregiver, Administrator, Staff Accountant; IT Team Lead
-    startDate: 2014-09
-    endDate: 2016-09
+    title: Head of Information Technology
+    summary: >
+      Worked for local home health care company. Proved my value and increased responsibility fast, starting as a 
+      caregiver, then moving to administration. Eventually directed all IT, including systems, networking, web presence,
+      software development.
+    startDate: 2014/09
+    endDate: 2016/09
     skills: []
     projects:
+
     - name: Just-a-Dash
       about: Light-weight combined HRM+CRM tool.
       skills:
@@ -299,8 +363,11 @@ work-experience:
       - Twilio
       roles:
       - Lead developer
+
     - name: Automation
-      about: 'Finance reporting tools: scripts and spreadsheets to create custom reporting not available in accounting software; scripts to rename and move files.'
+      about: >
+        Finance reporting tools: scripts and spreadsheets to create custom reporting not available in accounting 
+        software; scripts to rename and move files.
       skills:
       - PowerShell
       - ODBC
@@ -308,6 +375,7 @@ work-experience:
       - GoogleSheets
       roles:
       - Software lead
+
     - name: Company website
       about: Designed and administered company website.
       skills:
@@ -315,9 +383,11 @@ work-experience:
       roles:
       - Design lead
       - Web admin
+
+
   - job: Several schools
     title: English Teacher
-    startDate: 2009-03
-    endDate: 2014-08
+    startDate: 2009/03
+    endDate: 2014/08
     skills: []
     projects: []

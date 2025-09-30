@@ -1,22 +1,23 @@
 /* Pills */
 .skills-pills {
   list-style: none;
-  margin: 6px 0 0;
+  margin: 6px auto 0;    /* auto left/right centers the UL itself */
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  text-align: center;    /* center inline-block children */
+  max-width: max-content;/* shrink UL to fit its contents */
 }
 .skills-pills li {
   display: inline-block;
+  margin: 3px;                /* spacing between pills */
   padding: 4px 10px;
-  border-radius: 9999px;     /* pill */
-  background: #f2f3f5;       /* very light gray */
-  border: 1px solid #e4e6eb; /* subtle outline */
+  border-radius: 9999px;      /* pill */
+  background: #f2f3f5;        /* very light gray */
+  border: 1px solid #e4e6eb;  /* subtle outline */
   font-size: 12px;
   line-height: 1;
-  white-space: nowrap;       /* keeps each pill on one line */
+  white-space: nowrap;        /* keeps each pill on one line */
 }
+
 @media print {
   .skills-pills li {
     background: #eee;
@@ -28,6 +29,42 @@
 /* Section headers */
 .project-item {
   margin-top: 0.5em;
+}
+
+/* Job entry headers */
+/* - Card container */
+.work-card {
+  background: #f7f8fa;            /* light grey */
+  border: 1px solid #e5e7eb;      /* subtle outline */
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* - Optional: slightly separate header/body */
+.work-card__header { margin-bottom: 8px; }  /* currently unused i think */
+.work-card__body {
+  margin-top: 4px;
+  display: block;        /* ensure it's a block element */
+  width: 100%;           /* take full card width */
+  grid-column: 1 / -1;   /* if parent uses CSS grid */
+  align-self: stretch;   /* if parent uses flex/grid */
+}
+
+
+/* - Print tweaks to keep background/borders */
+@media print {
+  .work-card,
+  .skills-pills li {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Job entry summary */
+.summary {
+  margin-bottom: 7px;
 }
 
 /* Links */
@@ -44,3 +81,32 @@ a:active {
   color: #0073e6;        /* or whatever your theme’s hover color is */
   text-decoration: underline; /* or another hover style you like */
 }
+
+/* Work experience > projects > skills */
+.job-url {
+  font-size: 0.85em;
+  color: #6b7280;              /* grey brackets part */
+  margin-left: 0.25em;
+}
+
+/* - Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) */
+.skills-line { margin-top: 6px; }
+.skill-block { display: inline; }
+.skill-block:not(:last-child)::after { content: ", "; } /* auto-commas */
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: #f2f3f5;
+  border: 1px solid #e4e6eb;
+  font-size: 12px; line-height: 1;
+}
+.sub { margin-left: 4px; }
+
+/* - variation: Grey text inside parens */
+.skills-line { margin-top: 6px; }
+.skill-block { display: inline; }
+.skill-block:not(:last-child)::after { content: ", "; }
+.skill-main { color: #111827; }                    /* near-black */
+.skills-line .skill-sub { color: #6b7280 !important; } /* dark grey override */
+
