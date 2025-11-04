@@ -6,9 +6,9 @@ work-experience:
     endDate: Current
     summary: >
       Novel combination of recommender systems and gen AI to perpetually generate images based on 
-      user preferences. Optimizes for model and prompt components that work well when combined. Developing
-      extremely quickly using the latest agentic tools, with bundles of features, pages of documentation, and hundreds 
-      of new tests created every week.
+      user preferences. Optimizes for model and prompt components that work well when combined. Performant at tens of 
+      millions of rows. Developing extremely quickly using the latest agentic tools, with bundles of features, pages of 
+      documentation, and hundreds of new tests created weekly.
     skills:
     - Python
     - React
@@ -16,6 +16,28 @@ work-experience:
     - Recommender Systems
     - ML Engineering
     - Agentic AI
+    projects:
+
+    - name: Cloud infrastructure
+      skills:
+      - name: PostgreSQL
+        sub: [GIN & GiST indexing, FTS, Partitioning, automated aggregation, etc]
+#        Fact and dimension modeling, time-series reporting automation
+      - Redis
+      - AWS
+      - Docker
+      - Terraform
+
+    - name: Desktop & web backend
+      skills:
+      - name: Python
+        sub: [FastAPI, SQLAlchemy, Celery, Alembic]
+      - ComfyUI
+
+    - name: Frontend
+      skills:
+      - name: JavaScript
+        sub: [React, TypeScript, Material UI, Vite, Playwright]
 
   - job: "Johns Hopkins: Biomedical Informatics and Data Science team"
     title: Software Engineer
@@ -42,7 +64,7 @@ work-experience:
       - name: Python
         sub: [FastAPI, networkx, SQLAlchemy]
       - name: JavaScript
-        sub: [React, TypeScript, Material UI]
+        sub: [React, TypeScript, Material UI, Vite, Jest, Playwright]
       - name: PostgreSQL
         sub: [GIN & GiST indexing, window functions, materialized views, etc]
       - Azure
