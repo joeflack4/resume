@@ -5,8 +5,8 @@ work-experience:
     startDate: 2025/09
     endDate: Current
     summary: >
-      Novel combination of recommender systems and gen AI to perpetually generate huge quantities of images based on 
-      user preference. Finds models and prompts that work well when combined, and filters those which don't. Developing
+      Novel combination of recommender systems and gen AI to perpetually generate images based on 
+      user preferences. Optimizes for model and prompt components that work well when combined. Developing
       extremely quickly using the latest agentic tools, with bundles of features, pages of documentation, and hundreds 
       of new tests created every week.
     skills:
@@ -37,7 +37,7 @@ work-experience:
       url: https://bit.ly/termhub
       about: >
         Managed small team on web app to create and manage biomedical / terminological value sets, primarily for virtual
-        cohort selection. Involved complex tmeplate-based SQL system. github.com/jhu-bids/termhub
+        cohort selection. Involved complex template-based SQL system. github.com/jhu-bids/termhub
       skills:
       - name: Python
         sub: [FastAPI, networkx, SQLAlchemy]
@@ -384,7 +384,7 @@ work-experience:
     endDate: 2019/10
     skills: [Python, Flask, SQL, JavaScript, Full Stack]
     summary: >
-      Provided devleopment and maaintained codebases for public health survey operations organization, including 
+      Provided development and maintained codebases for public health survey operations organization, including 
       creation of web API, software libraries, frontend databases, and data visualization app.
     projects:
 
@@ -474,7 +474,7 @@ work-experience:
     - name: Open Data Kit forms development
       url: https://github.com/PMA-2020/collect
       about: >
-        Using XForms, created programmatic surveys for data collection. Runs on pplatforms such as Open Data Kit (ODK).
+        Using XForms, created programmatic surveys for data collection. Runs on platforms such as Open Data Kit (ODK).
       skills:
         - XPath
         - XForms
