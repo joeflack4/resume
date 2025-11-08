@@ -34,14 +34,20 @@ output/$(FILENAME_STUB).docx:
 
 docx-from-template: output/$(FILENAME_STUB).docx
 
-docx-from-html-via-pandoc:
-	pandoc output/$(FILENAME_STUB).html -o output/$(FILENAME_STUB)-from-html-via-pandoc.docx
+# input: canonical
+output/$(FILENAME_STUB)-from-html-via-pandoc.docx: output/$(FILENAME_STUB).html
+	pandoc $< -o $@
+
+docx-from-html-via-pandoc: output/$(FILENAME_STUB)-from-html-via-pandoc.docx
 
 # FYI: "MS Word 2007 XML" is just the filter name LibreOffice uses internally for .docx output. It’s not literally limited to 2007-era features — it produces normal modern Office Open XML DOCX files that open fine in Word 2016/2019/365.
-docx-from-html-via-libre-office:
+# input: canonical
+output/$(FILENAME_STUB)-from-html-via-libre-office.docx: output/$(FILENAME_STUB).html
 	soffice --headless --convert-to docx:"MS Word 2007 XML" \
-	output/$(FILENAME_STUB).html --outdir tmp/
-	@mv tmp/$(FILENAME_STUB).docx output/$(FILENAME_STUB)-from-html-via-libre-office.docx
+	$< --outdir tmp/
+	@mv tmp/$(FILENAME_STUB).docx $@
+
+docx-from-html-via-libre-office: output/$(FILENAME_STUB)-from-html-via-libre-office.docx
 
 docx-from-html: docx-from-html-via-pandoc docx-from-html-via-libre-office
 
