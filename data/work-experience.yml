@@ -26,7 +26,7 @@ work-experience:
       - Redis
       - AWS
       - Docker
-      - Terraform
+      - IAC (Terraform)
 
     - name: Desktop & web backend
       skills:
@@ -38,6 +38,23 @@ work-experience:
       skills:
       - name: JavaScript
         sub: [React, TypeScript, Material UI, Vite, Playwright]
+
+  - job: CarePath (Project)
+    title: Solo Dev
+    url: tinyurl.com/carepath-post
+    startDate: 2025/11
+    endDate: 2025/11
+    summary: >
+      AI chatbot connected to a medical record system. Demonstrates a fault tolerant and scalable microservice setup for 
+      deploying LLMs in web applications, with responses augmented by relevant user data using RAG. Built in 4 days 
+      using spec-driven development.
+    skills:
+    - Python
+    - React
+    - Mongo
+    - AWS
+    - Kubernetes
+    - ML Ops
 
   - job: "Johns Hopkins: Biomedical Informatics and Data Science team"
     title: Software Engineer
@@ -239,6 +256,16 @@ work-experience:
         - Zulip API
       roles:
         - Lead dev
+
+  - job: Emprata
+    title: Backend Developer
+    url: emprata.com
+    startDate: 2021/06
+    endDate: 2021/11
+    skills: [JavaScript, Node, Express, REST API, GIS]
+    summary: >
+      Part time contract working on API for flagship product, Resource Optimizer, helping the FCC to allocate resources 
+      and optimize geospatial telecom coverage.  
 
   - job: "Johns Hopkins: Tuberculosis Modeling and Translational Epi Group"
     title: Sr. Programmer Analyst

@@ -1,9 +1,14 @@
 .PHONY: all clean html html-plain html-stackoverflow html-canonical docx stackoverflow docx-from-template \
-docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office
+docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable
 
 FILENAME_STUB=Joe-Flack-Résumé
 
-all: html docx stackoverflow
+all-unstable: html docx stackoverflow
+
+all: default
+
+default:
+	$(MAKE) html-canonical -B
 
 clean:
 	rm -f output/*
