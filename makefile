@@ -22,7 +22,21 @@ html-plain: output/$(FILENAME_STUB)-plain.html
 output/$(FILENAME_STUB)-StackOverflow.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml > $@
 
+output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html:
+	pandoc --defaults defaults/html-stackoverflow.yaml \
+		-M toggles.show_project_statements=true \
+		-M toggles.show_project_skills=false > $@
+
+output/$(FILENAME_STUB)-StackOverflow--oriented-as-skills.html:
+	pandoc --defaults defaults/html-stackoverflow.yaml \
+		-M toggles.show_project_statements=false \
+		-M toggles.show_project_skills=true > $@
+
 html-stackoverflow: output/$(FILENAME_STUB)-StackOverflow.html
+
+html-stackoverflow--oriented-as-statements: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html
+
+html-stackoverflow--oriented-as-skills: output/$(FILENAME_STUB)-StackOverflow--oriented-as-skills.html
 
 output/$(FILENAME_STUB).html: output/$(FILENAME_STUB)-StackOverflow.html
 	@cp $< $@

@@ -18,7 +18,8 @@ work-experience:
     - Agentic AI
     projects:
 
-    - name: Cloud infrastructure
+# TODO: 88m rows
+    - name: Web platform foundation  # TODO
       skills:
       - name: PostgreSQL
         sub: [GIN & GiST indexing, FTS, Partitioning, automated aggregation, etc]
@@ -27,17 +28,34 @@ work-experience:
       - AWS
       - Docker
       - IAC (Terraform)
-
-    - name: Desktop & web backend
-      skills:
       - name: Python
         sub: [FastAPI, SQLAlchemy, Celery, Alembic]
       - ComfyUI
-
-    - name: Frontend
-      skills:
       - name: JavaScript
         sub: [React, TypeScript, Material UI, Vite, Playwright]
+      statements:
+      - Created a bla bla
+
+#    - name: Cloud infrastructure
+#      skills:
+#      - name: PostgreSQL
+#        sub: [GIN & GiST indexing, FTS, Partitioning, automated aggregation, etc]
+##        Fact and dimension modeling, time-series reporting automation
+#      - Redis
+#      - AWS
+#      - Docker
+#      - IAC (Terraform)
+#
+#    - name: Desktop & web backend
+#      skills:
+#      - name: Python
+#        sub: [FastAPI, SQLAlchemy, Celery, Alembic]
+#      - ComfyUI
+#
+#    - name: Frontend
+#      skills:
+#      - name: JavaScript
+#        sub: [React, TypeScript, Material UI, Vite, Playwright]
 
   - job: CarePath (Project)
     title: Solo Dev
@@ -55,6 +73,10 @@ work-experience:
     - AWS
     - Kubernetes
     - ML Ops
+    projects:
+    - name: MVP
+      statements:
+      - Created a bla bla
 
   - job: "Johns Hopkins: Biomedical Informatics and Data Science team"
     title: Software Engineer
@@ -77,6 +99,10 @@ work-experience:
       about: >
         Managed small team on web app to create and manage biomedical / terminological value sets, primarily for virtual
         cohort selection. Involved complex template-based SQL system. github.com/jhu-bids/termhub
+      roles:
+      - Primary backend dev
+      - Full stack dev
+      - Project management
       skills:
       - name: Python
         sub: [FastAPI, networkx, SQLAlchemy]
@@ -90,10 +116,8 @@ work-experience:
 #      - GitHub Actions
 #      - Agile/Scrum
 #      - Kanban
-      roles:
-      - Primary backend dev
-      - Full stack dev
-      - Project management
+      statements:
+      - Created a bla bla
 
     - name: CompLOINC
       url: https://github.com/loinc/comp-loinc

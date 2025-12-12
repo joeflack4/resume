@@ -173,6 +173,17 @@ $endif$
           </ul>
           $endif$
 
+          $if(toggles.show_project_statements)$
+          $if(work-experience.projects.statements)$
+          <ul class="statements">
+            $for(work-experience.projects.statements)$
+            <li>$work-experience.projects.statements$</li>
+            $endfor$
+          </ul>
+          $endif$
+          $endif$
+
+          $if(toggles.show_project_skills)$
 <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
@@ -191,6 +202,7 @@ $endif$
             $endif$
           $endfor$
           </p>
+          $endif$
 
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
@@ -251,12 +263,24 @@ $endif$
       <div class="item">
         $if(projects.summary)$<div class="summary">$projects.summary$</div>$endif$
 
+        $if(toggles.show_project_statements)$
+        $if(projects.statements)$
+        <ul class="statements">
+          $for(projects.statements)$
+          <li>$projects.statements$</li>
+          $endfor$
+        </ul>
+        $endif$
+        $endif$
+
+        $if(toggles.show_project_skills)$
         $if(projects.skills)$
         <ul class="skills-pills" aria-label="Skills">
           $for(projects.skills)$
           <li>$projects.skills$</li>
           $endfor$
         </ul>
+        $endif$
         $endif$
 
         $if(projects.highlights)$
