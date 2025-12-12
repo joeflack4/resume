@@ -3,12 +3,25 @@ docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default
 
 FILENAME_STUB=Joe-Flack-Résumé
 
-all-unstable: html docx stackoverflow
+all-unstable: html docx
 
 all: default
 
 default:
 	$(MAKE) html-canonical -B
+
+
+
+# todo: move these things around to correct places in file:
+default--oriented-as-statements:
+	$(MAKE) html-canonical--oriented-as-statements -B
+
+html-canonical--oriented-as-statements: output/$(FILENAME_STUB)--oriented-as-statements.html
+
+output/$(FILENAME_STUB)--oriented-as-statements.html: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html
+	@cp $< $@
+
+
 
 clean:
 	rm -f output/*

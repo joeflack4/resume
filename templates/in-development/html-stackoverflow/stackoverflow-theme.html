@@ -175,7 +175,7 @@ $endif$
 
           $if(toggles.show_project_statements)$
           $if(work-experience.projects.statements)$
-          <ul class="statements">
+          <ul class="statements" style="margin-bottom: 10px;">
             $for(work-experience.projects.statements)$
             <li>$work-experience.projects.statements$</li>
             $endfor$
@@ -265,7 +265,7 @@ $endif$
 
         $if(toggles.show_project_statements)$
         $if(projects.statements)$
-        <ul class="statements">
+        <ul class="statements" style="margin-bottom: 10px;">
           $for(projects.statements)$
           <li>$projects.statements$</li>
           $endfor$

@@ -4043,41 +4043,96 @@ weekly.</p></div>
                         <section class="project-item">
           <header class="clear">
             <div class="position">
-                              Cloud infrastructure
+                              Web platform foundation
                           </div>
           </header>
 
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Backend in Python, FastAPI + queue worker.
+Pydantic validation. SqlAlchemy Schema. Layered architecture using
+routes, services, repositories, and data models.</li>
+                        <li>Data layer with PostgreSQL database with
+&gt;25 tables, with partial star schema, junction relationship tables,
+partitioning, aggregation, extensive GIN &amp; GiST indexing, and FTS.
+Versioned migrations using Alembic.</li>
+                        <li>Redis caching, based on LRU and heuristics
+(popularity + response time), guided by analytics tables &amp; admin
+dashboard.</li>
+                        <li>Modern frontend using React, TypeScript,
+Vite, React Query, MUI, and Playwright.</li>
+                        <li>Recommender systems leveraging CLIP
+embeddings across text prompts and image recognition, with
+ensemble-based multi-signal recommendation. In development.</li>
+                        <li>Projects and experiments features, to
+isolate generation to specific topic sets (e.g. ‘Logos’, ‘Product ads’,
+‘Avatars’).</li>
+                        <li>Image generation, with auto and manual
+controls, integrated with ComfyUI (local or cloud). Includes model,
+browsing, selection, and uploads (e.g. LoRAs, checkpoints). Redis and
+celery worker for queues. Web sockets for no-refresh updates.</li>
+                        <li>Image browsing, supporting complex queries,
+with mutli-select tags, toggles + FTS (Full-Text search). FTS using
+tsvector + GIN on Postgres. Optimized to query joins with ~100 million
+rows in &lt;200ms.</li>
+                        <li>Schedule jobs (celery beat), for
+aggregation, statistics, and analytics.</li>
+                        <li>Bookmarks and tags for advanced curation and
+browsing, including bookmarks categories and an MVP tag hierarchy.</li>
+                        <li>Complex configuration &amp; environment
+(dev, demo, test, prod) set up with load order to allow overrides and
+extensibility.</li>
+                        <li>Extensive documentation, including for end
+user, and implementer / developer, including topics like architecture,
+infrastructure, configuration, testing, and troubleshooting.</li>
+                        <li>Extensive suite of developer commands (250~)
+and CLIs, for database operations, multi-tier testing, service
+orchestration, deployment, code quality, and workflows.</li>
+                        <li>1,500~ frontend and backend tests, covering
+unit, integration, e2e, and performance, using PyTest, Jest, and
+Playwright.</li>
+                        <li>Infrastructure on AWS, using Terraform for
+IAC tool, with WIP CI/CD in GitHub actions. Compute using ECS Fargate
+cluster running containerized services (Web API, workers, mock services)
+with ECR for Docker image storage. S3 for serving static React/Vite via
+CloudFront CDN with Origin Access Control (OAC) for secure access. S3
+also for state and DynamoDB table. Networking using Custom VPC with
+multi-AZ public/private subnets, NAT Gateway, and ALB (Application Load
+Balancer). Data layer uses RDS PostgreSQL and ElastiCache Redis.
+Security &amp; Access, with IAM roles, security groups, and secrets
+management.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
-                                    <span class="skill-block">
-                <span class="skill-main">PostgreSQL</span>
-                                  <span class="skill-sub">(GIN &amp;
-GiST indexing, FTS, Partitioning, automated aggregation, etc)</span>
-                              </span>
+                                    <span class="skill-block">PostgreSQL</span>
                                                 <span class="skill-block">Redis</span>
                                                 <span class="skill-block">AWS</span>
                                                 <span class="skill-block">Docker</span>
                                                 <span class="skill-block">IAC
 (Terraform)</span>
+                                                <span class="skill-block">
+                <span class="skill-main">Python</span>
+                                  <span class="skill-sub">(FastAPI, SQLAlchemy, Celery, Alembic)</span>
+                              </span>
+                                                <span class="skill-block">ComfyUI</span>
+                                                <span class="skill-block">
+                <span class="skill-main">JavaScript</span>
+                                  <span class="skill-sub">(React, TypeScript, Material
+UI, Vite, Playwright)</span>
+                              </span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">-->
-<!--                <span class="pill">PostgreSQL</span>-->
-<!--                -->
-<!--                  <span class="sub">(GIN &amp; GiST
-indexing, FTS, Partitioning, automated aggregation, etc)</span>-->
-<!--                -->
-<!--              </span>-->
+<!--              <span class="skill-block">PostgreSQL</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4096,43 +4151,6 @@ indexing, FTS, Partitioning, automated aggregation, etc)</span>-->
 <!--              <span class="skill-block">IAC (Terraform)</span>-->
 <!--            -->
 <!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            true, Redis, AWS, Docker, IAC (Terraform)-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              Desktop &amp; web backend
-                          </div>
-          </header>
-
-          
-          
-<!--          Variation: Grey text inside parens -->
-          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
-          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
-                                    <span class="skill-block">
-                <span class="skill-main">Python</span>
-                                  <span class="skill-sub">(FastAPI, SQLAlchemy, Celery, Alembic)</span>
-                              </span>
-                                                <span class="skill-block">ComfyUI</span>
-                                </p>
-
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
 <!--            -->
 <!--              <span class="skill-block">-->
 <!--                <span class="pill">Python</span>-->
@@ -4145,43 +4163,6 @@ indexing, FTS, Partitioning, automated aggregation, etc)</span>-->
 <!--            -->
 <!--              <span class="skill-block">ComfyUI</span>-->
 <!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            true, ComfyUI-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              Frontend
-                          </div>
-          </header>
-
-          
-          
-<!--          Variation: Grey text inside parens -->
-          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
-          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
-                                    <span class="skill-block">
-                <span class="skill-main">JavaScript</span>
-                                  <span class="skill-sub">(React, TypeScript, Material
-UI, Vite, Playwright)</span>
-                              </span>
-                                </p>
-
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">-->
@@ -4198,7 +4179,8 @@ UI, Vite, Playwright)</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true-->
+<!--            PostgreSQL, Redis, AWS, Docker, IAC
+(Terraform), true, ComfyUI, true-->
 <!--          </p>-->
 <!--          -->
 
@@ -4251,13 +4233,66 @@ using spec-driven development.</p></div>
                         <li>AWS</li>
                         <li>Kubernetes</li>
                         <li>ML Ops</li>
+                        <li>Tailwind</li>
                       </ul>
                   </div>
       </div>
 
       <!-- Job projects -->
       <div class="item">
-              </div>
+                        <section class="project-item">
+          <header class="clear">
+            <div class="position">
+                              MVP
+                          </div>
+          </header>
+
+          
+          
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Backend in Python using 2 FastAPI services -
+DB API and chat service.</li>
+                        <li>Chat service using open source models
+(e.g. Qwen2.5-7B-Instruct), using RAG to interface with Mongo, and
+routing to use internally deployed model or Hugging Face cloud. Using
+torch, transformers, and accelerate, as well as llama-cpp-python for
+CPU-based GGUF models.</li>
+                        <li>Data layer Mongo DB for synhetic patient
+data / mock EHR.</li>
+                        <li>Modern frontend using React, TypeScript,
+Vite, and Tailwind. Pages for chatbot queries, and user data and
+history.</li>
+                        <li>Infrastructure on AWS, using Terraform for
+IaC. Compute using EKS (Elastic Kubernetes Service) running services
+with ECR for Docker image storage. S3 for serving static React/Vite
+frontend with CloudFront CDN and OAI. S3 also with DynamoDB for
+Terraform state. Networking using Custom VPC, subnets, and gateways.
+Kubernetes using deployments, services load balancing, ConfigMaps,
+Secrets, and HPAs (Horizontal Pod Autoscalers). Security &amp; Access
+with IAM role. EBS PVC for LLM model caching. MongoDB Atlas (managed
+cloud database) as the only non-AWS piece.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
+          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
+          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
+<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
+                    </p>
+          
+
+<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
+<!--          <p class="skills-line" aria-label="Skills">-->
+<!--          -->
+<!--          </p>-->
+
+<!--          Variation: simple -->
+<!--          -->
+
+<!--          todo: this should be a toggle, rather than deactivating here -->
+<!--          -->
+        </section>
+                      </div>
     </section>
         <section class="work-item">
       <div class="work-card">
@@ -4320,7 +4355,51 @@ primarily for virtual cohort selection. Involved complex template-based
 SQL system. github.com/jhu-bids/termhub</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Managed small dev team using agile practices
+such as scrum and sprints. Managed product roadmap and kanban boards.
+Handled scheduling and agendas, team member work allocation, and
+mentorship and coaching.</li>
+                        <li>Backend in Python using a RESTful FastAPI
+server with Pydantic validation.</li>
+                        <li>Data layer with PostgreSQL Flexible Server
+featuring 25+ tables and views, including derived analytical tables,
+with refreshes managed by a DAG. Advanced indexing with GIN for
+full-text search using pg_trgm trigrams, GiST for hierarchical queries.
+Data model using mix of SqlAlchemy ORM &amp; custom DDL templates using
+Jinja2.</li>
+                        <li>Data synchronization pipeline with Palantir
+Foundry. Manged by sync jobs running every 20 minutes, ad hoc jobs for
+error resolution, and nightly jobs for ingesting large (~10GB)
+datasets.</li>
+                        <li>Modern frontend using React, TypeScript,
+Vite, MUI, and axios. State management using react-hooks-global-state
+with custom data caching layer implementing LRU cache strategies.</li>
+                        <li>Advanced graph algorithms and visualization
+using NetworkX (backend) and graphology (frontend). Custom gap-filling
+algorithms to connect disconnected concept subgraphs, dynamic subtree
+expansion/collapse for performance, and D3.js-based hierarchical
+visualizations supporting 2,000+ nodes.</li>
+                        <li>Complex data analysis features including
+multi-concept set comparison, overlap analysis, patient/record count
+aggregation with clamping for de-identification.</li>
+                        <li>Multi-environment infrastructure on
+Azure.</li>
+                        <li>CI/CD pipeline in GitHub Actions for QC, as
+well as scheduled health checks testing live production environment
+nightly.</li>
+                        <li>Database monitoring and quality assurance
+with automated row count tracking over time, schema comparison tools,
+delta analysis for refresh validation, and audit tables for fetch
+failures and retry mechanisms.</li>
+                        <li>Custom user and session analytics.</li>
+                        <li>Extensive documentation covering
+architecture (layered design, call graphs), developer onboarding,
+playbooks and procedures (e.g. rollback protocols), and end-user feature
+documentation.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4342,7 +4421,7 @@ GiST indexing, window functions, materialized views, etc)</span>
                                                 <span class="skill-block">Azure</span>
                                                 <span class="skill-block">Parquet</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4413,7 +4492,34 @@ biomedical vocabulary as a proper ontology. Lead on data processing
 pipeline, semantic harmonization, and CI/CD.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Owned product roadmap and delivery cadence:
+ran Kanban boards, sprint planning, scheduling, and task allocation
+across a small cross-functional team.</li>
+                        <li>Graph-based data ingestion and harmonization
+pipeline using Python, with NetworkX MultiDiGraph for normalizing
+heterogeneous medical coding systems (LOINC, SNOMED CT, LOINC-SNOMED
+ontology), numpy and pandas. Schema-driven validation.</li>
+                        <li>Semantic web technology stack using LinkML
+for schema definition, OWL generation tooling, ROBOT for DL reasoning,
+SPARQL queries, and ontology manipulation. Generates 12+ OWL module
+release variations.</li>
+                        <li>NLP pipeline using sentence-transformers,
+PyTorch, and Hugging Face transformers for semantic similarity matching.
+Includes curator feedback integration.</li>
+                        <li>Interactive visualization using Dash +
+Plotly + Bootstrap for reactive web dashboards with filtering, real-time
+updates, and responsive UI. Static visualizations with matplotlib
+(histograms), upsetplot (set intersection analysis).</li>
+                        <li>CI/CD with GitHub Actions for automated
+build and test pipeline.</li>
+                        <li>Poetry for package management.</li>
+                        <li>Comprehensive developer and end-user
+documentation as well as detailed auto-generated statistics and
+plots</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4427,7 +4533,7 @@ Transformers, LinkML, Matplotlib, Plotly, Dash)</span>
                                                 <span class="skill-block">OWL</span>
                                                 <span class="skill-block">render.com</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4482,7 +4588,27 @@ Disease Ontology</a>
 Coordinated several repos &amp; data sources.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>ETL architecture for disease ontology
+integration and harmonization from 9+ sources (DOID, OMIM, ORDO, NCIT,
+ICD10CM, ICD10WHO, ICD11, GARD, NANDO), using Python, SPARQL, reasoning
+engines, and makefile, including lexical matching and other
+techniques.</li>
+                        <li>Data layer using biomedical informatics
+standards formats including OWL, OBO, RDF, Turtle, and TSV, and more
+bleeding-edge standards and tooling such as SSSOM, SemanticSQL, and
+LinkML.</li>
+                        <li>Containerization for maintaining consistent
+environment for data science jobs, locally and for cloud tasks.</li>
+                        <li>CI/CD using GitHub Actions for QC and
+releases.</li>
+                        <li>Comprehensive documentation using MkDocs
+with Material theme (66+ markdown files), including auto-generated
+mapping progress, metrics, migration candidates, and per-source
+statistics.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4492,8 +4618,8 @@ Coordinated several repos &amp; data sources.</div>
                                   <span class="skill-sub">(pandas)</span>
                               </span>
                                                 <span class="skill-block">Docker</span>
-                                                <span class="skill-block">GitHub
-Actions</span>
+                                                <span class="skill-block">CI/CD
+in GitHub Actions</span>
                                                 <span class="skill-block">SPARQL</span>
                                                 <span class="skill-block">RDF</span>
                                                 <span class="skill-block">OWL</span>
@@ -4504,7 +4630,7 @@ Engineering</span>
                                                 <span class="skill-block">Data
 Visualization</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4523,7 +4649,8 @@ Visualization</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">GitHub Actions</span>-->
+<!--              <span class="skill-block">CI/CD in GitHub
+Actions</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4557,7 +4684,7 @@ Engineering</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true, Docker, GitHub
+<!--            true, Docker, CI/CD in GitHub
 Actions, SPARQL, RDF, OWL, Biomedical Ontologies, Semantic
 Engineering, Data Visualization-->
 <!--          </p>-->
@@ -4583,7 +4710,8 @@ servers. Helped write custom extensions in Java. Wrote data processing
 pipelines and libraries.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4605,7 +4733,7 @@ API</span>
                                                 <span class="skill-block">Biomedical
 Terminology</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4685,7 +4813,49 @@ API, Docker, OWL, RDF, Biomedical Terminology-->
 service framework, used by CCDH Terminology Service.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Backend in Python using FastAPI with Uvicorn
+ASGI server. Pydantic validation and settings management with
+environment-based configuration. Layered architecture using routers,
+repository pattern , and transaction scripts.</li>
+                        <li>Graph database layer using Neo4j 4.1.3 with
+Cypher queries for traversal and pattern matching. Semantic web
+integration via n10s (Neosemantics) plugin enabling RDF import. Property
+graph model based on SKOS standard with node types (ConceptReference,
+ConceptSystem, CodeSet) and hierarchical relationships (narrower_than,
+defined_in). Parameterized Cypher queries with transitive closure for
+concept hierarchies and configurable depth-limited traversal.</li>
+                        <li>RESTful API with 7 endpoints across 3
+routers (concept references, concept systems, code sets). Auto-generated
+OpenAPI/Swagger documentation. Content negotiation supporting JSON,
+YAML, and JSON-LD with Link headers. CURIE/URI handling with automatic
+expansion/contraction using prefixcommons. CORS middleware and file
+upload support.</li>
+                        <li>Semantic Web/Linked Data architecture
+implementing W3C standards - RDF, SKOS, OWL, JSON-LD. RDFLib for parsing
+and serialization with Turtle format support. Custom JSON-LD contexts
+with namespace management for biomedical ontologies (NCIT, OBO, ICD-O,
+PATO).</li>
+                        <li>ETL pipeline with specialized loaders
+(Factory pattern) for biomedical terminologies -NcitFlatLoader (NCI
+Thesaurus from FTP), OboLoader (OBO ontologies), and ICD-O loader using
+LinkML. Pandas for data manipulation. Multi-stage process - extract from
+remote sources, transform to SKOS/RDF model, export to Turtle, import
+via Neo4j n10s.</li>
+                        <li>Infrastructure using Docker Compose with
+multi-container orchestration - API container (Python 3.8, Pipenv) and
+Neo4j container with custom initialization scripts. Healthchecks
+ensuring database availability before API startup. Persistent volumes
+for data, plugins (APOC, n10s), and import directory. Separate
+environment configurations for local and containerized deployments.</li>
+                        <li>Comprehensive testing setup using pytest
+with pytest-docker for integration tests against Neo4j. FastAPI
+TestClient for ASGI testing. Docker-based test environment with fixtures
+for service orchestration and database connections. HTTP request
+examples and YAML test data.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4699,7 +4869,7 @@ service framework, used by CCDH Terminology Service.</p></div>
                                                 <span class="skill-block">Neo4J</span>
                                                 <span class="skill-block">Cypher</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4757,7 +4927,8 @@ service framework, used by CCDH Terminology Service.</p></div>
 codebase and servers.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4777,7 +4948,7 @@ EC2</span>
                                                 <span class="skill-block">Semantic
 Engineering</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4853,7 +5024,25 @@ patient anonymity analyses viable, increasing memory performance by
 ~100x.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Python implementation with Apache PySpark
+for distributed production processing (2M+ patient records) and pandas
+for local.</li>
+                        <li>Data Layer - OMOP CDM healthcare data format
+with 21+ quasi-identifier field categories (temporal/non-temporal).
+Parquet columnar storage with pyarrow optimization. Multi-phase pipeline
+- rectangularization &amp; imputation → generalization (sig-fig
+truncation, temporal bucketing via PySpark UDFs) → k-anonymity
+calculation. Caching system for intermediates.</li>
+                        <li>Security &amp; Privacy - AES encryption via
+pyzipper for data export. Pseudonymization utilities (sequential IDs,
+date/numeric obfuscation). Privacy-preserving defaults with automatic
+high-risk identifier removal. K-anonymity validation algorithms for
+quantifying re-identification risk.</li>
+                        <li>Infrastructure -Databricks</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4869,10 +5058,10 @@ Spark</span>
                                                 <span class="skill-block">Virtualization</span>
                                                 <span class="skill-block">Data
 obfuscation</span>
-                                                <span class="skill-block">GitHub
-Actions</span>
+                                                <span class="skill-block">CI/CD
+in GitHub Actions</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -4907,7 +5096,8 @@ Actions</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">GitHub Actions</span>-->
+<!--              <span class="skill-block">CI/CD in GitHub
+Actions</span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -4916,7 +5106,8 @@ Actions</span>
 <!--          -->
 <!--          <p class="skills">-->
 <!--            true, Databricks, Apache
-Spark, Parquet, Virtualization, Data obfuscation, GitHub Actions-->
+Spark, Parquet, Virtualization, Data obfuscation, CI/CD in GitHub
+Actions-->
 <!--          </p>-->
 <!--          -->
 
@@ -4939,7 +5130,8 @@ Spark, Parquet, Virtualization, Data obfuscation, GitHub Actions-->
 and assisted with various ETL and analysis.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -4951,7 +5143,7 @@ Foundry</span>
                                                 <span class="skill-block">REST</span>
                                                 <span class="skill-block">API</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5005,7 +5197,8 @@ library for a data metamodeling. Biggest contributions: Enumerations and
 FHIR ValueSets.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5015,7 +5208,7 @@ FHIR ValueSets.</p></div>
 Modeling</span>
                                                 <span class="skill-block">FHIR</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5060,7 +5253,8 @@ Modeling</span>
 e.g. FHIR ConceptMap format.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5079,7 +5273,7 @@ engineering</span>
                                                 <span class="skill-block">HL7
 FHIR</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5148,7 +5342,8 @@ Analysis</a>
 for Zulip-based HL7 chat.fhir.org.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5162,7 +5357,7 @@ API</span>
                                                 <span class="skill-block">Zulip
 API</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5315,7 +5510,8 @@ integrated various back-end services for a web application related to
 HIV modeling.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5329,7 +5525,7 @@ HIV modeling.</p></div>
                                                 <span class="skill-block">S3</span>
                                                 <span class="skill-block">SMTP</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5388,14 +5584,15 @@ code structure and debugging. Assisted with sensitivity
 analyses.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">R</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5433,7 +5630,8 @@ for COVID-19 related model for optimizing lab testing throughput and
 cost effectiveness. Translated MATLAB model into R.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5444,7 +5642,7 @@ cost effectiveness. Translated MATLAB model into R.</p></div>
                               </span>
                                                 <span class="skill-block">MATLAB</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5491,7 +5689,8 @@ Built data visualizations, multi-format data harmonization (APIs, CSVs,
 PDFs), lexical analyses, and data analyses.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5511,7 +5710,7 @@ API</span>
                                                 <span class="skill-block">Data
 visualization</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5582,7 +5781,8 @@ code. Executed simulations on HPC cluster. Analyzed model fitness in R
 and collaborated with epidemiologists.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5597,7 +5797,7 @@ and collaborated with epidemiologists.</p></div>
                                   <span class="skill-sub">(SLURM)</span>
                               </span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5652,7 +5852,8 @@ Enumerator Map Tool</a>
 interviewers with household survey activities in Kampala, Uganda.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5663,7 +5864,7 @@ Maps API</span>
                                                 <span class="skill-block">Google
 Sheets</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5710,7 +5911,8 @@ operations costing team; included a front-end with interconnected forms
 for multiple phases of data collection.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5719,7 +5921,7 @@ for multiple phases of data collection.</p></div>
                                                 <span class="skill-block">REDCap</span>
                                                 <span class="skill-block">Excel</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5748,7 +5950,7 @@ for multiple phases of data collection.</p></div>
 <!--          todo: this should be a toggle, rather than deactivating here -->
 <!--          -->
 <!--          <p class="roles">-->
-<!--            System architect-->
+<!--            System Architect-->
 <!--          </p>-->
 <!--          -->
         </section>
@@ -5814,13 +6016,14 @@ Created backend API for storing patient data, as well as interacting
 with cloud storage for medical records.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                     </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5895,7 +6098,57 @@ API</a>
 access to PMA2020 data.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Backend in Python using Flask web framework
+with custom Flask subclass for response handling. SQLAlchemy ORM with
+layered architecture using routes (versioned endpoints), models, and
+custom response handlers.</li>
+                        <li>Data layer with PostgreSQL database
+featuring 15+ tables including Country, Survey, Indicator, Data, and
+multilingual string translation tables. Foreign key relationships,
+custom JSON serialization methods, and database seeding from Excel
+workbooks.</li>
+                        <li>RESTful API design with versioned endpoints
+(v1), serving collections and entities for countries, surveys,
+indicators, survey data, and multilingual text resources.</li>
+                        <li>Asynchronous task processing using Celery
+with Redis as message broker for long-running operations like dataset
+activation and database initialization.</li>
+                        <li>Database-backed response caching system
+using custom Cache model with support for different MIME types and
+datalab initialization caching.</li>
+                        <li>Custom CLI management system using
+Flask-Script with commands for database initialization, backup/restore,
+dataset management, and translations.</li>
+                        <li>Multi-environment configuration
+(development, staging, production) using python-dotenv, with
+environment-specific database and broker URLs.</li>
+                        <li>Infrastructure on Heroku with Gunicorn WSGI
+server, PostgreSQL database, Redis message broker, and Procfile-based
+process management (web, worker, release).</li>
+                        <li>AWS S3 integration using boto3 for dataset
+versioning, database backups, and documentation hosting with separate
+staging/production buckets.</li>
+                        <li>CI/CD pipeline using CircleCI 2.0 with
+Docker containers (Python 3.6, PostgreSQL 9.6), automated testing,
+dependency caching, and auto-deployment to Heroku on successful
+builds.</li>
+                        <li>Comprehensive documentation using Sphinx
+with sphinxcontrib-httpdomain for API docs, hosted on AWS S3 (CloudFront
+CDN), including user guides and developer documentation.</li>
+                        <li>Authentication and user management using
+Flask-User, Flask-Login, with Passlib and bcrypt for secure password
+hashing.</li>
+                        <li>Data ingestion pipeline processing Excel
+workbooks (~20MB dataset files) with custom InitDbFromWb class for
+transforming spreadsheet data into normalized database tables with
+progress callbacks.</li>
+                        <li>Code quality tools including pylint,
+pycodestyle, pydocstyle, with comprehensive makefile for common
+development tasks (testing, linting, serving, deploying).</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -5917,7 +6170,7 @@ S3</span>
                                                 <span class="skill-block">RabbitMQ</span>
                                                 <span class="skill-block">Redis</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -5996,7 +6249,8 @@ S3, RabbitMQ, Redis-->
 PMA2020 data.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6009,7 +6263,7 @@ PMA2020 data.</div>
 S3</span>
                                                 <span class="skill-block">CircleCI</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6058,7 +6312,8 @@ S3</span>
 automated testing of XForms survey definitions.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6067,7 +6322,7 @@ automated testing of XForms survey definitions.</div>
                                                 <span class="skill-block">Python</span>
                                                 <span class="skill-block">XPath</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6112,7 +6367,8 @@ PDF Printer</a>
 printable, editable forms such as Word documents.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6126,7 +6382,7 @@ printable, editable forms such as Word documents.</div>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">CircleCI</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6185,7 +6441,8 @@ warehouse/BI solution for governments and M&amp;E organizations to store
 medical and public health data.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6193,7 +6450,7 @@ medical and public health data.</p></div>
                                     <span class="skill-block">Python</span>
                                                 <span class="skill-block">SQL</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6233,14 +6490,15 @@ medical and public health data.</p></div>
 XForms.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6276,14 +6534,15 @@ XForms.</div>
 XForms for electronic surveys.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6321,7 +6580,8 @@ programmatic surveys for data collection. Runs on platforms such as Open
 Data Kit (ODK).</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6333,7 +6593,7 @@ Cloud</span>
                                                 <span class="skill-block">Digital
 Ocean</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6382,7 +6642,8 @@ reporting personnel technical capacity levels in various countries of
 operation, using mock data.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6391,7 +6652,7 @@ operation, using mock data.</p></div>
 Power BI</span>
                                                 <span class="skill-block">Azure</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6428,13 +6689,15 @@ Survey Hub</a>
                           </div>
           </header>
 
-                    <div class="summary"><p>Alpha development phase
-project that is a combination of various PMA2020-created survey tools in
-one web app. Currently implementing own proprietary app, but in talks
-with KoBo Toolbox team, to add our tools as plugins.</p></div>
+                    <div class="summary"><p>Alpha-phase internal web
+application, project that is a combination of various PMA2020-created
+survey tools in one web app. Currently implementing own proprietary app,
+but in talks with KoBo Toolbox team, to add our tools as
+plugins.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6445,7 +6708,7 @@ with KoBo Toolbox team, to add our tools as plugins.</p></div>
                                                 <span class="skill-block">Linode</span>
                                                 <span class="skill-block">Heroku</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6494,11 +6757,12 @@ Translation Hub</a>
                           </div>
           </header>
 
-                    <div class="summary">Pre-release web application for
-translation management of M&amp;E survey content.</div>
+                    <div class="summary">Pre-release, internal web
+application for translation management of M&amp;E survey content.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6513,7 +6777,7 @@ translation management of M&amp;E survey content.</div>
                               </span>
                                                 <span class="skill-block">Heroku</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6617,7 +6881,38 @@ development.</p></div>
 tool.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Backend in Python, Flask + Gunicorn WSGI
+server. WTForms validation. SQLAlchemy ORM. MVC architecture with
+routes, models, and forms.</li>
+                        <li>Data layer with PostgreSQL database with 15+
+core models using SQLAlchemy. Soft deletes and auditing. Versioned
+migrations using Alembic (Flask-Migrate).</li>
+                        <li>Frontend using AngularJS + Bootstrap with
+AdminLTE dashboard theme. Jinja2 server-side templating. Modal-based
+CRUD operations. Chart.js for data visualization.</li>
+                        <li>Multi-tenant modular ERP architecture with 6
+independent business modules (OMS, CRM, HRM, AMS, MMS, Admin), each with
+isolated configurations, permissions, and frontend/backend
+components.</li>
+                        <li>Role-based access control (RBAC) with
+hierarchical permissions, module-specific role assignments, and custom
+route decorators for authorization. API-level authorization using
+preprocessors.</li>
+                        <li>User authentication &amp; security with
+Flask-Login session management, Bcrypt password hashing, CSRF protection
+(Flask-WTF), and permission-based route protection.</li>
+                        <li>Third-party integrations - Twilio API for
+SMS.</li>
+                        <li>CSV bulk import/export functionality for
+users, customers, and personnel with validation, using Flask-Excel.</li>
+                        <li>Environment-based configuration
+(development, staging, production, test) with database-driven app
+settings (branding, secret keys, module enablement).</li>
+                        <li>Deployment on Heroku PaaS.</li>
+                      </ul>
+                    
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6634,7 +6929,7 @@ tool.</div>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">Twilio</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6697,7 +6992,8 @@ scripts and spreadsheets to create custom reporting not available in
 accounting software; scripts to rename and move files.</p></div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
@@ -6707,7 +7003,7 @@ accounting software; scripts to rename and move files.</p></div>
                                                 <span class="skill-block">Excel</span>
                                                 <span class="skill-block">GoogleSheets</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6756,14 +7052,15 @@ website</a>
 company website.</div>
           
           
-<!--          Variation: Grey text inside parens -->
+                              
+          <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">WordPress</span>
                                 </p>
-
+          
 
 <!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
 <!--          <p class="skills-line" aria-label="Skills">-->
@@ -6892,7 +7189,8 @@ Manager</a>
 sync sets of related markdown files, subsections, and
 checklists.</p></div>
 
-        
+                        
+                        
         
       </div>
     </section>
@@ -6912,7 +7210,8 @@ Analysis</a>
         <div class="summary"><p>Have worked in several repos to collect
 and analyze various aspects of my health data over the years.</p></div>
 
-                <ul class="skills-pills" aria-label="Skills">
+                        
+                        <ul class="skills-pills" aria-label="Skills">
                     <li>Python</li>
                     <li>Pandas</li>
                     <li>Plotly</li>
@@ -6921,7 +7220,7 @@ and analyze various aspects of my health data over the years.</p></div>
                     <li>R</li>
                     <li>Google Sheets / Forms</li>
                   </ul>
-        
+                
         
       </div>
     </section>
@@ -6943,14 +7242,15 @@ application that is the central point allowing users to manage their
 personal health data collected from a suite of illness-specific mobile
 applications.</p></div>
 
-                <ul class="skills-pills" aria-label="Skills">
+                        
+                        <ul class="skills-pills" aria-label="Skills">
                     <li>JavaScript</li>
                     <li>React</li>
                     <li>GraphQL</li>
                     <li>Neo4j</li>
                     <li>Apollo</li>
                   </ul>
-        
+                
         
       </div>
     </section>
@@ -6968,7 +7268,8 @@ applications.</p></div>
       <div class="item">
         
 
-        
+                        
+                        
                 <ul>
                     <li><strong>SetupTools</strong>: Small PRs to core
 Python infra. [tinyurl.com/jf4stools]</li>

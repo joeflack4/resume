@@ -35,6 +35,8 @@ projects:
       - Jupyter Notebook
       - R
       - Google Sheets / Forms
+#    statements:
+#    - Created a bla bla
 
   - id: health-hub
     name: Health Hub
@@ -49,6 +51,8 @@ projects:
       - GraphQL
       - Neo4j
       - Apollo
+#    statements:
+#    - Created a bla bla
 
   - id: honorable-mentions
     name: Honorable mentions
