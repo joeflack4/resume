@@ -11,24 +11,6 @@ metadata-files:
   - data/projects.yml
   - data/education.yml   # or education.json
 
-projects-importance-order-to-include-statements-blocks:
-  # Genonaut: Web platform foundation
-  1: Web platform foundation
-  # MVP is for CarePath. that's the project name
-  2: MVP
-  3: TermHub
-  4: TCCM & CCDH
-  5: Just-a-Dash
-  6: PMA API
-  7: Datalab
-  8: TIMS (Terminology Infrastructure Management Systems)
-  9: JH K Anonymity
-  10: CompLOINC
-  11: Mondo Disease Ontology
-  12: XFormTest
-  13: Pretty PDF Printer
-  14: Zulip Analysis
-
 template: templates/in-development/html-stackoverflow/stackoverflow-theme.html
 
 css:
@@ -56,6 +38,7 @@ input-files:
 #  - content/80-references.md
 
 filters:
+  - templates/in-development/html-stackoverflow/filters/project-statements-filter.lua
   - templates/in-development/html-stackoverflow/filters/section-headings.lua
 
 #output-file: output/Joe-Flack-Résumé.html

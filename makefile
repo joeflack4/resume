@@ -1,7 +1,10 @@
 .PHONY: all clean html html-plain html-stackoverflow html-canonical docx stackoverflow docx-from-template \
-docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable
+docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable \
+default--top-n-projects-statements html-canonical--top-n-projects-statements \
+html-stackoverflow--oriented-as-statements--top-n-projects-statements
 
 FILENAME_STUB=Joe-Flack-Résumé
+N?=5
 
 all-unstable: html docx
 
@@ -55,6 +58,27 @@ output/$(FILENAME_STUB).html: output/$(FILENAME_STUB)-StackOverflow.html
 	@cp $< $@
 
 html-canonical: output/$(FILENAME_STUB).html
+
+# Parameterized versions with top-n-projects-statements
+output/$(FILENAME_STUB)-StackOverflow--top-n-$(N)-projects-statements.html:
+	pandoc --defaults defaults/html-stackoverflow.yaml \
+		-M toggles.top-n-projects-to-include-statements-blocks=$(N) > $@
+
+output/$(FILENAME_STUB)--top-n-$(N)-projects-statements.html: output/$(FILENAME_STUB)-StackOverflow--top-n-$(N)-projects-statements.html
+	@cp $< $@
+
+html-canonical--top-n-projects-statements: output/$(FILENAME_STUB)--top-n-$(N)-projects-statements.html
+
+default--top-n-projects-statements:
+	$(MAKE) html-canonical--top-n-projects-statements -B
+
+output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements--top-n-$(N)-projects-statements.html:
+	pandoc --defaults defaults/html-stackoverflow.yaml \
+		-M toggles.show_project_statements=true \
+		-M toggles.show_project_skills=false \
+		-M toggles.top-n-projects-to-include-statements-blocks=$(N) > $@
+
+html-stackoverflow--oriented-as-statements--top-n-projects-statements: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements--top-n-$(N)-projects-statements.html
 
 # todo: temp: mv: file in _archive until ready
 html: html-plain html-stackoverflow html-canonical

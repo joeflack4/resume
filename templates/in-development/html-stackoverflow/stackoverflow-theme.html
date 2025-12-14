@@ -174,12 +174,14 @@ $endif$
           $endif$
 
           $if(toggles.show_project_statements)$
+          $if(work-experience.projects.should_show_statements)$
           $if(work-experience.projects.statements)$
           <ul class="statements" style="margin-bottom: 10px;">
             $for(work-experience.projects.statements)$
             <li>$work-experience.projects.statements$</li>
             $endfor$
           </ul>
+          $endif$
           $endif$
           $endif$
 
@@ -264,12 +266,14 @@ $endif$
         $if(projects.summary)$<div class="summary">$projects.summary$</div>$endif$
 
         $if(toggles.show_project_statements)$
+        $if(projects.should_show_statements)$
         $if(projects.statements)$
         <ul class="statements" style="margin-bottom: 10px;">
           $for(projects.statements)$
           <li>$projects.statements$</li>
           $endfor$
         </ul>
+        $endif$
         $endif$
         $endif$
 
