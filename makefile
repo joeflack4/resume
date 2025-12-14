@@ -1,7 +1,7 @@
 .PHONY: all clean html html-plain html-stackoverflow html-canonical docx stackoverflow docx-from-template \
 docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable \
 default--top-n-projects-statements html-canonical--top-n-projects-statements \
-html-stackoverflow--oriented-as-statements--top-n-projects-statements
+html-stackoverflow--statements-only--top-n-projects-statements
 
 FILENAME_STUB=Joe-Flack-Résumé
 N?=5
@@ -10,19 +10,23 @@ all-unstable: html docx
 
 all: default
 
+# todo: remove the statements only one
 default:
 	$(MAKE) html-canonical -B
+	$(MAKE) html-stackoverflow--skills-only -B
+	$(MAKE) html-stackoverflow--statements-only -B
 
 
 
 # todo: move these things around to correct places in file:
-default--oriented-as-statements:
-	$(MAKE) html-canonical--oriented-as-statements -B
+default--statements-only:
+	$(MAKE) html-canonical--statements-only -B
 
-html-canonical--oriented-as-statements: output/$(FILENAME_STUB)--oriented-as-statements.html
+html-canonical--statements-only: output/$(FILENAME_STUB)--statements-only.html
 
-output/$(FILENAME_STUB)--oriented-as-statements.html: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html
-	@cp $< $@
+output/$(FILENAME_STUB)--statements-only.html: output/$(FILENAME_STUB)-StackOverflow--statements-only.html
+	@mv $< $@
+#	@cp $< $@
 
 
 
@@ -38,47 +42,53 @@ html-plain: output/$(FILENAME_STUB)-plain.html
 output/$(FILENAME_STUB)-StackOverflow.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml > $@
 
-output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html:
+output/$(FILENAME_STUB)-StackOverflow--statements-only.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml \
-		-M toggles.show_project_statements=true \
-		-M toggles.show_project_skills=false > $@
+		-M override_show_project_statements=true \
+		-M override_show_project_skills=false > $@
 
-output/$(FILENAME_STUB)-StackOverflow--oriented-as-skills.html:
+output/$(FILENAME_STUB)-StackOverflow--skills-only.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml \
-		-M toggles.show_project_statements=false \
-		-M toggles.show_project_skills=true > $@
+		-M override_show_project_statements=false \
+		-M override_show_project_skills=true > $@
+
+output/$(FILENAME_STUB)--skills-only.html: output/$(FILENAME_STUB)-StackOverflow--skills-only.html
+	@mv $< $@
+#	@cp $< $@
 
 html-stackoverflow: output/$(FILENAME_STUB)-StackOverflow.html
 
-html-stackoverflow--oriented-as-statements: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements.html
+html-stackoverflow--statements-only: output/$(FILENAME_STUB)-StackOverflow--statements-only.html
 
-html-stackoverflow--oriented-as-skills: output/$(FILENAME_STUB)-StackOverflow--oriented-as-skills.html
+html-stackoverflow--skills-only: output/$(FILENAME_STUB)--skills-only.html
 
 output/$(FILENAME_STUB).html: output/$(FILENAME_STUB)-StackOverflow.html
-	@cp $< $@
+	@mv $< $@
+#	@cp $< $@
 
 html-canonical: output/$(FILENAME_STUB).html
 
 # Parameterized versions with top-n-projects-statements
 output/$(FILENAME_STUB)-StackOverflow--top-n-$(N)-projects-statements.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml \
-		-M toggles.top-n-projects-to-include-statements-blocks=$(N) > $@
+		-M override_top_n_projects=$(N) > $@
 
 output/$(FILENAME_STUB)--top-n-$(N)-projects-statements.html: output/$(FILENAME_STUB)-StackOverflow--top-n-$(N)-projects-statements.html
-	@cp $< $@
+	@mv $< $@
+#	@cp $< $@
 
 html-canonical--top-n-projects-statements: output/$(FILENAME_STUB)--top-n-$(N)-projects-statements.html
 
 default--top-n-projects-statements:
 	$(MAKE) html-canonical--top-n-projects-statements -B
 
-output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements--top-n-$(N)-projects-statements.html:
+output/$(FILENAME_STUB)-StackOverflow--statements-only--top-n-$(N)-projects-statements.html:
 	pandoc --defaults defaults/html-stackoverflow.yaml \
-		-M toggles.show_project_statements=true \
-		-M toggles.show_project_skills=false \
-		-M toggles.top-n-projects-to-include-statements-blocks=$(N) > $@
+		-M override_show_project_statements=true \
+		-M override_show_project_skills=false \
+		-M override_top_n_projects=$(N) > $@
 
-html-stackoverflow--oriented-as-statements--top-n-projects-statements: output/$(FILENAME_STUB)-StackOverflow--oriented-as-statements--top-n-$(N)-projects-statements.html
+html-stackoverflow--statements-only--top-n-projects-statements: output/$(FILENAME_STUB)-StackOverflow--statements-only--top-n-$(N)-projects-statements.html
 
 # todo: temp: mv: file in _archive until ready
 html: html-plain html-stackoverflow html-canonical

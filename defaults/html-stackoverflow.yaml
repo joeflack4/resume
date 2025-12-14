@@ -38,6 +38,7 @@ input-files:
 #  - content/80-references.md
 
 filters:
+  - templates/in-development/html-stackoverflow/filters/toggle-override-filter.lua
   - templates/in-development/html-stackoverflow/filters/project-statements-filter.lua
   - templates/in-development/html-stackoverflow/filters/section-headings.lua
 
