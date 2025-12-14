@@ -31,6 +31,7 @@ toggles:
   show_headshot: true
   show_project_skills: true
   show_project_statements: true
+  top-n-projects-to-include-statements-blocks: 5
 #summary: >
 #  I'm a full stack developer specializing in web application and data engineering projects, with increasing expertise in
 #  machine learning. I have particular experience and passion for healthcare. I employ new and powerful

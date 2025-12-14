@@ -4050,6 +4050,9 @@ weekly.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Full ownership of solo-dev zero to one
+project, including idea conception, architecture design, and
+implementation.</li>
                         <li>Backend in Python, FastAPI + queue worker.
 Pydantic validation. SqlAlchemy Schema. Layered architecture using
 routes, services, repositories, and data models.</li>
@@ -4250,6 +4253,9 @@ using spec-driven development.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Full ownership of solo-dev zero to one
+project, including idea conception, architecture design, and
+implementation.</li>
                         <li>Backend in Python using 2 FastAPI services -
 DB API and chat service.</li>
                         <li>Chat service using open source models
@@ -4352,7 +4358,8 @@ semantic/ontology engineering. Effectively lead small teams.</p></div>
                     <div class="summary"><p>Managed small team on web
 app to create and manage biomedical / terminological value sets,
 primarily for virtual cohort selection. Involved complex template-based
-SQL system. github.com/jhu-bids/termhub</p></div>
+SQL system. Zero to one project. Secondary link:
+github.com/jhu-bids/termhub</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
@@ -4360,40 +4367,41 @@ SQL system. github.com/jhu-bids/termhub</p></div>
 such as scrum and sprints. Managed product roadmap and kanban boards.
 Handled scheduling and agendas, team member work allocation, and
 mentorship and coaching.</li>
-                        <li>Backend in Python using a RESTful FastAPI
-server with Pydantic validation.</li>
-                        <li>Data layer with PostgreSQL Flexible Server
-featuring 25+ tables and views, including derived analytical tables,
-with refreshes managed by a DAG. Advanced indexing with GIN for
-full-text search using pg_trgm trigrams, GiST for hierarchical queries.
-Data model using mix of SqlAlchemy ORM &amp; custom DDL templates using
-Jinja2.</li>
-                        <li>Data synchronization pipeline with Palantir
-Foundry. Manged by sync jobs running every 20 minutes, ad hoc jobs for
-error resolution, and nightly jobs for ingesting large (~10GB)
-datasets.</li>
-                        <li>Modern frontend using React, TypeScript,
-Vite, MUI, and axios. State management using react-hooks-global-state
-with custom data caching layer implementing LRU cache strategies.</li>
-                        <li>Advanced graph algorithms and visualization
-using NetworkX (backend) and graphology (frontend). Custom gap-filling
-algorithms to connect disconnected concept subgraphs, dynamic subtree
-expansion/collapse for performance, and D3.js-based hierarchical
-visualizations supporting 2,000+ nodes.</li>
-                        <li>Complex data analysis features including
-multi-concept set comparison, overlap analysis, patient/record count
-aggregation with clamping for de-identification.</li>
-                        <li>Multi-environment infrastructure on
-Azure.</li>
-                        <li>CI/CD pipeline in GitHub Actions for QC, as
-well as scheduled health checks testing live production environment
-nightly.</li>
-                        <li>Database monitoring and quality assurance
-with automated row count tracking over time, schema comparison tools,
-delta analysis for refresh validation, and audit tables for fetch
+                        <li>Owned and architected backend in Python
+using a RESTful FastAPI server with Pydantic validation.</li>
+                        <li>Owned and architected data synchronization
+pipeline with Palantir Foundry. Manged by sync jobs running every 20
+minutes, ad hoc jobs for error resolution, and nightly jobs for
+ingesting large (~10GB) datasets.</li>
+                        <li>Owned and maintained multi-environment
+infrastructure on Azure, along with CI/CD pipeline in GitHub Actions for
+QC, as well as scheduled health checks testing live production
+environment nightly.</li>
+                        <li>Co-developed data layer with PostgreSQL
+Flexible Server featuring 25+ tables and views, including derived
+analytical tables, with refreshes managed by a DAG. Advanced indexing
+with GIN for full-text search using pg_trgm trigrams, GiST for
+hierarchical queries. Data model using mix of SqlAlchemy ORM &amp;
+custom DDL templates using Jinja2.</li>
+                        <li>Co-developed modern frontend using React,
+TypeScript, Vite, MUI, and axios. State management using
+react-hooks-global-state with custom data caching layer implementing LRU
+cache strategies.</li>
+                        <li>Co-developed Advanced graph algorithms and
+visualization using NetworkX (backend) and graphology (frontend). Custom
+gap-filling algorithms to connect disconnected concept subgraphs,
+dynamic subtree expansion/collapse for performance, and D3.js-based
+hierarchical visualizations supporting 2,000+ nodes.</li>
+                        <li>Co-developed Complex data analysis features
+including multi-concept set comparison, overlap analysis, patient/record
+count aggregation with clamping for de-identification.</li>
+                        <li>Co-developed database monitoring and quality
+assurance with automated row count tracking over time, schema comparison
+tools, delta analysis for refresh validation, and audit tables for fetch
 failures and retry mechanisms.</li>
-                        <li>Custom user and session analytics.</li>
-                        <li>Extensive documentation covering
+                        <li>Co-developed custom user and session
+analytics.</li>
+                        <li>Owned extensive documentation covering
 architecture (layered design, call graphs), developer onboarding,
 playbooks and procedures (e.g. rollback protocols), and end-user feature
 documentation.</li>
@@ -4488,8 +4496,9 @@ management-->
           </header>
 
                     <div class="summary"><p>Managed small team to render
-biomedical vocabulary as a proper ontology. Lead on data processing
-pipeline, semantic harmonization, and CI/CD.</p></div>
+biomedical vocabulary as a proper ontology. Dev resopnsibilities
+included design and implementation of data processing pipeline including
+semantic harmonization, and CI/CD.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
@@ -4508,15 +4517,11 @@ release variations.</li>
 PyTorch, and Hugging Face transformers for semantic similarity matching.
 Includes curator feedback integration.</li>
                         <li>Interactive visualization using Dash +
-Plotly + Bootstrap for reactive web dashboards with filtering, real-time
-updates, and responsive UI. Static visualizations with matplotlib
-(histograms), upsetplot (set intersection analysis).</li>
+Plotly + Bootstrap for reactive web dashboards with filtering. Deployed
+on Render. Static visualizations with matplotlib (histograms), upsetplot
+(set intersection analysis).</li>
                         <li>CI/CD with GitHub Actions for automated
 build and test pipeline.</li>
-                        <li>Poetry for package management.</li>
-                        <li>Comprehensive developer and end-user
-documentation as well as detailed auto-generated statistics and
-plots</li>
                       </ul>
                     
           <!--          Variation: Grey text inside parens -->
@@ -4602,10 +4607,6 @@ LinkML.</li>
 environment for data science jobs, locally and for cloud tasks.</li>
                         <li>CI/CD using GitHub Actions for QC and
 releases.</li>
-                        <li>Comprehensive documentation using MkDocs
-with Material theme (66+ markdown files), including auto-generated
-mapping progress, metrics, migration candidates, and per-source
-statistics.</li>
                       </ul>
                     
           <!--          Variation: Grey text inside parens -->
@@ -4705,22 +4706,37 @@ Engineering, Data Visualization-->
                           </div>
           </header>
 
-                    <div class="summary"><p>Deployed and maintained web
-servers. Helped write custom extensions in Java. Wrote data processing
-pipelines and libraries.</p></div>
+                    <div class="summary"><p>Co-architected,
+co-developed, and maintained infrastructure for unprecedented project to
+provide RESTful access to biomedical ontologies using FHIR standard.
+Several zero to one projects.</p></div>
           
           
-                              
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Spearheaded project coordination—roadmap
+ownership, sprint agendas, and work distribution, without formal
+supervisory role.</li>
+                        <li>Architected multi-repository approach for
+division of responsibilities: OMOP to OWL tooling, OWL to FHIR tooling,
+SSSOM to FHIR tooling, web server, source-specific ingests, content
+store, and public facing website.</li>
+                        <li>Full ownership over architecture and
+development of novel CLI libraries OMOP to OWL, OWL to FHIR, SSSOM to
+FHIR, and OMOP to FHIR.</li>
+                        <li>Full ownership of data processing / ingest
+pipelines and libraries in Python.</li>
+                        <li>Maintained Java-based (Spring Boot) FHIR
+server called HAPI, using DOcker on Ubuntu VM on Azure.</li>
+                        <li>Co-developed custom web server
+extensions.</li>
+                      </ul>
+                    
           <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">Python</span>
-                                                <span class="skill-block">
-                <span class="skill-main">JavaScript</span>
-                                  <span class="skill-sub">(React)</span>
-                              </span>
                                                 <span class="skill-block">Java</span>
                                                 <span class="skill-block">Azure</span>
                                                 <span class="skill-block">HL7
@@ -4730,6 +4746,7 @@ API</span>
                                                 <span class="skill-block">Docker</span>
                                                 <span class="skill-block">OWL</span>
                                                 <span class="skill-block">RDF</span>
+                                                <span class="skill-block">SSSOM</span>
                                                 <span class="skill-block">Biomedical
 Terminology</span>
                                 </p>
@@ -4740,15 +4757,6 @@ Terminology</span>
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">-->
-<!--                <span class="pill">JavaScript</span>-->
-<!--                -->
-<!--                  <span class="sub">(React)</span>-->
-<!--                -->
-<!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4780,6 +4788,10 @@ Terminology</span>
 <!--            -->
 <!--          -->
 <!--            -->
+<!--              <span class="skill-block">SSSOM</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
 <!--              <span class="skill-block">Biomedical
 Terminology</span>-->
 <!--            -->
@@ -4789,8 +4801,8 @@ Terminology</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            Python, true, Java, Azure, HL7 FHIR, REST
-API, Docker, OWL, RDF, Biomedical Terminology-->
+<!--            Python, Java, Azure, HL7 FHIR, REST
+API, Docker, OWL, RDF, SSSOM, Biomedical Terminology-->
 <!--          </p>-->
 <!--          -->
 
@@ -4805,54 +4817,30 @@ API, Docker, OWL, RDF, Biomedical Terminology-->
           <header class="clear">
             <div class="position">
                               <a href="https://github.com/HOT-Ecosystem/tccm-api">TCCM
-(Terminology Core Common Model)</a>
+&amp; CCDH</a>
                           </div>
           </header>
 
                     <div class="summary"><p>Maintained terminology
-service framework, used by CCDH Terminology Service.</p></div>
+service library framework TCCM (Terminology Core Common Model) and by
+CCDH (Center for Cancer Data Harmonization) biomedical terminology
+service codebase and infrastructure, serving as a backend component for
+research projects. Secondary link:
+https://github.com/cancerDHC</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
-                        <li>Backend in Python using FastAPI with Uvicorn
-ASGI server. Pydantic validation and settings management with
-environment-based configuration. Layered architecture using routers,
-repository pattern , and transaction scripts.</li>
-                        <li>Graph database layer using Neo4j 4.1.3 with
-Cypher queries for traversal and pattern matching. Semantic web
-integration via n10s (Neosemantics) plugin enabling RDF import. Property
-graph model based on SKOS standard with node types (ConceptReference,
-ConceptSystem, CodeSet) and hierarchical relationships (narrower_than,
-defined_in). Parameterized Cypher queries with transitive closure for
-concept hierarchies and configurable depth-limited traversal.</li>
-                        <li>RESTful API with 7 endpoints across 3
-routers (concept references, concept systems, code sets). Auto-generated
-OpenAPI/Swagger documentation. Content negotiation supporting JSON,
-YAML, and JSON-LD with Link headers. CURIE/URI handling with automatic
-expansion/contraction using prefixcommons. CORS middleware and file
-upload support.</li>
-                        <li>Semantic Web/Linked Data architecture
-implementing W3C standards - RDF, SKOS, OWL, JSON-LD. RDFLib for parsing
-and serialization with Turtle format support. Custom JSON-LD contexts
-with namespace management for biomedical ontologies (NCIT, OBO, ICD-O,
-PATO).</li>
-                        <li>ETL pipeline with specialized loaders
-(Factory pattern) for biomedical terminologies -NcitFlatLoader (NCI
-Thesaurus from FTP), OboLoader (OBO ontologies), and ICD-O loader using
-LinkML. Pandas for data manipulation. Multi-stage process - extract from
-remote sources, transform to SKOS/RDF model, export to Turtle, import
-via Neo4j n10s.</li>
-                        <li>Infrastructure using Docker Compose with
-multi-container orchestration - API container (Python 3.8, Pipenv) and
-Neo4j container with custom initialization scripts. Healthchecks
-ensuring database availability before API startup. Persistent volumes
-for data, plugins (APOC, n10s), and import directory. Separate
-environment configurations for local and containerized deployments.</li>
-                        <li>Comprehensive testing setup using pytest
-with pytest-docker for integration tests against Neo4j. FastAPI
-TestClient for ASGI testing. Docker-based test environment with fixtures
-for service orchestration and database connections. HTTP request
-examples and YAML test data.</li>
+                        <li>Maintained and co-developed backend in
+Python using FastAPI RESTful API, with Pydantic validation and
+LinkML-driven data models.</li>
+                        <li>Maintained Neo4J graph database with n10s
+(Neosemantics) and cypher queries.</li>
+                        <li>Maintained semantic processing pipeline,
+parsing data sources into Neo4j, using RDFLib for semantic formats RDF,
+OWL, and JSON-LD, and pandas for flat files. Data sources included NCIT,
+ICD-O, and PATO.</li>
+                        <li>Maintained infrastructure using Docker
+Compose with multi-container orchestration.</li>
                       </ul>
                     
           <!--          Variation: Grey text inside parens -->
@@ -4864,87 +4852,14 @@ examples and YAML test data.</li>
                 <span class="skill-main">Python</span>
                                   <span class="skill-sub">(FastAPI)</span>
                               </span>
-                                                <span class="skill-block">API</span>
-                                                <span class="skill-block">REST</span>
-                                                <span class="skill-block">Neo4J</span>
-                                                <span class="skill-block">Cypher</span>
-                                </p>
-          
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">-->
-<!--                <span class="pill">Python</span>-->
-<!--                -->
-<!--                  <span class="sub">(FastAPI)</span>-->
-<!--                -->
-<!--              </span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">API</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">REST</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Neo4J</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Cypher</span>-->
-<!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            true, API, REST, Neo4J, Cypher-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-<!--          <p class="roles">-->
-<!--            Developer-->
-<!--          </p>-->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
-                              <a href="https://github.com/cancerDHC">CCDH
-(Center for Cancer Data Harmonization)</a>
-                          </div>
-          </header>
-
-                    <div class="summary"><p>Helped develop and maintain
-codebase and servers.</p></div>
-          
-          
-                              
-          <!--          Variation: Grey text inside parens -->
-          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
-          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
-                                    <span class="skill-block">
-                <span class="skill-main">Python</span>
-                                  <span class="skill-sub">(FastAPI)</span>
-                              </span>
-                                                <span class="skill-block">REST</span>
+                                                <span class="skill-block">REST
+API</span>
                                                 <span class="skill-block">Neo4J</span>
                                                 <span class="skill-block">Cypher</span>
                                                 <span class="skill-block">Docker</span>
+                                                <span class="skill-block">AWS</span>
                                                 <span class="skill-block">RDF</span>
                                                 <span class="skill-block">OWL</span>
-                                                <span class="skill-block">AWS
-EC2</span>
                                                 <span class="skill-block">Semantic
 Engineering</span>
                                 </p>
@@ -4963,7 +4878,7 @@ Engineering</span>
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">REST</span>-->
+<!--              <span class="skill-block">REST API</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -4979,15 +4894,15 @@ Engineering</span>
 <!--            -->
 <!--          -->
 <!--            -->
+<!--              <span class="skill-block">AWS</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
 <!--              <span class="skill-block">RDF</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">OWL</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">AWS EC2</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -5000,8 +4915,8 @@ Engineering</span>-->
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true, REST, Neo4J, Cypher, Docker, RDF, OWL, AWS
-EC2, Semantic Engineering-->
+<!--            true, REST
+API, Neo4J, Cypher, Docker, AWS, RDF, OWL, Semantic Engineering-->
 <!--          </p>-->
 <!--          -->
 
@@ -5019,27 +4934,22 @@ EC2, Semantic Engineering-->
                           </div>
           </header>
 
-                    <div class="summary"><p>Made Johns Hopkins OMOP
-patient anonymity analyses viable, increasing memory performance by
-~100x.</p></div>
+                    <div class="summary"><p>Optimized analytical
+pipeline designed to foster anonymization of Johns Hopkins Hospital EHR
+OMOP based patient data. Brought the project to a viable status,
+increasing throughput by ~100x.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
-                        <li>Python implementation with Apache PySpark
-for distributed production processing (2M+ patient records) and pandas
-for local.</li>
-                        <li>Data Layer - OMOP CDM healthcare data format
-with 21+ quasi-identifier field categories (temporal/non-temporal).
-Parquet columnar storage with pyarrow optimization. Multi-phase pipeline
-- rectangularization &amp; imputation → generalization (sig-fig
-truncation, temporal bucketing via PySpark UDFs) → k-anonymity
-calculation. Caching system for intermediates.</li>
-                        <li>Security &amp; Privacy - AES encryption via
-pyzipper for data export. Pseudonymization utilities (sequential IDs,
-date/numeric obfuscation). Privacy-preserving defaults with automatic
-high-risk identifier removal. K-anonymity validation algorithms for
-quantifying re-identification risk.</li>
-                        <li>Infrastructure -Databricks</li>
+                        <li>Optimized Apache PySpark analytical pipeline
+running on Databricks, processing data for 2 million patients, using
+parquet columnar storage with pyarrow optimization. Updated and properly
+connected and added cahding for multi-phase pipeline -
+rectangularization &amp; imputation → generalization (sig-fig
+truncation, temporal bucketing) → k-anonymity calculation.</li>
+                        <li>Security &amp; Privacy -Added AES encryption
+via pyzipper for data export, in tandem with custom pseudonymization
+algorithm.</li>
                       </ul>
                     
           <!--          Variation: Grey text inside parens -->
@@ -5121,80 +5031,14 @@ Actions-->
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              <a href="http://ncats.nih.gov/n3c">N3C
-(National COVID Cohort Collaborative)</a>
-                          </div>
-          </header>
-
-                    <div class="summary"><p>Wrote ValueSet tools library
-and assisted with various ETL and analysis.</p></div>
-          
-          
-                              
-          <!--          Variation: Grey text inside parens -->
-          <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
-          <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;sf" aria-label="Skills">-->
-<!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
-                                    <span class="skill-block">Palantir
-Foundry</span>
-                                                <span class="skill-block">OMOP</span>
-                                                <span class="skill-block">Python</span>
-                                                <span class="skill-block">REST</span>
-                                                <span class="skill-block">API</span>
-                                </p>
-          
-
-<!--          Variation: Things outside of parens as pills: e.g. ((Python)) (Dash, Plotly, ...) -->
-<!--          <p class="skills-line" aria-label="Skills">-->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Palantir Foundry</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">OMOP</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">Python</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">REST</span>-->
-<!--            -->
-<!--          -->
-<!--            -->
-<!--              <span class="skill-block">API</span>-->
-<!--            -->
-<!--          -->
-<!--          </p>-->
-
-<!--          Variation: simple -->
-<!--          -->
-<!--          <p class="skills">-->
-<!--            Palantir Foundry, OMOP, Python, REST, API-->
-<!--          </p>-->
-<!--          -->
-
-<!--          todo: this should be a toggle, rather than deactivating here -->
-<!--          -->
-<!--          <p class="roles">-->
-<!--            Software Engineer-->
-<!--          </p>-->
-<!--          -->
-        </section>
-                <section class="project-item">
-          <header class="clear">
-            <div class="position">
                               <a href="https://github.com/linkml/linkml">LinkML
 (Linked data Modeling Language)</a>
                           </div>
           </header>
 
                     <div class="summary"><p>Contributed to open source
-library for a data metamodeling. Biggest contributions: Enumerations and
-FHIR ValueSets.</p></div>
+metamodeling standard &amp; library, LinkML. Biggest contributions:
+Enumerations and FHIR ValueSets models.</p></div>
           
           
                               
@@ -5249,8 +5093,9 @@ Modeling</span>
                           </div>
           </header>
 
-                    <div class="summary"><p>Open source contributions,
-e.g. FHIR ConceptMap format.</p></div>
+                    <div class="summary"><p>Contributed to open source
+ontological mappings standard and library, SSSOM. Biggest contribution:
+FHIR ConceptMap format.</p></div>
           
           
                               
@@ -5339,10 +5184,22 @@ Analysis</a>
           </header>
 
                     <div class="summary"><p>Analyzed community activity
-for Zulip-based HL7 chat.fhir.org.</p></div>
+for Zulip-based HL7 chat.fhir.org in order to help the organization
+understand topics of interest.</p></div>
           
           
-                              
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Managed a 2-man team, designing and
+implementing Python &amp; pandas based CLI &amp; data extraction
+tool.</li>
+                        <li>Integrated with Google API to connect with
+Google Sheets, which was used as a database to manage categories,
+keywords, configurations, etc.</li>
+                        <li>Integrated with Zulip API to query chat
+data.</li>
+                        <li>Created visualizations in Matplotlib.</li>
+                      </ul>
+                    
           <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
@@ -5429,7 +5286,9 @@ API</span>
           <!-- Summary -->
                     <div class="summary"><p>Part time contract working
 on API for flagship product, Resource Optimizer, helping the FCC to
-allocate resources and optimize geospatial telecom coverage.</p></div>
+allocate resources and optimize geospatial telecom coverage. Developed,
+tested, and maintained endpoints for querying geospatial and relational
+data</p></div>
           
           <!-- Job skills overview -->
                     <ul class="skills-pills" aria-label="Skills">
@@ -5479,8 +5338,8 @@ allocate resources and optimize geospatial telecom coverage.</p></div>
           <!-- Summary -->
                     <div class="summary"><p>Worked with a number of
 teams on projects requiring different skill sets, from statistical
-modeling, to frontend development, to high performance
-computing.</p></div>
+modeling, to data visualization web applications, to high performance
+computing. All web applications were done zero to one.</p></div>
           
           <!-- Job skills overview -->
                     <ul class="skills-pills" aria-label="Skills">
@@ -6094,58 +5953,30 @@ API</a>
                           </div>
           </header>
 
-                    <div class="summary">RESTful API for programmatic
-access to PMA2020 data.</div>
+                    <div class="summary"><p>RESTful API for programmatic
+access to PMA2020 data, serving the public and also as a backend for
+Datalab.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
-                        <li>Backend in Python using Flask web framework
-with custom Flask subclass for response handling. SQLAlchemy ORM with
-layered architecture using routes (versioned endpoints), models, and
-custom response handlers.</li>
-                        <li>Data layer with PostgreSQL database
-featuring 15+ tables including Country, Survey, Indicator, Data, and
-multilingual string translation tables. Foreign key relationships,
-custom JSON serialization methods, and database seeding from Excel
-workbooks.</li>
-                        <li>RESTful API design with versioned endpoints
-(v1), serving collections and entities for countries, surveys,
-indicators, survey data, and multilingual text resources.</li>
-                        <li>Asynchronous task processing using Celery
-with Redis as message broker for long-running operations like dataset
-activation and database initialization.</li>
-                        <li>Database-backed response caching system
-using custom Cache model with support for different MIME types and
-datalab initialization caching.</li>
-                        <li>Custom CLI management system using
-Flask-Script with commands for database initialization, backup/restore,
-dataset management, and translations.</li>
-                        <li>Multi-environment configuration
-(development, staging, production) using python-dotenv, with
-environment-specific database and broker URLs.</li>
-                        <li>Infrastructure on Heroku with Gunicorn WSGI
-server, PostgreSQL database, Redis message broker, and Procfile-based
-process management (web, worker, release).</li>
-                        <li>AWS S3 integration using boto3 for dataset
-versioning, database backups, and documentation hosting with separate
-staging/production buckets.</li>
-                        <li>CI/CD pipeline using CircleCI 2.0 with
-Docker containers (Python 3.6, PostgreSQL 9.6), automated testing,
-dependency caching, and auto-deployment to Heroku on successful
-builds.</li>
-                        <li>Comprehensive documentation using Sphinx
-with sphinxcontrib-httpdomain for API docs, hosted on AWS S3 (CloudFront
-CDN), including user guides and developer documentation.</li>
+                        <li>Co-led and co-developed zero to one project,
+including architecture and development.</li>
+                        <li>Backend in Python, using Flask web framework
+and SQLAlchemy ORM.</li>
                         <li>Authentication and user management using
 Flask-User, Flask-Login, with Passlib and bcrypt for secure password
 hashing.</li>
-                        <li>Data ingestion pipeline processing Excel
-workbooks (~20MB dataset files) with custom InitDbFromWb class for
-transforming spreadsheet data into normalized database tables with
-progress callbacks.</li>
-                        <li>Code quality tools including pylint,
-pycodestyle, pydocstyle, with comprehensive makefile for common
-development tasks (testing, linting, serving, deploying).</li>
+                        <li>PostgreSQL database, with pipeline for
+database seeding from Excel workbooks.</li>
+                        <li>RESTful API design with versioned and
+multi-lingual endpoints.</li>
+                        <li>Asynchronous worker task processing using
+Celery with Redis (previously used RabbitMQ) as message broker for
+long-running, large dataset upload processes.</li>
+                        <li>Infrastructure on Heroku for web server,
+with multi-environment configuration (development, staging, production),
+as well as AWS S3 for datasets.</li>
+                        <li>CI/CD pipeline using CircleCI.</li>
                       </ul>
                     
           <!--          Variation: Grey text inside parens -->
@@ -6169,6 +6000,7 @@ development tasks (testing, linting, serving, deploying).</li>
 S3</span>
                                                 <span class="skill-block">RabbitMQ</span>
                                                 <span class="skill-block">Redis</span>
+                                                <span class="skill-block">CircleCI</span>
                                 </p>
           
 
@@ -6221,13 +6053,17 @@ S3</span>
 <!--              <span class="skill-block">Redis</span>-->
 <!--            -->
 <!--          -->
+<!--            -->
+<!--              <span class="skill-block">CircleCI</span>-->
+<!--            -->
+<!--          -->
 <!--          </p>-->
 
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
 <!--            true, true, R, SQL, PostgreSQL, Heroku, AWS
-S3, RabbitMQ, Redis-->
+S3, RabbitMQ, Redis, CircleCI-->
 <!--          </p>-->
 <!--          -->
 
@@ -6249,7 +6085,20 @@ S3, RabbitMQ, Redis-->
 PMA2020 data.</div>
           
           
-                              
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Managed, but did not do hands-on development
+for, version 2.0 of app, moving from a static-JSON data model to REST
+API queries.</li>
+                        <li>Led stakeholder requirements gathering and
+produced a comprehensive requirements specification for vendor
+implementation.</li>
+                        <li>Selected and managed an external firm to
+develop the product, as well as hired and managed part time contractor
+for implementing tests.</li>
+                        <li>Deployed as static jQuery app, with
+highcharts for visualization, to AWS S3.</li>
+                      </ul>
+                    
           <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
@@ -6257,11 +6106,11 @@ PMA2020 data.</div>
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">
                 <span class="skill-main">JavaScript</span>
-                                  <span class="skill-sub">(jQuery, Selenium, Node, npm)</span>
+                                  <span class="skill-sub">(jQuery, highcharts, Selenium, Karma, Chai, Node, npm)</span>
                               </span>
+                                                <span class="skill-block">Bootstrap</span>
                                                 <span class="skill-block">AWS
 S3</span>
-                                                <span class="skill-block">CircleCI</span>
                                 </p>
           
 
@@ -6272,17 +6121,17 @@ S3</span>
 <!--              <span class="skill-block">-->
 <!--                <span class="pill">JavaScript</span>-->
 <!--                -->
-<!--                  <span class="sub">(jQuery, Selenium, Node, npm)</span>-->
+<!--                  <span class="sub">(jQuery, highcharts, Selenium, Karma, Chai, Node, npm)</span>-->
 <!--                -->
 <!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">AWS S3</span>-->
+<!--              <span class="skill-block">Bootstrap</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
-<!--              <span class="skill-block">CircleCI</span>-->
+<!--              <span class="skill-block">AWS S3</span>-->
 <!--            -->
 <!--          -->
 <!--          </p>-->
@@ -6290,29 +6139,43 @@ S3</span>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true, AWS S3, CircleCI-->
+<!--            true, Bootstrap, AWS S3-->
 <!--          </p>-->
 <!--          -->
 
 <!--          todo: this should be a toggle, rather than deactivating here -->
 <!--          -->
 <!--          <p class="roles">-->
-<!--            Dev team lead-->
+<!--            Software Engineer, Manager-->
 <!--          </p>-->
 <!--          -->
         </section>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              <a href="https://github.com/PMA-2020/xform-test">XFormTest</a>
+                              <a href="https://forum.getodk.org/t/xformtest-an-xlsform-testing-library-just-for-you/15774">XFormTest</a>
                           </div>
           </header>
 
-                    <div class="summary">CLI tool and library for
-automated testing of XForms survey definitions.</div>
+                    <div class="summary"><p>CLI tool and library for
+automated testing of XForms survey definitions. Zero to one project,
+creating novel, only of its kind, testing framework for XForms running
+on XPath, allowing developers of complex XForms and XLSForms to deploy
+with confidence. Secondary link:
+https://github.com/PMA-2020/xform-test</p></div>
           
           
-                              
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Conceived idea, architected, developed,
+marketed, and provided training for novel testing tool.</li>
+                        <li>Integrated with Java-based XForm engine
+JavaRosa, to serve as the headless engine for emulating data entry,
+mirroring the execution environment of popular XForm software ODK (Open
+Data Kit).</li>
+                        <li>Integrated Python-based pyxform library for
+XLSForm to XForm conversion.</li>
+                      </ul>
+                    
           <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
@@ -6363,11 +6226,25 @@ PDF Printer</a>
                           </div>
           </header>
 
-                    <div class="summary">Tool for converting XForms into
-printable, editable forms such as Word documents.</div>
+                    <div class="summary"><p>Tool for converting XForms
+into human readable formats. Used extensively by internal staff and
+other public health organizations to iterate on form development,
+syncronizing the “paper” representations with programmatic one, thereby
+solving inconsistencies and friction, leading to improved quality and
+development speed of survey questionnaires.</p></div>
           
           
-                              
+                              <ul class="statements" style="margin-bottom: 10px;">
+                        <li>Co-managed zero to one project, including
+architecture and development</li>
+                        <li>Developed Python tool to convert XForms to
+HTML, PDF, and DOCX.</li>
+                        <li>Deployed and maintained web application
+first on Linode, and then on Heroku, with CI/CD using CircleCI.</li>
+                        <li>Hired and managed frontend software engineer
+to handle templating and styling.</li>
+                      </ul>
+                    
           <!--          Variation: Grey text inside parens -->
           <!-- SKILLS (Monospace: Consolas stack) (other fonts look exactly the same; could remove) -->
           <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills">
@@ -6375,9 +6252,10 @@ printable, editable forms such as Word documents.</div>
 <!--          <p class="skills-line skills-line&#45;&#45;mono mono&#45;&#45;jetbrains" aria-label="Skills">-->
                                     <span class="skill-block">
                 <span class="skill-main">Python</span>
-                                  <span class="skill-sub">(Flask, Argparse, PyPI)</span>
+                                  <span class="skill-sub">(Flask)</span>
                               </span>
                                                 <span class="skill-block">JavaScript</span>
+                                                <span class="skill-block">Bootstrap</span>
                                                 <span class="skill-block">Linode</span>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">CircleCI</span>
@@ -6391,13 +6269,17 @@ printable, editable forms such as Word documents.</div>
 <!--              <span class="skill-block">-->
 <!--                <span class="pill">Python</span>-->
 <!--                -->
-<!--                  <span class="sub">(Flask, Argparse, PyPI)</span>-->
+<!--                  <span class="sub">(Flask)</span>-->
 <!--                -->
 <!--              </span>-->
 <!--            -->
 <!--          -->
 <!--            -->
 <!--              <span class="skill-block">JavaScript</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Bootstrap</span>-->
 <!--            -->
 <!--          -->
 <!--            -->
@@ -6417,7 +6299,7 @@ printable, editable forms such as Word documents.</div>
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true, JavaScript, Linode, Heroku, CircleCI-->
+<!--            true, JavaScript, Bootstrap, Linode, Heroku, CircleCI-->
 <!--          </p>-->
 <!--          -->
 
@@ -6684,16 +6566,14 @@ Power BI</span>
                 <section class="project-item">
           <header class="clear">
             <div class="position">
-                              <a href="https://www.youtube.com/watch?v=efdKNfjDNRM&amp;t=287s">PMA
+                              <a href="https://github.com/PMA-2020/PMA-Survey-Hub">PMA
 Survey Hub</a>
                           </div>
           </header>
 
-                    <div class="summary"><p>Alpha-phase internal web
-application, project that is a combination of various PMA2020-created
-survey tools in one web app. Currently implementing own proprietary app,
-but in talks with KoBo Toolbox team, to add our tools as
-plugins.</p></div>
+                    <div class="summary"><p>Prototype of internal, zero
+to one web application, project that is a combination of various
+PMA2020-created survey tools in one web application.</p></div>
           
           
                               
@@ -6757,8 +6637,9 @@ Translation Hub</a>
                           </div>
           </header>
 
-                    <div class="summary">Pre-release, internal web
-application for translation management of M&amp;E survey content.</div>
+                    <div class="summary">Prototype of internal, zero to
+one web application for translation management of M&amp;E survey
+content.</div>
           
           
                               
@@ -6877,11 +6758,15 @@ development.</p></div>
                           </div>
           </header>
 
-                    <div class="summary">Light-weight combined HRM+CRM
-tool.</div>
+                    <div class="summary"><p>Zero to one project,
+involving creation of an HRM + CRM (Human Resource Management + Customer
+Resource Management) general web application framework, and customized
+home health care implementation.</p></div>
           
           
                               <ul class="statements" style="margin-bottom: 10px;">
+                        <li>100% ownership of zero to one project,
+involving architecture and development, as a solo dev.</li>
                         <li>Backend in Python, Flask + Gunicorn WSGI
 server. WTForms validation. SQLAlchemy ORM. MVC architecture with
 routes, models, and forms.</li>
@@ -6928,6 +6813,8 @@ settings (branding, secret keys, module enablement).</li>
                                                 <span class="skill-block">PostgreSQL</span>
                                                 <span class="skill-block">Heroku</span>
                                                 <span class="skill-block">Twilio</span>
+                                                <span class="skill-block">AdminLTE</span>
+                                                <span class="skill-block">Bootstrap</span>
                                 </p>
           
 
@@ -6964,12 +6851,20 @@ settings (branding, secret keys, module enablement).</li>
 <!--              <span class="skill-block">Twilio</span>-->
 <!--            -->
 <!--          -->
+<!--            -->
+<!--              <span class="skill-block">AdminLTE</span>-->
+<!--            -->
+<!--          -->
+<!--            -->
+<!--              <span class="skill-block">Bootstrap</span>-->
+<!--            -->
+<!--          -->
 <!--          </p>-->
 
 <!--          Variation: simple -->
 <!--          -->
 <!--          <p class="skills">-->
-<!--            true, true, PostgreSQL, Heroku, Twilio-->
+<!--            true, true, PostgreSQL, Heroku, Twilio, AdminLTE, Bootstrap-->
 <!--          </p>-->
 <!--          -->
 
