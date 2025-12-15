@@ -2,7 +2,7 @@
 docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable \
 default--top-n-projects-statements html-canonical--top-n-projects-statements \
 html-stackoverflow--statements-only--top-n-projects-statements html-stackoverflow--top-5-project-details-only \
-html-canonical--top-5-project-details-only test
+html-canonical--top-5-project-details-only html-stackoverflow-no-project-details test
 
 FILENAME_STUB=Joe-Flack-Résumé
 N?=5
@@ -17,6 +17,7 @@ default:
 	$(MAKE) html-stackoverflow--skills-only -B
 	$(MAKE) html-stackoverflow--statements-only -B
 	$(MAKE) html-stackoverflow--top-5-project-details-only -B
+	$(MAKE) html-stackoverflow-no-project-details -B
 
 
 
@@ -65,6 +66,11 @@ output/$(FILENAME_STUB)-StackOverflow--top-5-project-details-only.html:
 output/$(FILENAME_STUB)--top-5-project-details-only.html: output/$(FILENAME_STUB)-StackOverflow--top-5-project-details-only.html
 	@mv $< $@
 #	@cp $< $@
+
+output/$(FILENAME_STUB)-no-project-details.html:
+	pandoc --defaults defaults/html-stackoverflow-no-project-details.yaml > $@
+
+html-stackoverflow-no-project-details: output/$(FILENAME_STUB)-no-project-details.html
 
 html-stackoverflow: output/$(FILENAME_STUB)-StackOverflow.html
 

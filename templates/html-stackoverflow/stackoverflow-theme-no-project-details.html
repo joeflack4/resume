@@ -1,0 +1,268 @@
+<!doctype html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="en">
+<head>
+
+<meta charSet="UTF-8" /><meta
+	name="viewport"
+	content="width=device-width, initial-scale=1.0"
+/>
+<title>
+$if(name)$
+  $name$$if(title)$ – $title$$endif$
+$else$
+  $if(title)$$title$$endif$
+$endif$
+</title>
+
+<!--CDN version-->
+<!--<link-->
+<!--	rel="stylesheet"-->
+<!--	href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"-->
+<!--	integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"-->
+<!--	crossOrigin="anonymous"-->
+<!--/>-->
+<!--<link-->
+<!--	rel="stylesheet"-->
+<!--	href="fontawesome-v5.15.4-all.css">-->
+<link
+	rel="stylesheet"
+	href="fontawesome-free-5.15.4-web/css/all.css">
+<link
+	rel="stylesheet"
+	href="theme.css">
+<link
+	rel="stylesheet"
+	href="my.css">
+</head>
+
+<body>
+<div id="root">
+<div id="resume">
+
+<header id="header" class="clear">
+	$if(headshot)$
+		<img class="image" src="$headshot$" alt="">
+	$endif$
+
+	<div class="middle">
+		<h1 class="name">$name$</h1>
+		<h2 class="label">$title$</h2>
+	</div>
+	$if(subheader)$<span class="subheader">
+		<span class="city">$subheader$</span>
+	</span>$endif$
+
+
+<div id="contact-row">
+  <!-- email + phone -->
+  <div class="contact-top">
+    <span class="far fa-envelope"></span>
+    <a class="hide-href-print" href="mailto:$email$">$email$</a>
+    <span class="fas fa-mobile-alt"></span>
+    <a class="hide-href-print" href="tel:$phone$">$phone$</a>
+  </div>
+
+  <!-- Links -->
+  $if(links)$
+  <div class="contact-bottom">
+    $for(links)$
+    <span class="$if(links.icon)$$links.icon$$else$fas fa-external-link-alt$endif$"></span>
+    <span class="url">
+      <a class="hide-href-print" target="_blank" href="$links.href$" rel="noreferrer">
+        $links.text$
+      </a>
+    </span>
+    $endfor$
+  </div>
+  $endif$
+</div>
+
+
+</header>
+
+<section class="section"><section class="main-summary"><div>
+	$summary$
+</div></section></section>
+<!--  Alt major way to group content, using content/*.md rather than Non data/*.yml -->
+<!--<main class="resume-content">-->
+<!--	$body$-->
+<!--</main>-->
+
+
+
+<section class="section">
+  <header><h2 class="section-title">Work Experience</h2></header>
+  <section id="work">
+    $for(work-experience)$
+    <section class="work-item"$if(work-experience.id)$ id="$work-experience.id$"$endif$>
+      <div class="work-card">
+        <!-- id -->
+        $if(work-experience.id)$<label for="$work-experience.id$"></label>$endif$
+
+        <!-- Start/end date -->
+        <!--        <header class="clear work-card__header"> adds: "{ margin-bottom: 8px; }", but I don't need -->
+        <header>
+          <div class="date">
+            <span class="startDate">$work-experience.startDate$</span>$if(work-experience.startDate)$ -$endif$
+            <span class="endDate">$work-experience.endDate$</span>
+          </div>
+
+          <!-- Title -->
+          <div class="position">$work-experience.title$</div>
+
+          <!-- URL -->
+          <div class="job">
+            $if(work-experience.url)$
+              <a href=$if(work-experience.url)$"https://$work-experience.url$"$endif$ class="job-link">
+                $work-experience.job$
+                <span class="job-url">[$work-experience.url$]</span>
+              </a>
+            $else$
+              $work-experience.job$
+            $endif$
+          </div>
+        </header>
+
+        <div class="item work-card__body">
+          <!-- Loc -->
+          <!--      $if(work-experience.location)$-->
+          <!--      <span class="subheader">$work-experience.location$</span>-->
+          <!--      $endif$-->
+
+          <!-- Summary -->
+          $if(work-experience.summary)$
+          <div class="summary">$work-experience.summary$</div>
+          $endif$
+
+          <!-- Job skills overview -->
+          $if(work-experience.skills)$
+          <ul class="skills-pills" aria-label="Skills">
+            $for(work-experience.skills)$
+            <li>$work-experience.skills$</li>
+            $endfor$
+          </ul>
+          $endif$
+        </div>
+      </div>
+
+      <!-- Job-level statements (outside work-card) -->
+      <div class="item">
+        $if(work-experience.statements)$
+        <ul class="statements" style="margin-bottom: 10px;">
+          $for(work-experience.statements)$
+          <li>$work-experience.statements$</li>
+          $endfor$
+        </ul>
+        $endif$
+
+        <!-- Job-level all-skills (single line) -->
+        $if(work-experience.all-skills)$
+        <p class="skills-line skills-line--mono mono--consolas" aria-label="Skills" style="margin-top: 8px;">
+        $for(work-experience.all-skills)$
+          $if(work-experience.all-skills.name)$
+            <span class="skill-block">
+              <span class="skill-main">$work-experience.all-skills.name$</span>
+              $if(work-experience.all-skills.sub)$
+                <span class="skill-sub">($for(work-experience.all-skills.sub)$$work-experience.all-skills.sub$$sep$, $endfor$)</span>
+              $endif$
+            </span>
+          $else$
+            <span class="skill-block">$work-experience.all-skills$</span>
+          $endif$
+        $endfor$
+        </p>
+        $endif$
+      </div>
+
+      <!-- Job projects - REMOVED IN THIS TEMPLATE -->
+      <!-- This template does not render project details -->
+
+    </section>
+    $endfor$
+  </section>
+</section>
+
+
+
+<section class="section">
+  <header><h2 class="section-title">Projects</h2></header>
+  <section id="projects">
+    $for(projects)$
+    <section class="project-item" id="$projects.id$">
+      $if(projects.id)$<label for="$projects.id$"></label>$endif$
+      <header class="clear">
+        <div class="position">
+          $if(projects.url)$<a href="$projects.url$">$projects.name$</a>$else$$projects.name$$endif$
+        </div>
+        <div class="date">
+          <span class="startDate">$projects.startDate$</span>$if(projects.startDate)$ -$endif$
+          <span class="endDate">$projects.endDate$</span>
+        </div>
+      </header>
+      <div class="item">
+        $if(projects.summary)$<div class="summary">$projects.summary$</div>$endif$
+
+        $if(toggles.show_project_statements)$
+        $if(projects.should_show_statements)$
+        $if(projects.statements)$
+        <ul class="statements" style="margin-bottom: 10px;">
+          $for(projects.statements)$
+          <li>$projects.statements$</li>
+          $endfor$
+        </ul>
+        $endif$
+        $endif$
+        $endif$
+
+        $if(toggles.show_project_skills)$
+        $if(projects.skills)$
+        <ul class="skills-pills" aria-label="Skills">
+          $for(projects.skills)$
+          <li>$projects.skills$</li>
+          $endfor$
+        </ul>
+        $endif$
+        $endif$
+
+        $if(projects.highlights)$
+        <ul>
+          $for(projects.highlights)$
+          <li>$projects.highlights$</li>
+          $endfor$
+        </ul>
+        $endif$
+
+      </div>
+    </section>
+    $endfor$
+  </section>
+</section>
+
+
+
+
+<section class="section">
+	<header><h2 class="section-title">Education</h2></header>
+	<section id="education" class="education-list">
+    $for(education)$
+    <section class="education-item">
+      <header class="clear">
+        <div class="date">
+          <span class="startDate">$education.startDate$</span>$if(education.startDate)$ -$endif$
+          <span class="endDate">$education.endDate$</span>
+        </div>
+        <div class="header-left">
+          <div class="studyType">$education.studyType$</div>
+          <div class="area">$education.area$</div>
+          <div class="institution">$education.institution$</div>
+        </div>
+      </header>
+      <div class="item"></div>
+    </section>
+    $endfor$
+  </section>
+</section>
+
+</div></div></body>
+</html>

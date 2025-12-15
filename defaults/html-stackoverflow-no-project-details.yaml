@@ -1,0 +1,45 @@
+from: gfm
+to: html
+standalone: true
+self-contained: true  # embeds css/js from external links
+embed-resources: true  # embeds css/js from external links
+
+metadata-files:
+  - data/meta.yml
+  - data/section-ordering/body.yml
+  - data/work-experience.yml
+  - data/projects.yml
+  - data/education.yml   # or education.json
+
+template: templates/html-stackoverflow/stackoverflow-theme-no-project-details.html
+
+css:
+  - templates/html-stackoverflow/theme.css
+  - templates/html-stackoverflow/fontawesome-free-5.15.4-web/css/all.css
+#  - templates/html-stackoverflow/fontawesome-v5.15.4-all.css
+
+resource-path:
+  - .
+  - templates/html-stackoverflow
+  - templates/html
+  - assets/images
+
+input-files:
+#  - content/01-header.md  #duplicative; this is defined in the html with $ vars
+  - content/02-summary.md
+  - content/10-experience/2021-experience.md
+  - content/10-experience/2025-.md
+  - content/20-skills.md
+#  - content/30-education.md
+#  - content/40-projects.md
+#  - content/50-awards.md
+#  - content/60-languages.md
+#  - content/70-interests.md
+#  - content/80-references.md
+
+filters:
+  - templates/html-stackoverflow/filters/toggle-override-filter.lua
+  - templates/html-stackoverflow/filters/project-statements-filter.lua
+  - templates/html-stackoverflow/filters/section-headings.lua
+
+#output-file: output/Joe-Flack-Résumé-no-project-details.html
