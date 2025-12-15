@@ -1,7 +1,7 @@
 # H2 Header Spacing Analysis
 
 ## Problem Description
-The h2 headers (particularly "Education" and "Projects") in `output/Joe-Flack-Résumé.html` (doc1) have excessive spacing after them compared to the template `templates/in-development/html-stackoverflow/_archive/v/1-downloaded-b4-customization/stack1.html` (doc2).
+The h2 headers (particularly "Education" and "Projects") in `output/Joe-Flack-Résumé.html` (doc1) have excessive spacing after them compared to the template `templates/html-stackoverflow/_archive/v/1-downloaded-b4-customization/stack1.html` (doc2).
 
 ## Root Cause Analysis
 

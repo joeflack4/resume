@@ -44,7 +44,7 @@ The templates define:
 - Inline content like skills, summaries, roles, and URLs
 
 ### 4. Lua Filters
-Pandoc Lua filters process and transform metadata before rendering. Located in `templates/in-development/html-stackoverflow/filters/`:
+Pandoc Lua filters process and transform metadata before rendering. Located in `templates/html-stackoverflow/filters/`:
 
 - `toggle-override-filter.lua` — Allows overriding toggle values via command-line metadata
 - `project-statements-filter.lua` — Implements top-N project filtering based on importance order

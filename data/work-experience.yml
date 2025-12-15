@@ -16,6 +16,19 @@ work-experience:
     - Recommender Systems
     - ML Engineering
     - Agentic AI
+    statements:
+    - Founded and fully owned a zero-to-one, solo-developed platform combining recommender systems and generative AI to iteratively produce images optimized for user preferences.
+    - Designed and implemented a scalable Python backend using FastAPI, Celery workers, SQLAlchemy, Alembic, and layered service/repository architecture.
+    - Built a high-performance PostgreSQL data layer with 25+ tables, partial star schema, partitioning, aggregation tables, full-text search, and extensive GIN/GiST indexing supporting queries over ~100M rows in sub-200ms.
+    - Implemented Redis-based caching using LRU and heuristic strategies driven by analytics and admin dashboards.
+    - Developed a modern React/TypeScript frontend using Vite, MUI, React Query, and Playwright with real-time updates via WebSockets.
+    - Integrated image generation workflows using ComfyUI with support for local and cloud execution, model management, LoRA uploads, and queued job processing.
+    - Built experimental recommender systems leveraging CLIP embeddings across text and image signals with ensemble-based ranking.
+    - Implemented complex search and curation features including multi-select tagging, bookmarks, hierarchical tags, and advanced filtering.
+    - Created extensive developer tooling including ~250 CLI commands supporting database operations, testing, orchestration, and deployment workflows.
+    - Authored comprehensive end-user and developer documentation covering architecture, infrastructure, configuration, testing, and troubleshooting.
+    - Built and maintained ~1,500 frontend and backend tests spanning unit, integration, e2e, and performance testing.
+    - Designed and deployed AWS infrastructure using Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.
     projects:
 
     - name: Web platform foundation
@@ -89,6 +102,14 @@ work-experience:
     - Kubernetes
     - ML Ops
     - Tailwind
+    statements:
+    - Designed and built a zero-to-one AI chatbot connected to a mock medical record system in four days using spec-driven development.
+    - Implemented a fault-tolerant microservice architecture using Python and FastAPI, separating data APIs from LLM-powered chat services.
+    - Integrated retrieval-augmented generation (RAG) over MongoDB-backed synthetic EHR data.
+    - Deployed open-source LLMs using both local inference (GGUF/CPU) and Hugging Face-hosted models with dynamic routing.
+    - Built a modern React/TypeScript frontend with Tailwind for chatbot interaction, user data exploration, and history tracking.
+    - Provisioned Kubernetes-based infrastructure on AWS using Terraform, EKS, autoscaling, ConfigMaps, Secrets, and persistent volumes for model caching.
+    - Implemented secure cloud architecture with IAM, private networking, CloudFront-hosted frontend, and managed MongoDB Atlas.
     # todo: add granular skills section?
     projects:
     - name: MVP
@@ -114,6 +135,19 @@ work-experience:
     - Full Stack
     - Biomedical Informatics
     - Ontology Engineering
+    statements:
+    - Served as a full stack and data engineer across multiple concurrent biomedical informatics projects, frequently in zero-to-one contexts.
+    - Led and mentored small engineering teams, owning roadmaps, sprint planning, kanban boards, scheduling, and work allocation without formal supervisory authority.
+    - Architected and maintained production-grade Python backends using FastAPI, Pydantic, SQLAlchemy, and custom data pipelines.
+    - Designed complex PostgreSQL schemas and analytical layers with advanced indexing, materialized views, DAG-managed refreshes, and full-text search.
+    - Built modern web frontends using React, TypeScript, Vite, MUI, and data visualization libraries for large-scale semantic datasets.
+    - Developed graph-based data systems and visualizations using NetworkX, Neo4j, and D3-based tooling to support ontology exploration at scale.
+    - Implemented semantic ingestion and harmonization pipelines using OWL, RDF, SPARQL, LinkML, and ontology reasoning tools.
+    - Built NLP pipelines using sentence transformers and PyTorch for semantic similarity and curator-assisted matching.
+    - Owned and operated CI/CD pipelines, infrastructure, and monitoring across Azure and cloud-hosted platforms.
+    - Optimized large-scale analytics pipelines using PySpark and Databricks, achieving ~100x throughput improvements on de-identification workflows.
+    - Contributed to and helped shape major open-source standards including LinkML and SSSOM, with focus on FHIR interoperability.
+    - Produced extensive architecture diagrams, onboarding guides, playbooks, and end-user documentation.
     projects:
 
     - name: TermHub
@@ -361,6 +395,10 @@ work-experience:
       Part time contract working on API for flagship product, Resource Optimizer, helping the FCC to allocate resources 
       and optimize geospatial telecom coverage. Developed, tested, and maintained endpoints for querying geospatial and 
       relational data
+#    statements:
+#    - Developed and maintained backend APIs for a geospatial analytics platform supporting FCC telecom resource optimization.
+#    - Implemented RESTful endpoints using Node.js and Express to query and serve geospatial and relational datasets.
+#    - Worked in a part-time contract capacity delivering production-quality features under tight timelines.
 
   - job: "Johns Hopkins: Tuberculosis Modeling and Translational Epi Group"
     title: Sr. Programmer Analyst
@@ -372,6 +410,13 @@ work-experience:
     summary: >
       Worked with a number of teams on projects requiring different skill sets, from statistical modeling, to data 
       visualization web applications, to high performance computing. All web applications were done zero to one.
+    statements:
+    - Contributed to interdisciplinary epidemiological modeling projects spanning statistical analysis, web applications, and high-performance computing.
+    - Built multiple zero-to-one data visualization and modeling tools using R Shiny, Python, and JavaScript.
+    - Implemented and calibrated agent-based disease models in C++, executing simulations on HPC clusters using SLURM.
+    - Translated and adapted mathematical models between MATLAB and R for web-based deployment.
+    - Designed GIS-enabled web tools integrating APIs, spreadsheets, PDFs, and visualization platforms.
+    - Collaborated closely with epidemiologists on model validation, sensitivity analyses, and result interpretation.
     projects:
 
     - name: JHEEM (Ending HIV)
@@ -527,6 +572,10 @@ work-experience:
     summary: >
       Several contractors, including myself, drafted separate mockups to inspire BioViva's technical development 
       ideation.
+#    statements:
+#    - Designed and implemented a bioinformatics portal mockup to support patient data management and visualization.
+#    - Built a static React frontend paired with a Python/Flask backend API for CRUD operations and cloud storage integration.
+#    - Contributed architectural ideas and prototypes to guide early-stage technical direction.
     projects:
     - name: Bioinformatics Portal Mockup
       about: >
@@ -545,6 +594,15 @@ work-experience:
     summary: >
       Provided development and maintained codebases for public health survey operations organization, including 
       creation of web API, software libraries, frontend databases, and data visualization app.
+    statements:
+    - Served as a full stack engineer on public health survey and data dissemination platforms used internationally.
+    - Co-led multiple zero-to-one projects including public REST APIs, visualization tools, and developer libraries.
+    - Designed and implemented Python-based web services using Flask, SQLAlchemy, Celery, and PostgreSQL.
+    - Built asynchronous processing pipelines for large data uploads and transformations using message queues.
+    - Led requirements gathering, vendor selection, and external contractor management for major frontend rewrites.
+    - Created novel developer tooling for automated testing of XForms and survey definitions.
+    - Deployed and maintained applications across Heroku, AWS, and other cloud providers with CI/CD pipelines.
+    - Mentored junior developers and coordinated small teams across engineering and data roles.
     projects:
 
     - name: PMA API
@@ -756,6 +814,14 @@ work-experience:
     startDate: 2014/09
     endDate: 2016/09
     skills: [Python, Flask, JavaScript, Angular]
+    statements:
+    - Progressed rapidly from caregiver to Head of Information Technology, ultimately owning all technical systems.
+    - Architected and built a zero-to-one, multi-tenant HRM/CRM web platform as a solo developer.
+    - Developed backend systems using Python and Flask with robust authentication, authorization, and auditing.
+    - Designed modular ERP-style architecture supporting HR, CRM, operations, scheduling, and administration.
+    - Built Angular-based frontend dashboards with role-based access control and data visualization.
+    - Integrated third-party services including SMS notifications and financial reporting automation.
+    - Managed deployments, configuration, and infrastructure for production systems.
     projects:
 
     - name: Just-a-Dash
@@ -820,6 +886,9 @@ work-experience:
     endDate: 2014/08
     summary: >
       Taught in Japan & South Korea, public and private, all age ranges from toddler to post-high school.
+#    statements:
+#    - Taught English in Japan and South Korea across public and private institutions.
+#    - Instructed students ranging from toddlers to post–high school learners in diverse classroom environments.
 
   - job: Several companies
     title: Various roles
@@ -827,3 +896,5 @@ work-experience:
     endDate: "2008"
     summary: >
       Worked in several roles in sales, food service, and retail.
+#    statements:
+#    - Held various roles in sales, food service, and retail early in career, building foundational communication and work discipline skills.

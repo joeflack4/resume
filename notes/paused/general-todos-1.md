@@ -146,7 +146,7 @@ A: Local. No alternative.
 
 **Files created/modified:**
 - ✅ `defaults/html-stackoverflow.yaml` - Pandoc configuration for StackOverflow template
-- ✅ `templates/in-development/html-stackoverflow/stackoverflow-theme.html` - Converted to use pandoc variables
+- ✅ `templates/html-stackoverflow/stackoverflow-theme.html` - Converted to use pandoc variables
 - ✅ `content/40-projects.md`, `50-awards.md`, `60-languages.md`, `70-interests.md`, `80-references.md` - New sections
 - ✅ `makefile` - Added StackOverflow build targets
 
