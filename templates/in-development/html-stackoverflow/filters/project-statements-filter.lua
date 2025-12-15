@@ -20,8 +20,9 @@ function Meta(meta)
 
   -- Helper function to check if a project should show statements
   local function should_include(project_name)
-    if top_n == 0 then
-      return true  -- If top_n is 0 or not set, include all
+    -- Special case: -1 means "show all", as does 0 (not set) or any negative value
+    if top_n <= 0 then
+      return true  -- If top_n is -1, 0, or not set, include all
     end
 
     local order = importance_map[project_name]

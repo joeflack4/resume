@@ -1,7 +1,8 @@
 .PHONY: all clean html html-plain html-stackoverflow html-canonical docx stackoverflow docx-from-template \
 docx-from-html docx-from-html-via-pandoc docx-from-html-via-libre-office default all-unstable \
 default--top-n-projects-statements html-canonical--top-n-projects-statements \
-html-stackoverflow--statements-only--top-n-projects-statements
+html-stackoverflow--statements-only--top-n-projects-statements html-stackoverflow--top-5-project-details-only \
+html-canonical--top-5-project-details-only test
 
 FILENAME_STUB=Joe-Flack-Résumé
 N?=5
@@ -15,6 +16,7 @@ default:
 	$(MAKE) html-canonical -B
 	$(MAKE) html-stackoverflow--skills-only -B
 	$(MAKE) html-stackoverflow--statements-only -B
+	$(MAKE) html-stackoverflow--top-5-project-details-only -B
 
 
 
@@ -56,11 +58,23 @@ output/$(FILENAME_STUB)--skills-only.html: output/$(FILENAME_STUB)-StackOverflow
 	@mv $< $@
 #	@cp $< $@
 
+output/$(FILENAME_STUB)-StackOverflow--top-5-project-details-only.html:
+	pandoc --defaults defaults/html-stackoverflow.yaml \
+		-M override_top_n_projects=5 > $@
+
+output/$(FILENAME_STUB)--top-5-project-details-only.html: output/$(FILENAME_STUB)-StackOverflow--top-5-project-details-only.html
+	@mv $< $@
+#	@cp $< $@
+
 html-stackoverflow: output/$(FILENAME_STUB)-StackOverflow.html
 
 html-stackoverflow--statements-only: output/$(FILENAME_STUB)-StackOverflow--statements-only.html
 
 html-stackoverflow--skills-only: output/$(FILENAME_STUB)--skills-only.html
+
+html-stackoverflow--top-5-project-details-only: output/$(FILENAME_STUB)--top-5-project-details-only.html
+
+html-canonical--top-5-project-details-only: output/$(FILENAME_STUB)--top-5-project-details-only.html
 
 output/$(FILENAME_STUB).html: output/$(FILENAME_STUB)-StackOverflow.html
 	@mv $< $@
@@ -121,3 +135,8 @@ docx-from-html: docx-from-html-via-pandoc docx-from-html-via-libre-office
 docx: docx-from-template docx-from-html
 	@mv output/$(FILENAME_STUB).docx output/_archive/docx/development_versions/
 
+
+# Testing
+test:
+	@echo "Running output variant tests..."
+	@python tests/run_tests.py
