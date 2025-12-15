@@ -7,6 +7,7 @@ html-canonical--top-5-project-details-only html-stackoverflow-no-project-details
 FILENAME_STUB=Joe-Flack-Résumé
 N?=5
 
+# todo: make sure that html and docx commands represent all the variations in the body of the 'default' command
 all-unstable: html docx
 
 all: default
@@ -15,7 +16,7 @@ all: default
 default:
 	$(MAKE) html-canonical -B
 	$(MAKE) html-stackoverflow--skills-only -B
-	$(MAKE) html-stackoverflow--statements-only -B
+	#$(MAKE) html-stackoverflow--statements-only -B
 	$(MAKE) html-stackoverflow--top-5-project-details-only -B
 	$(MAKE) html-stackoverflow-no-project-details -B
 
@@ -111,6 +112,7 @@ output/$(FILENAME_STUB)-StackOverflow--statements-only--top-n-$(N)-projects-stat
 html-stackoverflow--statements-only--top-n-projects-statements: output/$(FILENAME_STUB)-StackOverflow--statements-only--top-n-$(N)-projects-statements.html
 
 # todo: temp: mv: file in _archive until ready
+# todo: make sure that html and docx commands represent all the variations in the body of the 'default' command
 html: html-plain html-stackoverflow html-canonical
 	@mv output/$(FILENAME_STUB)-plain.html output/_archive/html/development_versions/plain/
 
@@ -138,6 +140,7 @@ docx-from-html-via-libre-office: output/$(FILENAME_STUB)-from-html-via-libre-off
 docx-from-html: docx-from-html-via-pandoc docx-from-html-via-libre-office
 
 # todo: temp: mv: file in _archive until ready
+# todo: make sure that html and docx commands represent all the variations in the body of the 'default' command
 docx: docx-from-template docx-from-html
 	@mv output/$(FILENAME_STUB).docx output/_archive/docx/development_versions/
 

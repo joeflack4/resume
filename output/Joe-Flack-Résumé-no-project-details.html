@@ -4041,41 +4041,40 @@ weekly.</p></div>
       <!-- Job-level statements (outside work-card) -->
       <div class="item">
                 <ul class="statements" style="margin-bottom: 10px;">
-                    <li>Founded and fully owned a zero-to-one,
-solo-developed platform combining recommender systems and generative AI
-to iteratively produce images optimized for user preferences.</li>
-                    <li>Designed and implemented a scalable Python
-backend using FastAPI, Celery workers, SQLAlchemy, Alembic, and layered
-service/repository architecture.</li>
-                    <li>Built a high-performance PostgreSQL data layer
-with 25+ tables, partial star schema, partitioning, aggregation tables,
-full-text search, and extensive GIN/GiST indexing supporting queries
-over ~100M rows in sub-200ms.</li>
-                    <li>Implemented Redis-based caching using LRU and
-heuristic strategies driven by analytics and admin dashboards.</li>
-                    <li>Developed a modern React/TypeScript frontend
-using Vite, MUI, React Query, and Playwright with real-time updates via
-WebSockets.</li>
-                    <li>Integrated image generation workflows using
-ComfyUI with support for local and cloud execution, model management,
-LoRA uploads, and queued job processing.</li>
-                    <li>Built experimental recommender systems
-leveraging CLIP embeddings across text and image signals with
-ensemble-based ranking.</li>
-                    <li>Implemented complex search and curation features
-including multi-select tagging, bookmarks, hierarchical tags, and
-advanced filtering.</li>
-                    <li>Created extensive developer tooling including
-~250 CLI commands supporting database operations, testing,
-orchestration, and deployment workflows.</li>
-                    <li>Authored comprehensive end-user and developer
-documentation covering architecture, infrastructure, configuration,
-testing, and troubleshooting.</li>
-                    <li>Built and maintained ~1,500 frontend and backend
-tests spanning unit, integration, e2e, and performance testing.</li>
-                    <li>Designed and deployed AWS infrastructure using
-Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache
-Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.</li>
+                    <li>Full ownership of solo-dev zero to one project,
+including idea conception, architecture design, and implementation.</li>
+                    <li>Backend in Python, FastAPI + queue worker.
+Pydantic validation. SqlAlchemy Schema. Layered architecture using
+routes, services, repositories, and data models.</li>
+                    <li>Data layer with PostgreSQL database with &gt;25
+tables, with partial star schema, junction relationship tables,
+partitioning, aggregation, extensive GIN &amp; GiST indexing, and FTS.
+Versioned migrations using Alembic. Schedule jobs (celery beat), for
+aggregation, statistics, and analytics.</li>
+                    <li>Redis caching, based on LRU and heuristics
+(popularity + response time), guided by analytics tables &amp; admin
+dashboard.</li>
+                    <li>Modern frontend using React, TypeScript, Vite,
+React Query, MUI, and Playwright.</li>
+                    <li>Recommender systems leveraging CLIP embeddings
+across text prompts and image recognition, with ensemble-based
+multi-signal recommendation. In development.</li>
+                    <li>Image generation, with auto and manual controls,
+integrated with ComfyUI (local or cloud). Redis and celery worker for
+queues. Web sockets for no-refresh updates. Several pages for model
+browsing and upload, and batch generation (projects &amp;
+experiments).</li>
+                    <li>Image browsing, supporting complex queries, with
+mutli-select tags, toggles + FTS (Full-Text search). FTS using tsvector
++ GIN on Postgres. Optimized to query joins with ~100 million rows in
+&lt;200ms. Several pages for gallery and tag and bookmark browsing and
+management.</li>
+                    <li>1,500 tests (unit, integration, e2e,
+performance), CLIs &amp; 250+ commands, and extensive
+documentation.</li>
+                    <li>AWS infrastructure using Terraform, including
+ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 +
+CloudFront, ALB, IAM, and multi-AZ VPC networking.</li>
                   </ul>
         
         <!-- Job-level all-skills (single line) -->
@@ -4653,7 +4652,7 @@ S3, CircleCI)</span>
           </div>
 
           <!-- Title -->
-          <div class="position">Head of Information Technology</div>
+          <div class="position">Software Engineer</div>
 
           <!-- URL -->
           <div class="job">

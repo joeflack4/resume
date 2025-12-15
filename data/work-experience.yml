@@ -29,19 +29,45 @@ work-experience:
     - ComfyUI
     - WebSockets
     - CLIP
+    # todo! (not a todo, just a reminder): keep in sync: 'job.statements' and 'job.PROJECT.statements'
     statements:
-    - Founded and fully owned a zero-to-one, solo-developed platform combining recommender systems and generative AI to iteratively produce images optimized for user preferences.
-    - Designed and implemented a scalable Python backend using FastAPI, Celery workers, SQLAlchemy, Alembic, and layered service/repository architecture.
-    - Built a high-performance PostgreSQL data layer with 25+ tables, partial star schema, partitioning, aggregation tables, full-text search, and extensive GIN/GiST indexing supporting queries over ~100M rows in sub-200ms.
-    - Implemented Redis-based caching using LRU and heuristic strategies driven by analytics and admin dashboards.
-    - Developed a modern React/TypeScript frontend using Vite, MUI, React Query, and Playwright with real-time updates via WebSockets.
-    - Integrated image generation workflows using ComfyUI with support for local and cloud execution, model management, LoRA uploads, and queued job processing.
-    - Built experimental recommender systems leveraging CLIP embeddings across text and image signals with ensemble-based ranking.
-    - Implemented complex search and curation features including multi-select tagging, bookmarks, hierarchical tags, and advanced filtering.
-    - Created extensive developer tooling including ~250 CLI commands supporting database operations, testing, orchestration, and deployment workflows.
-    - Authored comprehensive end-user and developer documentation covering architecture, infrastructure, configuration, testing, and troubleshooting.
-    - Built and maintained ~1,500 frontend and backend tests spanning unit, integration, e2e, and performance testing.
-    - Designed and deployed AWS infrastructure using Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.
+    - Full ownership of solo-dev zero to one project, including idea conception, architecture design, and implementation.
+    - Backend in Python, FastAPI + queue worker. Pydantic validation. SqlAlchemy Schema. Layered architecture using routes, services, repositories, and data models.
+    # i combined these two lines into 1
+    - Data layer with PostgreSQL database with >25 tables, with partial star schema, junction relationship tables, partitioning, aggregation, extensive GIN & GiST indexing, and FTS. Versioned migrations using Alembic. Schedule jobs (celery beat), for aggregation, statistics, and analytics.
+#      - Data layer with PostgreSQL database with >25 tables, with partial star schema, junction relationship tables, partitioning, aggregation, extensive GIN & GiST indexing, and FTS. Versioned migrations using Alembic.
+#      - Schedule jobs (celery beat), for aggregation, statistics, and analytics.
+    - Redis caching, based on LRU and heuristics (popularity + response time), guided by analytics tables & admin dashboard.
+    - Modern frontend using React, TypeScript, Vite, React Query, MUI, and Playwright.
+    - Recommender systems leveraging CLIP embeddings across text prompts and image recognition, with ensemble-based multi-signal recommendation. In development.
+#      - Complex configuration & environment (dev, demo, test, prod) set up with load order to allow overrides and extensibility.
+    - Image generation, with auto and manual controls, integrated with ComfyUI (local or cloud). Redis and celery worker for queues. Web sockets for no-refresh updates. Several pages for model browsing and upload, and batch generation (projects & experiments).
+    - Image browsing, supporting complex queries, with mutli-select tags, toggles + FTS (Full-Text search). FTS using tsvector + GIN on Postgres. Optimized to query joins with ~100 million rows in <200ms. Several pages for gallery and tag and bookmark browsing and management.
+    # consolidated these two into 'img gen' and 'img browsing' bullets above, respectively
+#      - Projects and experiments features, to isolate generation to specific topic sets (e.g. 'Logos', 'Product ads', 'Avatars').
+#      - Bookmarks and tags for advanced curation and browsing, including bookmarks categories and an MVP tag hierarchy.
+    - 1,500 tests (unit, integration, e2e, performance), CLIs & 250+ commands, and extensive documentation.
+#      - Extensive documentation, including for end user, and implementer / developer, including topics like architecture, infrastructure, configuration, testing, and troubleshooting.
+#      - Extensive suite of developer commands (250~) and CLIs, for database operations, multi-tier testing, service orchestration, deployment, code quality, and workflows.
+#      - 1,500~ frontend and backend tests, covering unit, integration, e2e, and performance, using PyTest, Jest, and Playwright.
+    - AWS infrastructure using Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.
+    # longer version:
+#      - Infrastructure on AWS, using Terraform for IAC tool, with WIP CI/CD in GitHub actions. Compute using ECS Fargate cluster running  containerized services (Web API, workers, mock services) with ECR for Docker image storage. S3 for serving static React/Vite via CloudFront CDN with Origin Access Control (OAC) for secure access. S3 also for state and DynamoDB table. Networking using Custom VPC with multi-AZ public/private subnets, NAT Gateway, and ALB (Application Load Balancer). Data layer uses RDS PostgreSQL and ElastiCache Redis. Security & Access, with IAM roles, security groups, and secrets management.
+    # --------
+    # what chatgpt made after i asked it to consolidate projects details by job. but i like what I had instead, so I've commented this all out
+#    - Zero-to-one solo developed platform combining recommender systems and generative AI to iteratively produce images optimized for user preferences.
+#    - Scalable Python backend using FastAPI, Celery workers, SQLAlchemy, Alembic, and layered service/repository architecture.
+#    - High-performance PostgreSQL data layer with 25+ tables, partial star schema, partitioning, aggregation tables, full-text search, and extensive GIN/GiST indexing supporting queries over ~100M rows in sub-200ms.
+#    - Redis-based caching using LRU and heuristic strategies driven by analytics and admin dashboards.
+#    - Modern React/TypeScript frontend using Vite, MUI, React Query, and Playwright with real-time updates via WebSockets.
+#    - Image generation workflows using ComfyUI with support for local and cloud execution, model management, LoRA uploads, and queued job processing.
+#    - Recommender systems leveraging CLIP embeddings across text and image signals with ensemble-based ranking (in development).
+#    - Complex search and curation features including multi-select tagging, bookmarks, hierarchical tags, and advanced filtering.
+#    - 1,500 tests (unit, integration, e2e, performance), CLIs & 250+ commands, and extensive documentation.
+##    - Created extensive developer tooling including ~250 CLI commands supporting database operations, testing, orchestration, and deployment workflows.
+##    - Authored comprehensive end-user and developer documentation covering architecture, infrastructure, configuration, testing, and troubleshooting.
+##    - Built and maintained ~1,500 frontend and backend tests spanning unit, integration, e2e, and performance testing.
+#    - AWS infrastructure using Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.
     projects:
 
     - name: Web platform foundation
@@ -59,23 +85,30 @@ work-experience:
       - ComfyUI
       - name: JavaScript
         sub: [React, TypeScript, Material UI, Vite, Playwright]
+      # todo! (not a todo, just a reminder): keep in sync: 'job.statements' and 'job.PROJECT.statements'
       statements:
       - Full ownership of solo-dev zero to one project, including idea conception, architecture design, and implementation.
       - Backend in Python, FastAPI + queue worker. Pydantic validation. SqlAlchemy Schema. Layered architecture using routes, services, repositories, and data models.
-      - Data layer with PostgreSQL database with >25 tables, with partial star schema, junction relationship tables, partitioning, aggregation, extensive GIN & GiST indexing, and FTS. Versioned migrations using Alembic.
+      # i combined these two lines into 1
+      - Data layer with PostgreSQL database with >25 tables, with partial star schema, junction relationship tables, partitioning, aggregation, extensive GIN & GiST indexing, and FTS. Versioned migrations using Alembic. Schedule jobs (celery beat), for aggregation, statistics, and analytics.
+#      - Data layer with PostgreSQL database with >25 tables, with partial star schema, junction relationship tables, partitioning, aggregation, extensive GIN & GiST indexing, and FTS. Versioned migrations using Alembic.
+#      - Schedule jobs (celery beat), for aggregation, statistics, and analytics.
       - Redis caching, based on LRU and heuristics (popularity + response time), guided by analytics tables & admin dashboard.
       - Modern frontend using React, TypeScript, Vite, React Query, MUI, and Playwright.
       - Recommender systems leveraging CLIP embeddings across text prompts and image recognition, with ensemble-based multi-signal recommendation. In development.
-      - Projects and experiments features, to isolate generation to specific topic sets (e.g. 'Logos', 'Product ads', 'Avatars').
-      - Image generation, with auto and manual controls, integrated with ComfyUI (local or cloud). Includes model, browsing, selection, and uploads (e.g. LoRAs, checkpoints). Redis and celery worker for queues. Web sockets for no-refresh updates.
-      - Image browsing, supporting complex queries, with mutli-select tags, toggles + FTS (Full-Text search). FTS using tsvector + GIN on Postgres. Optimized to query joins with ~100 million rows in <200ms.
-      - Schedule jobs (celery beat), for aggregation, statistics, and analytics.
-      - Bookmarks and tags for advanced curation and browsing, including bookmarks categories and an MVP tag hierarchy.
-      - Complex configuration & environment (dev, demo, test, prod) set up with load order to allow overrides and extensibility.
-      - Extensive documentation, including for end user, and implementer / developer, including topics like architecture, infrastructure, configuration, testing, and troubleshooting.
-      - Extensive suite of developer commands (250~) and CLIs, for database operations, multi-tier testing, service orchestration, deployment, code quality, and workflows.
-      - 1,500~ frontend and backend tests, covering unit, integration, e2e, and performance, using PyTest, Jest, and Playwright.
-      - Infrastructure on AWS, using Terraform for IAC tool, with WIP CI/CD in GitHub actions. Compute using ECS Fargate cluster running  containerized services (Web API, workers, mock services) with ECR for Docker image storage. S3 for serving static React/Vite via CloudFront CDN with Origin Access Control (OAC) for secure access. S3 also for state and DynamoDB table. Networking using Custom VPC with multi-AZ public/private subnets, NAT Gateway, and ALB (Application Load Balancer). Data layer uses RDS PostgreSQL and ElastiCache Redis. Security & Access, with IAM roles, security groups, and secrets management.
+#      - Complex configuration & environment (dev, demo, test, prod) set up with load order to allow overrides and extensibility.
+      - Image generation, with auto and manual controls, integrated with ComfyUI (local or cloud). Redis and celery worker for queues. Web sockets for no-refresh updates. Several pages for model browsing and upload, and batch generation (projects & experiments).
+      - Image browsing, supporting complex queries, with mutli-select tags, toggles + FTS (Full-Text search). FTS using tsvector + GIN on Postgres. Optimized to query joins with ~100 million rows in <200ms. Several pages for gallery and tag and bookmark browsing and management.
+      # consolidated these two into 'img gen' and 'img browsing' bullets above, respectively
+#      - Projects and experiments features, to isolate generation to specific topic sets (e.g. 'Logos', 'Product ads', 'Avatars').
+#      - Bookmarks and tags for advanced curation and browsing, including bookmarks categories and an MVP tag hierarchy.
+      - 1,500 tests (unit, integration, e2e, performance), CLIs & 250+ commands, and extensive documentation.
+#      - Extensive documentation, including for end user, and implementer / developer, including topics like architecture, infrastructure, configuration, testing, and troubleshooting.
+#      - Extensive suite of developer commands (250~) and CLIs, for database operations, multi-tier testing, service orchestration, deployment, code quality, and workflows.
+#      - 1,500~ frontend and backend tests, covering unit, integration, e2e, and performance, using PyTest, Jest, and Playwright.
+      - AWS infrastructure using Terraform, including ECS Fargate services, RDS PostgreSQL, ElastiCache Redis, S3 + CloudFront, ALB, IAM, and multi-AZ VPC networking.
+      # longer version:
+#      - Infrastructure on AWS, using Terraform for IAC tool, with WIP CI/CD in GitHub actions. Compute using ECS Fargate cluster running  containerized services (Web API, workers, mock services) with ECR for Docker image storage. S3 for serving static React/Vite via CloudFront CDN with Origin Access Control (OAC) for secure access. S3 also for state and DynamoDB table. Networking using Custom VPC with multi-AZ public/private subnets, NAT Gateway, and ALB (Application Load Balancer). Data layer uses RDS PostgreSQL and ElastiCache Redis. Security & Access, with IAM roles, security groups, and secrets management.
 
 #    - name: Cloud infrastructure
 #      skills:
@@ -224,17 +257,23 @@ work-experience:
 #      - Agile/Scrum
 #      - Kanban
       statements:
-      - Managed small dev team using agile practices such as scrum and sprints. Managed product roadmap and kanban boards. Handled scheduling and agendas, team member work allocation, and mentorship and coaching.
+      # commented some out simply to reduce verbosity
+      # rem: who i mentored: Hope. and then there were 2 guys also that participated idr their names but it was like 2 mon and i didn't do for them
+      - Managed small dev team using agile practices. Managed product roadmap and kanban boards. Lead scrums and sprints. Provided direction, oversight, and mentorship.
+#      - Managed small dev team using agile practices such as scrum and sprints. Managed product roadmap and kanban boards. Handled scheduling and agendas, team member work allocation, and mentorship and coaching.
       - Owned and architected backend in Python using a RESTful FastAPI server with Pydantic validation.
       - Owned and architected data synchronization pipeline with Palantir Foundry. Manged by sync jobs running every 20 minutes, ad hoc jobs for error resolution, and nightly jobs for ingesting large (~10GB) datasets.
       - Owned and maintained multi-environment infrastructure on Azure, along with CI/CD pipeline in GitHub Actions for QC, as well as scheduled health checks testing live production environment nightly.
       - Co-developed data layer with PostgreSQL Flexible Server featuring 25+ tables and views, including derived analytical tables, with refreshes managed by a DAG. Advanced indexing with GIN for full-text search using pg_trgm trigrams, GiST for hierarchical queries. Data model using mix of SqlAlchemy ORM & custom DDL templates using Jinja2.
       - Co-developed modern frontend using React, TypeScript, Vite, MUI, and axios. State management using react-hooks-global-state with custom data caching layer implementing LRU cache strategies.
       - Co-developed Advanced graph algorithms and visualization using NetworkX (backend) and graphology (frontend). Custom gap-filling algorithms to connect disconnected concept subgraphs, dynamic subtree expansion/collapse for performance, and D3.js-based hierarchical visualizations supporting 2,000+ nodes.
-      - Co-developed Complex data analysis features including multi-concept set comparison, overlap analysis, patient/record count aggregation with clamping for de-identification.
-      - Co-developed database monitoring and quality assurance with automated row count tracking over time, schema comparison tools, delta analysis for refresh validation, and audit tables for fetch failures and retry mechanisms.
-      - Co-developed custom user and session analytics.
-      - Owned extensive documentation covering architecture (layered design, call graphs), developer onboarding, playbooks and procedures (e.g. rollback protocols), and end-user feature documentation.
+      # consolidated 4 lines into the one here
+      - Owned and co-developed database monitoring and QA, end user analytical feaures, and internal analytics, and extensive documentation.
+#      - Co-developed Complex data analysis features including multi-concept set comparison, overlap analysis, patient/record count aggregation with clamping for de-identification.
+#      - Co-developed database monitoring and quality assurance with automated row count tracking over time, schema comparison tools, delta analysis for refresh validation, and audit tables for fetch failures and retry mechanisms.
+#      - Co-developed custom user and session analytics.
+#      - Owned extensive documentation covering architecture (layered design, call graphs), developer onboarding, playbooks and procedures (e.g. rollback protocols), and end-user feature documentation.
+
 
     - name: CompLOINC
       url: https://github.com/loinc/comp-loinc
@@ -285,7 +324,7 @@ work-experience:
       - Data Visualization
 #      - Data pipelines
       statements:
-      - ETL architecture for disease ontology integration and harmonization from 9+ sources (DOID, OMIM, ORDO, NCIT, ICD10CM, ICD10WHO, ICD11, GARD, NANDO), using Python, SPARQL, reasoning engines, and makefile, including lexical matching and other techniques.
+      - ETL architecture for disease ontology integration and harmonization from 9+ sources (e.g. Disease Ontology and ICD10), using Python, SPARQL, reasoning engines, and makefile, including lexical matching and other techniques.
       - Data layer using biomedical informatics standards formats including OWL, OBO, RDF, Turtle, and TSV, and more bleeding-edge standards and tooling such as SSSOM, SemanticSQL, and LinkML.
       - Containerization for maintaining consistent environment for data science jobs, locally and for cloud tasks.
       - CI/CD using GitHub Actions for QC and releases.
@@ -316,7 +355,7 @@ work-experience:
       statements:
       - Spearheaded project coordination—roadmap ownership, sprint agendas, and work distribution, without formal supervisory role.
       - "Architected multi-repository approach for division of responsibilities: OMOP to OWL tooling, OWL to FHIR tooling, SSSOM to FHIR tooling, web server, source-specific ingests, content store, and public facing website."
-      - Full ownership over architecture and development of novel CLI libraries OMOP to OWL, OWL to FHIR, SSSOM to FHIR, and OMOP to FHIR.
+      - Full ownership over architecture and development of novel tooling OMOP to OWL/FHIR, OWL to FHIR, SSSOM to FHIR.
       - Full ownership of data processing / ingest pipelines and libraries in Python.
       - Maintained Java-based (Spring Boot) FHIR server called HAPI, using DOcker on Ubuntu VM on Azure.
       - Co-developed custom web server extensions.
@@ -342,7 +381,7 @@ work-experience:
         - OWL
         - Semantic Engineering
       statements:
-      - Maintained and co-developed backend in Python using FastAPI RESTful API, with Pydantic validation and LinkML-driven data models.
+      - Maintained and co-developed Python backend using FastAPI RESTful API, with Pydantic and LinkML-driven data models.
       - Maintained Neo4J graph database with n10s (Neosemantics) and cypher queries.
       - Maintained semantic processing pipeline, parsing data sources into Neo4j, using RDFLib for semantic formats RDF, OWL, and JSON-LD, and pandas for flat files. Data sources included NCIT, ICD-O, and PATO.
       - Maintained infrastructure using Docker Compose with multi-container orchestration.
@@ -431,8 +470,8 @@ work-experience:
       statements:
       - Managed a 2-man team, designing and implementing Python & pandas based CLI & data extraction tool.
       - Integrated with Google API to connect with Google Sheets, which was used as a database to manage categories, keywords, configurations, etc.
-      - Integrated with Zulip API to query chat data.
-      - Created visualizations in Matplotlib.
+      # consolidated these two sentences into 1 line
+      - Integrated with Zulip API to query chat data. Created visualizations in Matplotlib.
 
   - job: Emprata
     title: Backend Developer
@@ -720,7 +759,8 @@ work-experience:
       - PostgreSQL database, with pipeline for database seeding from Excel workbooks.
       - RESTful API design with versioned and multi-lingual endpoints.
       - Asynchronous worker task processing using Celery with Redis (previously used RabbitMQ) as message broker for long-running, large dataset upload processes.
-      - Infrastructure on Heroku for web server, with multi-environment configuration (development, staging, production), as well as AWS S3 for datasets.
+      # removed text:  (development, staging, production)
+      - Infrastructure on Heroku for web server, with multi-environment configuration, as well as AWS S3 for datasets.
       - CI/CD pipeline using CircleCI.
 
     - name: Datalab
@@ -738,7 +778,7 @@ work-experience:
       statements:
       - Managed, but did not do hands-on development for, version 2.0 of app, moving from a static-JSON data model to REST API queries.
       - Led stakeholder requirements gathering and produced a comprehensive requirements specification for vendor implementation.
-      - Selected and managed an external firm to develop the product, as well as hired and managed part time contractor for implementing tests.
+      - Selected and managed external firm to develop MVP. Hired and managed contractor for tests and updates.
       - Deployed as static jQuery app, with highcharts for visualization, to AWS S3.
 
     - name: XFormTest
@@ -942,16 +982,17 @@ work-experience:
       - Bootstrap
       statements:
       - 100% ownership of zero to one project, involving architecture and development, as a solo dev.
-      - Backend in Python, Flask + Gunicorn WSGI server. WTForms validation. SQLAlchemy ORM. MVC architecture with routes, models, and forms.
+      # removed Gunicorn WSGI server
+      - Backend in Python using Flask, WTForms, and SQLAlchemy. MVC architecture with routes, models, and forms. Twilio integration for SMS.
       - Data layer with PostgreSQL database with 15+ core models using SQLAlchemy. Soft deletes and auditing. Versioned migrations using Alembic (Flask-Migrate).
       - Frontend using AngularJS + Bootstrap with AdminLTE dashboard theme. Jinja2 server-side templating. Modal-based CRUD operations. Chart.js for data visualization.
       - Multi-tenant modular ERP architecture with 6 independent business modules (OMS, CRM, HRM, AMS, MMS, Admin), each with isolated configurations, permissions, and frontend/backend components.
       - Role-based access control (RBAC) with hierarchical permissions, module-specific role assignments, and custom route decorators for authorization. API-level authorization using preprocessors.
       - User authentication & security with Flask-Login session management, Bcrypt password hashing, CSRF protection (Flask-WTF), and permission-based route protection.
-      - Third-party integrations - Twilio API for SMS.
       - CSV bulk import/export functionality for users, customers, and personnel with validation, using Flask-Excel.
-      - Environment-based configuration (development, staging, production, test) with database-driven app settings (branding, secret keys, module enablement).
-      - Deployment on Heroku PaaS.
+      # Removed text (development, staging, production, test) (branding, secret keys, module enablement)
+      - Deployment on Heroku PaaS. Multi environment configuration with DB settings for industry / domain customization.
+
 
 #    - name: Automation
 #      about: >
