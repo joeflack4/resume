@@ -16,6 +16,19 @@ work-experience:
     - Recommender Systems
     - ML Engineering
     - Agentic AI
+    all-skills:
+    - name: Python
+      sub: [FastAPI, SQLAlchemy, Celery, Alembic, Pydantic, PyTest]
+    - name: JavaScript / Frontend
+      sub: [React, TypeScript, Vite, Material UI, React Query, Playwright, Jest]
+    - name: Infra
+      sub: [AWS, Terraform, Docker, ECS Fargate, RDS, ElastiCache, S3, CloudFront, ALB, IAM, VPC]
+    - PostgreSQL
+    - Redis
+    - DynamoDB
+    - ComfyUI
+    - WebSockets
+    - CLIP
     statements:
     - Founded and fully owned a zero-to-one, solo-developed platform combining recommender systems and generative AI to iteratively produce images optimized for user preferences.
     - Designed and implemented a scalable Python backend using FastAPI, Celery workers, SQLAlchemy, Alembic, and layered service/repository architecture.
@@ -102,6 +115,17 @@ work-experience:
     - Kubernetes
     - ML Ops
     - Tailwind
+    all-skills:
+    - name: Python
+      sub: [FastAPI, torch, transformers, accelerate, llama-cpp-python]
+    - name: JavaScript / Frontend
+      sub: [React, TypeScript, Vite]
+    - name: Infra
+      sub: [AWS, Terraform, Docker, Kubernetes, EKS, CloudFront, S3, IAM, VPC]
+    - MongoDB
+    - MongoDB Atlas
+    - Hugging Face
+    - GGUF
     statements:
     - Designed and built a zero-to-one AI chatbot connected to a mock medical record system in four days using spec-driven development.
     - Implemented a fault-tolerant microservice architecture using Python and FastAPI, separating data APIs from LLM-powered chat services.
@@ -135,6 +159,32 @@ work-experience:
     - Full Stack
     - Biomedical Informatics
     - Ontology Engineering
+    all-skills:
+    - name: Python
+      sub: [ FastAPI, SQLAlchemy, pandas, networkx, PySpark ]
+    - name: JavaScript / Frontend
+      sub: [ React, TypeScript, Vite, Material UI, D3.js ]
+    - name: Infra
+      sub: [ Azure, Docker, GitHub Actions ]
+    - PostgreSQL
+    - Neo4j
+    - Apache Spark
+    - Databricks
+    - Parquet
+    - OWL
+    - RDF
+    - SPARQL
+    - LinkML
+    - ROBOT
+    - SSSOM
+    - SemanticSQL
+    - FHIR
+    - HL7
+    - Dash
+    - Plotly
+    - Matplotlib
+    - PyTorch
+    - Sentence Transformers
     statements:
     - Served as a full stack and data engineer across multiple concurrent biomedical informatics projects, frequently in zero-to-one contexts.
     - Led and mentored small engineering teams, owning roadmaps, sprint planning, kanban boards, scheduling, and work allocation without formal supervisory authority.
@@ -390,6 +440,11 @@ work-experience:
     startDate: 2021/06
     endDate: 2021/11
     skills: [JavaScript, Node, Express, REST API, GIS]
+#    all-skills:
+#    - name: JavaScript / Frontend
+#      sub: [Node.js, Express]
+#    - REST
+#    - GIS
     # todo: explain how skills were used?
     summary: >
       Part time contract working on API for flagship product, Resource Optimizer, helping the FCC to allocate resources 
@@ -407,6 +462,19 @@ work-experience:
     endDate: 2021/06
     skills: [Python, R, C++, Shiny, Statistical Modeling, GIS, HPC]
 #    skills: [Data Visualization]
+    all-skills:
+    - name: Python
+      sub: [pandas]
+    - name: JavaScript / Frontend
+      sub: [Shiny]
+    - name: Infra
+      sub: [HPC, SLURM]
+    - R
+    - C++
+    - MATLAB
+    - Tableau
+    - Google Maps API
+    - Parquet
     summary: >
       Worked with a number of teams on projects requiring different skill sets, from statistical modeling, to data 
       visualization web applications, to high performance computing. All web applications were done zero to one.
@@ -569,6 +637,13 @@ work-experience:
     title: Software Engineer
     endDate: 2019/05
     skills: [React, Python, Flask, AWS]
+#    all-skills:
+#    - name: Python
+#      sub: [Flask]
+#    - name: JavaScript / Frontend
+#      sub: [React]
+#    - name: Infra
+#      sub: [AWS]
     summary: >
       Several contractors, including myself, drafted separate mockups to inspire BioViva's technical development 
       ideation.
@@ -591,6 +666,20 @@ work-experience:
     startDate: 2016/09
     endDate: 2019/10
     skills: [Python, Flask, SQL, JavaScript, Full Stack]
+    all-skills:
+    - name: Python
+      sub: [Flask, SQLAlchemy, Celery]
+    - name: JavaScript / Frontend
+      sub: [jQuery, React, Node]
+    - name: Infra
+      sub: [Heroku, AWS S3, CircleCI]
+    - PostgreSQL
+    - Redis
+    - RabbitMQ
+    - XForms
+    - XPath
+    - XLSForm
+    - Java
     summary: >
       Provided development and maintained codebases for public health survey operations organization, including 
       creation of web API, software libraries, frontend databases, and data visualization app.
@@ -805,7 +894,8 @@ work-experience:
 
 
   - job: Sonshine Companion Care
-    title: Head of Information Technology
+#    title: Head of Information Technology
+    title: Software Engineer
     url: https://www.sonshinecompanioncare.com/
     summary: >
       Worked for local home health care company. Proved my value and increased responsibility fast, starting as a 
@@ -814,6 +904,15 @@ work-experience:
     startDate: 2014/09
     endDate: 2016/09
     skills: [Python, Flask, JavaScript, Angular]
+#    all-skills:
+#    - name: Python
+#      sub: [Flask, SQLAlchemy, Alembic]
+#    - name: JavaScript / Frontend
+#      sub: [AngularJS]
+#    - name: Infra
+#      sub: [Heroku]
+#    - PostgreSQL
+#    - Twilio
     statements:
     - Progressed rapidly from caregiver to Head of Information Technology, ultimately owning all technical systems.
     - Architected and built a zero-to-one, multi-tenant HRM/CRM web platform as a solo developer.
@@ -854,30 +953,30 @@ work-experience:
       - Environment-based configuration (development, staging, production, test) with database-driven app settings (branding, secret keys, module enablement).
       - Deployment on Heroku PaaS.
 
-    - name: Automation
-      about: >
-        Finance reporting tools: scripts and spreadsheets to create custom reporting not available in accounting 
-        software; scripts to rename and move files.
-      roles:
-      - Software lead
-      skills:
-      - PowerShell
-      - ODBC
-      - Excel
-      - GoogleSheets
-#      statements:
-#      - Created a bla bla
-
-    - name: Company website
-      url: https://www.sonshinecompanioncare.com/
-      about: Designed and administered company website.
-      roles:
-      - Design lead
-      - Web admin
-      skills:
-      - WordPress
-#      statements:
-#      - Created a bla bla
+#    - name: Automation
+#      about: >
+#        Finance reporting tools: scripts and spreadsheets to create custom reporting not available in accounting
+#        software; scripts to rename and move files.
+#      roles:
+#      - Software lead
+#      skills:
+#      - PowerShell
+#      - ODBC
+#      - Excel
+#      - GoogleSheets
+##      statements:
+##      - Created a bla bla
+#
+#    - name: Company website
+#      url: https://www.sonshinecompanioncare.com/
+#      about: Designed and administered company website.
+#      roles:
+#      - Design lead
+#      - Web admin
+#      skills:
+#      - WordPress
+##      statements:
+##      - Created a bla bla
 
 
   - job: Several schools

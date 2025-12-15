@@ -32,6 +32,7 @@ toggles:
   show_project_skills: true
   show_project_statements: true
   top-n-projects-to-include-statements-blocks: -1  # set to -1 to include all projects
+  include-root-projects: false  # controls whether standalone Projects section appears
 projects-importance-order-to-include-statements-blocks:
   # Genonaut: Web platform foundation
   1: Web platform foundation
