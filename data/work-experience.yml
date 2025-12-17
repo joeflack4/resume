@@ -201,7 +201,9 @@ work-experience:
       sub: [ Azure, Docker, GitHub Actions ]
     - PostgreSQL
     - Neo4j
-    - Apache Spark
+    - PySpark (Apache Spark)
+    # As needed: Extension: Redshift
+#    - Redshift
     - Databricks
     - Parquet
     - OWL
@@ -228,9 +230,15 @@ work-experience:
     - Implemented semantic ingestion and harmonization pipelines using OWL, RDF, SPARQL, LinkML, and ontology reasoning tools.
     - Built NLP pipelines using sentence transformers and PyTorch for semantic similarity and curator-assisted matching.
     - Owned and operated CI/CD pipelines, infrastructure, and monitoring across Azure and cloud-hosted platforms.
-    - Optimized large-scale analytics pipelines using PySpark and Databricks, achieving ~100x throughput improvements on de-identification workflows.
+    - Optimized large-scale analytics pipelines using PySpark (Apache Spark) and Databricks, achieving ~100x throughput improvements on de-identification workflows.
     - Contributed to and helped shape major open-source standards including LinkML and SSSOM, with focus on FHIR interoperability.
     - Produced extensive architecture diagrams, onboarding guides, playbooks, and end-user documentation.
+    # As needed: Extension: Redshift, Airflow, and OLTP/OLAP + star/snowflake schemas
+#    - Managed workflow automation for several projects using Airflow, as well as custom Python and Make-based DAGs for ETL, ingestion, and analytical refresh processes.
+#    - Modeled data for both OLTP and OLAP applications, including star and, to a lesser extent, snowflake designs, denormalized analytical tables, and performance-tuned transactional schemas.
+#    - Leveraged Amazon Redshift for warehousing and analyzing large healthcare datasets supporting academic and clinical research.
+    # As needed: FHIR
+#    - Developed and maintained HAPI FHIR server serving content used by partner researchers, and lead evelopment on associated novel OMOP to FHIR tooling & ingest pipeline.
     projects:
 
     - name: TermHub
@@ -394,16 +402,16 @@ work-experience:
         - Developer
       skills:
         - name: Python
-          sub: [Pandas, PySpark, Matplotlib]
+          sub: [Pandas, Matplotlib]
         - Databricks
-        - Apache Spark
+        - PySpark (Apache Spark)
         - Parquet
 #        - Apache Parquet
         - Virtualization
         - Data obfuscation
         - CI/CD in GitHub Actions
       statements:
-      - Optimized Apache PySpark analytical pipeline running on Databricks, processing data for 2 million patients, using parquet columnar storage with pyarrow optimization. Updated and properly connected and added cahding for multi-phase pipeline - rectangularization & imputation → generalization (sig-fig truncation, temporal bucketing) → k-anonymity calculation.
+      - Optimized PySpark analytical pipeline running on Databricks, processing data for 2 million patients, using parquet columnar storage with pyarrow optimization. Updated and properly connected and added cahding for multi-phase pipeline - rectangularization & imputation → generalization (sig-fig truncation, temporal bucketing) → k-anonymity calculation.
       - Security & Privacy -Added AES encryption via pyzipper for data export, in tandem with custom pseudonymization algorithm.
 
 #    - name: N3C (National COVID Cohort Collaborative)
