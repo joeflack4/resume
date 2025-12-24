@@ -504,7 +504,8 @@ work-experience:
 #    - Worked in a part-time contract capacity delivering production-quality features under tight timelines.
 
   - job: "Johns Hopkins: Tuberculosis Modeling and Translational Epi Group"
-    title: Sr. Programmer Analyst
+    title: Software Engineer
+#    title: Sr. Programmer Analyst
     url: modeltb.org
     startDate: 2019/10
     endDate: 2021/06
@@ -710,7 +711,8 @@ work-experience:
 
   - job: PMA (Performance Monitoring for Action)
     url: https://www.pmadata.org/
-    title: Programmer Analyst
+    title: Software Engineer
+#    title: Programmer Analyst
     startDate: 2016/09
     endDate: 2019/10
     skills: [Python, Flask, SQL, JavaScript, Full Stack]
@@ -729,8 +731,8 @@ work-experience:
     - XLSForm
     - Java
     summary: >
-      Provided development and maintained codebases for public health survey operations organization, including 
-      creation of web API, software libraries, frontend databases, and data visualization app.
+      Developed and maintained production codebases for a public health survey operations organization, including web 
+      APIs, shared software libraries, frontend data stores, and data visualization applications.
     statements:
     - Served as a full stack engineer on public health survey and data dissemination platforms used internationally.
     - Co-led multiple zero-to-one projects, owning architecture, implementation, and delivery of public APIs, visualization tools, and developer libraries.
@@ -944,7 +946,7 @@ work-experience:
 
   - job: Sonshine Companion Care
 #    title: Head of Information Technology
-    title: Software Engineer
+    title: IT Lead & Software Developer
     url: https://www.sonshinecompanioncare.com/
     summary: >
       Worked for local home health care company. Proved my value and increased responsibility fast, starting as a 
