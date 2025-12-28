@@ -232,6 +232,10 @@ work-experience:
     - Built NLP pipelines using sentence transformers and PyTorch for semantic similarity and curator-assisted matching.
     - Owned and operated CI/CD pipelines, infrastructure, and monitoring across Azure and cloud-hosted platforms.
     - Optimized large-scale analytics pipelines using PySpark (Apache Spark) and Databricks, achieving ~100x throughput improvements on de-identification workflows.
+    # next 2 lines if need add phi: Choose one!
+    - Implemented end-to-end PHI protection mechanisms across biomedical data pipelines, including strong encryption and custom pseudonymization tailored to healthcare privacy requirements.
+#    - Owned security and privacy architecture for biomedical data systems, implementing encryption and custom pseudonymization to ensure robust PHI protection in regulated environments.
+    - Developed and maintained NoSQL graph database (Neo4J) to serve biomedical content, using FastAPI RESTful API, with Pydantic and LinkML-driven data models, using cypher queries with n10s (Neosemantics).
     - Contributed to and helped shape major open-source standards including LinkML and SSSOM, with focus on FHIR interoperability.
     - Owned long-term maintainability through extensive architecture documentation, onboarding guides, operational playbooks, and end-user documentation.
     # As needed: Extension: Redshift, Airflow, and OLTP/OLAP + star/snowflake schemas
@@ -272,7 +276,9 @@ work-experience:
 #      - Managed small dev team using agile practices such as scrum and sprints. Managed product roadmap and kanban boards. Handled scheduling and agendas, team member work allocation, and mentorship and coaching.
       - Owned and architected backend in Python using a RESTful FastAPI server with Pydantic validation.
       - Owned and architected data synchronization pipeline with Palantir Foundry. Manged by sync jobs running every 20 minutes, ad hoc jobs for error resolution, and nightly jobs for ingesting large (~10GB) datasets.
+      # next 2: swap to 2nd depending on if need stress AWS
       - Owned and maintained multi-environment infrastructure on Azure, along with CI/CD pipeline in GitHub Actions for QC, as well as scheduled health checks testing live production environment nightly.
+#      - Owned and maintained multi-environment infrastructure on both Azure and AWS (EC2, S3), along with CI/CD pipeline in GitHub Actions for QC, as well as scheduled health checks testing live production environment nightly.
       - Co-developed data layer with PostgreSQL Flexible Server featuring 25+ tables and views, including derived analytical tables, with refreshes managed by a DAG. Advanced indexing with GIN for full-text search using pg_trgm trigrams, GiST for hierarchical queries. Data model using mix of SqlAlchemy ORM & custom DDL templates using Jinja2.
       - Co-developed modern frontend using React, TypeScript, Vite, MUI, and axios. State management using react-hooks-global-state with custom data caching layer implementing LRU cache strategies.
       - Co-developed Advanced graph algorithms and visualization using NetworkX (backend) and graphology (frontend). Custom gap-filling algorithms to connect disconnected concept subgraphs, dynamic subtree expansion/collapse for performance, and D3.js-based hierarchical visualizations supporting 2,000+ nodes.
@@ -413,7 +419,7 @@ work-experience:
         - CI/CD in GitHub Actions
       statements:
       - Optimized PySpark analytical pipeline running on Databricks, processing data for 2 million patients, using parquet columnar storage with pyarrow optimization. Updated and properly connected and added cahding for multi-phase pipeline - rectangularization & imputation → generalization (sig-fig truncation, temporal bucketing) → k-anonymity calculation.
-      - Security & Privacy -Added AES encryption via pyzipper for data export, in tandem with custom pseudonymization algorithm.
+      - Security & Privacy - Added AES encryption via pyzipper for data export, in tandem with custom pseudonymization algorithm to ensure PHI protection and regulatory compliance.
 
 #    - name: N3C (National COVID Cohort Collaborative)
 #      url: http://ncats.nih.gov/n3c
@@ -741,6 +747,8 @@ work-experience:
     - Owned project delivery for major frontend rewrites, including requirements definition, vendor selection, and contractor management.
     - Created novel developer tooling for automated testing of XForms and survey definitions.
     - Deployed and maintained applications across Heroku, AWS, and other cloud providers with CI/CD pipelines.
+    # turn below line on if need heroku / aws
+    - Managed infrastructure, with MVPs on Heroku, and production using AWS (EC2, S3, RDS).
     - Mentored junior developers and coordinated small teams across engineering and data roles.
     projects:
 
@@ -770,8 +778,11 @@ work-experience:
       - PostgreSQL database, with pipeline for database seeding from Excel workbooks.
       - RESTful API design with versioned and multi-lingual endpoints.
       - Asynchronous worker task processing using Celery with Redis (previously used RabbitMQ) as message broker for long-running, large dataset upload processes.
+      # next commented out lines area bout deployment
       # removed text:  (development, staging, production)
       - Infrastructure on Heroku for web server, with multi-environment configuration, as well as AWS S3 for datasets.
+      # if need stress aws
+#      - Infrastructure initially on Heroku, then AWS using EC2, S3, and RDS.
       - CI/CD pipeline using CircleCI.
 
     - name: Datalab
