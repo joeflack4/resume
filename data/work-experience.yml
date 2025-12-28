@@ -346,6 +346,7 @@ work-experience:
 #      - Comprehensive documentation using MkDocs with Material theme (66+ markdown files), including auto-generated mapping progress, metrics, migration candidates, and per-source statistics.
 
     - name: TIMS (Terminology Infrastructure Management Systems)
+      # - TIMS: https://www.timsbiomed.org/ / https://github.com/joeflack4/owl-on-fhir / https://github.com/joeflack4/owl-on-fhir-content / https://github.com/timsbiomed/omop2owl-vocab / https://github.com/timsbiomed/omop2fhir-vocab / https://github.com/joeflack4/mondo-on-fhir
       url: https://www.timsbiomed.org/
       # todo: I'd like to say more about how it was used, but it was a prototype and leadership never found an audience
       about: >
@@ -452,6 +453,7 @@ work-experience:
 #      - Created a bla bla
 
     - name: SSSOM (Super Simple Standard for Ontology Mappings)
+      # https://github.com/joeflack4/sssom-py
       url: https://github.com/mapping-commons/sssom
       about: >
         Contributed to open source ontological mappings standard and library, SSSOM. Biggest contribution: FHIR 
@@ -542,7 +544,16 @@ work-experience:
     - Collaborated closely with epidemiologists on model validation, sensitivity analyses, and result interpretation.
     projects:
 
+# did i contribute?
+#- HIV NCD: https://github.com/joeflack4/hivNcd
+# = https://github.com/joeflack4/FAHCT
+# https://github.com/joeflack4/hivMentalHealth
+# https://github.com/joeflack4/calibro
+
     - name: JHEEM (Ending HIV)
+      # https://github.com/joeflack4/ending_hiv
+      # https://github.com/tfojo1/jheem
+      # https://www.hopkinsmedicine.org/news/newsroom/news-releases/2021/09/johns-hopkins-medicine-team-creates-model-to-help-show-path-toward-ending-hiv-nationwide
       url: https://jheem.shinyapps.io/EndingHIV/
       about: >
         Implemented front-end and integrated various back-end services for a web application related to HIV modeling.
@@ -561,6 +572,7 @@ work-experience:
 #      - Created a bla bla
 
     - name: Impaact4TB
+      # https://github.com/TB-Modeling/impaact4tb-tpt-3hp / https://github.com/TB-Modeling/impaact4tb
       url: http://impaact4tb.org/
       about: >
         Co-authored on a project related to preventative therapies for Tuberculosis (TB). Helped with code structure and
@@ -573,6 +585,7 @@ work-experience:
 #      - Created a bla bla
 
     - name: COVID NAT-RDT
+      # https://joeflack4.shinyapps.io/COVID19-NAT-RDT/
       url: https://joeflack4.shinyapps.io/COVID19-NAT-RDT/
       about: >
         Implemented the front-end for COVID-19 related model for optimizing lab testing throughput and cost 
@@ -589,6 +602,7 @@ work-experience:
 #      - Created a bla bla
 
     - name: Ghana Lab Network
+      # https://github.com/TB-Modeling/lab-network-ghana
       url: https://joeflack4.shinyapps.io/GhanaLabNetwork/
       about: >
         Created web application. Built data visualizations, multi-format data harmonization (APIs, CSVs, PDFs), lexical 
@@ -688,6 +702,8 @@ work-experience:
 
 # todo: considate into just the summary? Change title to "Software Engineer (Contract)"?
   - job: BioViva
+    # https://github.com/joeflack4/bioviva-client
+    # https://github.com/joeflack4/bioviva-api
     url: https://bioviva-science.com/
     title: Software Engineer
     endDate: 2019/05
@@ -714,6 +730,12 @@ work-experience:
         well as interacting with cloud storage for medical records.
 
 
+# did i contribute?
+  # https://github.com/joeflack4/odk2stata
+#  https://github.com/joeflack4/pmaxform
+# https://github.com/joeflack4/javarosa
+  # https://github.com/joeflack4/qlang
+  # https://github.com/joeflack4/PMA-Convert
 
   - job: PMA (Performance Monitoring for Action)
     url: https://www.pmadata.org/
@@ -823,6 +845,8 @@ work-experience:
 
     # I know some other org(s) used but IDR who. DHS?
     - name: Pretty PDF Printer
+      # ArgParse2Web: https://github.com/PMA-2020/argparse-to-web
+      # https://github.com/joeflack4/ppp-web
       url: https://ppp.pma2020.org/
       about: >
         Tool for converting XForms into human readable formats. Used extensively by internal staff and other public 
